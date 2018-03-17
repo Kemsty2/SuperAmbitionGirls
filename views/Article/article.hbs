@@ -1,0 +1,207 @@
+<div class="breadcumb_common_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="breadcum_c_left">
+                    <p>Super Ambitieux</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="breadcum_c_right">
+                    <ul>
+                        <li><a href="#">Acceuil  /</a></li>
+                        <li><a href="#">{{article.type}} /</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="main_news_wrapper cc_single_post_wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-9 col-xs-12">
+                <!-- ~~~=| Fashion area START |=~~~ -->
+                <input type="hidden" value="{{article.contenu}}" id="contenuhidden">
+                <div class="cc_single_post">
+                    <div class="row">
+                        <div class="col-md-11 col-sm-11 col-xs-12">
+                            <div class="br_single_news">
+                                <img alt="" class="img-responsive" src="{{article.photo}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sp_details">
+                        <a href="#">{{article.type}}</a>
+                        <h1>{{article.titre}}</h1>
+                        <div class="post_meta">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-user"></i>By {{article.auteur_nom}}</a></li>
+                                <li><a href="#"><i class="far fa-clock"></i>{{article.duree}} min</a></li>
+                                <li><a href="#"><i class="fa fa-comment-o"></i>{{article.nombre_comms}}</a></li>
+                            </ul>
+                        </div>
+                        <div class="post_text">
+                            <p id="contenu"></p>
+                        </div>
+                        <div class="social_tags">
+                            <div class="social_tags_left">
+                                <p>Tags :</p>
+                                <ul>
+                                    {{#each article.tags}}
+                                        <li><a href="#">{{this}}</a></li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                            <div class="social_tags_right">
+                                <ul>
+                                    <li class="facebook"><a class="fab fa-facebook-f" href="#"></a></li>
+                                    <li class="twitter"><a class="fab fa-twitter" href="#"></a></li>
+                                    <li class="google-plus"><a class="fab fa-google-plus" href="#"></a></li>
+                                    <li class="linkedin"><a class="fab fa-linkedin" href="#"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sp-next-prev">
+                            {{#if previous}}
+                                <div class="sp-prev">
+                                    <a href="/articles/{{previous._id}}"><i class="fa fa-angle-double-left"></i>Previous post</a>
+                                    <div class="sp-next-post">
+                                        <a href="/articles/{{previous._id}}">{{previous.titre}}</a>
+                                    </div>
+                                </div>
+                            {{/if}}
+                            {{#if next}}
+                                <div class="sp-next">
+                                    <a href="/articles/{{next._id}}">Next Posts<i class="fa fa-angle-double-right"></i></a>
+                                    <div class="sp-next-post">
+                                        <a href="/articles/{{next._id}}">{{next.titre}}</a>
+                                    </div>
+                                </div>
+                            {{/if}}
+                        </div>
+                        <div class="sp-comments-box">
+                            <h2>Comments</h2>
+                            <div class="single_comment">
+                                <div class="single_comment_pic">
+                                    <img src="images/comment-pic1.png" alt="" />
+                                </div>
+                                <div class="single_comment_text">
+                                    <div class="sp_title">
+                                        <a href="#"><h4>Chris Hemsworth</h4></a>
+                                        <p>10 Min ago</p>
+                                    </div>
+                                    <p>They call him Flipper Flipper faster than lightning. No one you see is smarter than he. They call him Flipper Flipper the faster than lightning. No one you see is smarter than he</p>
+                                    <a href="#"><i class="fa fa-reply"></i>Reply</a>
+                                </div>
+                            </div>
+                            <div class="single_comment single_comment_middle">
+                                <div class="single_comment_pic">
+                                    <img src="images/comment-pic2.png" alt="" />
+                                </div>
+                                <div class="single_comment_text">
+                                    <div class="sp_title">
+                                        <a href="#"><h4>Chris Hemsworth</h4></a>
+                                        <p>10 Min ago</p>
+                                    </div>
+                                    <p>They call him Flipper Flipper faster than lightning. No one you see is smarter than he. They call him Flipper Flipper the faster than lightning. No one you see is smarter than he</p>
+                                    <a href="#"><i class="fa fa-reply"></i>Reply</a>
+                                </div>
+                            </div>
+                            <div class="single_comment single_comment_last">
+                                <div class="single_comment_pic">
+                                    <img src="images/comment-pic3.png" alt="" />
+                                </div>
+                                <div class="single_comment_text">
+                                    <div class="sp_title">
+                                        <a href="#"><h4>Chris Hemsworth</h4></a>
+                                        <p>10 Min ago</p>
+                                    </div>
+                                    <p>They call him Flipper Flipper faster than lightning. No one you see is smarter than he. They call him Flipper Flipper the faster than lightning. No one you see is smarter than he</p>
+                                    <a href="#"><i class="fa fa-reply"></i>Reply</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-form">
+                            <h2>leave your comments</h2>
+                            <div class="comments_form">
+                                <form>
+                                    <div class="inp_name">
+                                        <input id="c_name" type="text" placeholder="Your Name" required/>
+                                        <input type="text" placeholder="Your Name" required/>
+                                    </div>
+                                    <textarea cols="30" rows="10" placeholder="Message"></textarea>
+                                    <input type="submit" value="Send Message"/>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ~~~=| Fashion area END |=~~~ -->
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12">
+                <div class="home_sidebar">
+                    <div class="follow_us_side">
+                        <h2>Publicite</h2>
+                        <div class="purchase_sidebar_img">
+                            <img src="/images/Mboté.png" alt="" />
+                        </div>
+                        <div class="purchase_sidebar_img">
+                            <img src="/images/mulema.jpg" alt="" />
+                        </div>
+                    </div>
+                    <div class="follow_us_side">
+                        <h2>Follow Us</h2>
+                        <div class="all_single_follow">
+                            <div class="single_follow_us"> <a href="#"> <i class="fab fa-facebook-f"></i><br>
+                                5638<br>
+                                Fans </a> </div>
+                            <div class="single_follow_us twit"> <a href="#"> <i class="fab fa-twitter"></i><br>
+                                5638<br>
+                                Fans </a> </div>
+                            <div class="single_follow_us goopl"> <a href="#"> <i class="fab fa-google-plus"></i><br>
+                                5638<br>
+                                Fans </a> </div>
+                            <div class="single_follow_us last_one"> <a href="#"> <i class="fab fa-instagram"></i><br>
+                                5638<br>
+                                Fans </a> </div>
+                        </div>
+                    </div>
+                    <div class="follow_us_side">
+                        <h2>Latest Post</h2>
+                        <div class="all_news_right">
+                            {{#if recent_post}}
+                                {{#each recent_post}}
+                                    <div class="fs_news_right" onclick="document.location= '/articles/{{this._id}}';">
+                                        <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" /> </div>
+                                        <div class="single_fs_news_right_text">
+                                            <h4><a href="/articles/{{this._id}}">{{this.titre}}</a></h4>
+                                            <p> <a class="violet-text" href="#">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class="follow_us_side">
+                        <h2>Popular Post</h2>
+                        <div class="all_news_right">
+                            {{#if popular_post}}
+                                {{#each popular_post}}
+                                    <div class="fs_news_right" onclick="document.location= '/articles/{{this._id}}';">
+                                        <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" /> </div>
+                                        <div class="single_fs_news_right_text">
+                                            <h4><a href="/articles/{{this._id}}">{{this.titre}}</a></h4>
+                                            <p> <a class="violet-text" href="#">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

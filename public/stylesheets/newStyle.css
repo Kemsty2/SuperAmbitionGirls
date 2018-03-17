@@ -1,0 +1,206 @@
+@font-face {
+    font-family: Langdon;
+    src: url('/fonts/Langdon.ttf.woff') format('woff');
+}
+
+@font-face {
+    font-family: Renogare;
+    src: url('/fonts/Renogare-Regular.otf') format('otf');
+}
+
+@font-face {
+    font-family: "Tw Cen MT";
+    src: url('/fonts/TCM_____.TTF') format('TTF');
+}
+
+body{
+    font-family: Raleway, Renogare;
+}
+
+
+h1, h2, h3, h4, h5, h6{
+    font-family: Langdon, Renogare !important;
+}
+
+p{
+    font-family: Raleway !important;
+}
+
+.pr-1 label{
+    font-family: Langdon, Renogare !important;
+}
+
+.carousel-item .br_single_news{
+    height: 500px !important;
+}
+
+.cc_single_post .br_single_news{
+    height: 500px !important;
+}
+
+.post_text p{
+    font-family: Raleway,Renogare  !important;
+    font-size: 15px !important;
+    color: black !important;
+    text-align: justify;
+}
+
+.post_text .post_inner p{
+    font-family: Raleway ,Renogare  !important;
+    font-size: 22px !important;
+}
+
+.part{
+    height: 245px !important;
+}
+
+li[ data-target="#carousel-example-generic"]{
+    background-color: #DC3151;
+}
+
+#nav {
+    font-family: Langdon, Renogare !important;
+}
+#nav li a{
+    font-size: 15px !important;
+}
+
+.nav_lifeguide .sub_menu ul li a{
+    font-family: Langdon, Renogare !important;
+    font-size: 12px;
+}
+
+.sub_menu li a {
+    font-family: Langdon, Renogare !important;
+    font-size: 12px;
+}
+
+.left_fashion li a{
+    font-family: Langdon, Renogare !important;
+    font-size: 15px !important;
+    color: white !important;
+}
+
+.fashion_area .header_fasion{
+    border-bottom: solid #4f2c84 5px;
+}
+
+.footer_top{
+    background-color: #4f2c84 !important;
+
+}
+
+.footer_top p{
+    color: white !important;
+}
+
+.footer_bottom{
+    background-color: #B61D8D  !important;
+}
+
+.item .br_single_news .blue_hp_span{
+    width: 200px !important;
+}
+
+.violet-text{
+    color: #4f2c84 !important;
+}
+
+.dark-violet-text{
+    color: #4f2c84 !important;
+}
+
+.dark_hp_span{
+    background: rgba(255, 255, 255, 0.5);
+    width: auto;
+    padding: 10px ;
+}
+
+.dark_hp_span a{
+    color: black !important;
+}
+
+.item .br_single_news .br_single_text{
+    margin-bottom: 50px !important;
+}
+
+.follow_us_side h2{
+    font-size: 20px !important;
+    border-bottom: #B61D8D solid 2px !important;
+}
+
+.single_related_post h5{
+    color: white;
+}
+
+.single_related_post h5 a{
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+.sp_details > a{
+    padding: 10px !important;
+    background: #4f2c84 !important;
+    height: auto;
+    width: 200px;
+}
+
+.breadcumb_common_area{
+    margin-top: 3rem;
+}
+
+.breadcumb_common_area p {
+    color: #4f2c84 ;
+    font-family: Langdon !important;
+    font-size: 18px !important;
+}
+
+.breadcum_c_right a{
+    color: #4f2c84 !important;
+    font-family: Langdon !important;
+    font-size: 16px !important;
+}
+
+.header_top{
+    background-color: #B61D8D;
+    border-bottom: 4px solid #4f2c84 ;
+}
+
+.mega_menu li a{
+    font-family: Langdon, Renogare !important;
+}
+
+.br_single_news img:hover{
+    cursor: pointer;
+}
+
+.fs_news_left:hover{
+    cursor:pointer;
+}
+
+.fs_news_right:hover{
+    cursor: pointer;
+}
+
+.main_news_wrapper_article .br_single_news {
+    height: 500px !important;
+}
+
+.type_article_box{
+    margin-top: 3rem;
+    background-color: #4f2c84;
+    padding: 10px;
+    border-bottom: 5px #B61D8D solid;
+    margin-bottom: 3rem;
+
+}
+
+.type_article_box p{
+    font-size: 32px;
+    font-weight: 200;
+    text-transform: uppercase;
+    color: white;
+
+}
+

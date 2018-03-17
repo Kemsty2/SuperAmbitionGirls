@@ -1,0 +1,92 @@
+<div class="panel-header panel-header-sm">
+</div>
+<h2 class="panel-title text-center" style="margin-top: 1rem;"> Creation Redacteur</h2>
+<div class="content" style="margin-top: 1rem;">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="card" style="padding-bottom: 2rem;">
+                <form action="/admin/enroll_redacteur" method="post">
+                <div class="card-header">
+                    <h5 class="title"> Creer Redacteur</h5>
+                </div>
+                <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    <label>Noms</label>
+                                    <input type="text" class="form-control" placeholder="Noms" name="noms">
+                                </div>
+                            </div>
+                            <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>Prenoms</label>
+                                    <input type="text" class="form-control" placeholder="Prenoms" name="prenoms">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    <label> Email</label>
+                                    <input type="email" class="form-control" placeholder="Email" name="email">
+                                </div>
+                            </div>
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    <label> Password</label>
+                                    <input type="password" class="form-control" placeholder="Mot de Passe" name="password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 pr-1">
+                                <label>Adresse</label>
+                                <input type="text" class="form-control" placeholder="Adresse" name="adresse">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 pr-1">
+                                <label>Poste</label>
+                                <input type="text" class="form-control" placeholder="Poste" name="poste">
+                            </div>
+                            <div class="col-md-4 pr-1">
+                                <label>Tel</label>
+                                <input type="text" class="form-control" placeholder="Telephone" name="tel">
+                            </div>
+                            <div class="col-md-4 pr-1">
+                                <label>Age</label>
+                                <input type="text" class="form-control" placeholder="Poste" name="age">
+                            </div>
+                        </div>
+                </div>
+                <div class="card-footer row">
+                    <button type="submit" class="btn btn-primary btn-round col-md-3" style="margin-left: 35%;background-color: #DC3151;">Créer</button>
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card card-user">
+                <div class="card-body">
+                    <div>
+                        <h4 class="card-title text-center">Choisir Photo</h4>
+                        <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail">
+                                <img src="../../assets/img/image_placeholder.jpg" alt="...">
+                            </div>
+                            <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                            <div>
+                                <span class="btn btn-rose btn-round btn-file">
+                                    <span class="fileinput-new">Select image</span>
+                                    <span class="fileinput-exists">Change</span>
+                                    <input type="file" name="..." />
+                                </span>
+                                <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

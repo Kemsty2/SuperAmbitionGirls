@@ -1,0 +1,328 @@
+<section class="hp_banner_area section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="row hp_banner_box">
+                    <div class="col-md-8 col-sm-8 col-xs-12">
+                        <div id="carousel-debut" class="carousel slide slideInLeft wow" data-ride="carousel" data-wow-delay="2.2s">
+                            <ul class="carousel-indicators">
+                                <li data-target="#carousel-debut" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-debut" data-slide-to="1"></li>
+                                <li data-target="#carousel-debut" data-slide-to="2"></li>
+                            </ul>
+                            <div class="carousel-inner">
+                                {{#each articlesrecent}}
+                                    <div class="carousel-item active" id="{{@key}}" value="0">
+                                        <div class="br_single_news" onclick="document.location= '/articles/{{this._id}}';">
+                                            <img alt="" src="{{this.photo}}">
+                                            <div class="br_single_text">
+                                                <span class="blue_hp_span">{{this.type}}</span>
+                                                <h1 class="dark_hp_span"><a href="/articles/{{this._id}}">{{this.titre}}</a></h1>
+                                            </div>
+                                            <div class="br_cam">
+                                                <a class="fa fa-camera" href="#"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            </div>
+                            <a class="carousel-control-prev" href="#carousel-debut" data-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel-debut" data-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-8 col-xs-12 " >
+                        {{#each articlesrecent2}}
+                            <div class="br_single_news part wow slideInRight" data-wow-delay="2.2s" onclick="document.location= '/articles/{{this._id}}';">
+                                <img class="img-responsive" src="{{this.photo}}" alt="" />
+                                <div class="br_single_text">
+                                    <span class="blue_hp_span">{{this.type}}</span>
+                                    <h4 class="dark_hp_span"><a href="/articles/{{this._id}}">{{this.titre}}</a></h4>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="main_news_wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-9 col-xs-12">
+                <!-- ~~~=| SuperAmbitieux area START |=~~~ -->
+                <div class="fashion_area">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+
+                            <!-- Super Ambitieux -->
+                            <div class="header_fasion">
+                                <div class="left_fashion main_nav_box">
+                                    <ul>
+                                        <li class="nav_gadgets"><a style="font-size: 20px !important;" href="#">SuperAmbitieux</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="fashion_area_box">
+                                <div class="row">
+                                    {{# if superambitieuxarticle}}
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="fs_news_left" onclick="document.location= '/articles/{{this._id}}';">
+                                                    <div class="single_fs_news_left_text">
+                                                        <div class="fs_news_left_img">
+                                                            <img src="{{superambitieuxarticle2.photo}}" alt="" />
+                                                        </div>
+                                                        <h4><a href="/articles/{{this._id}}">{{superambitieuxarticle2.titre}}</a></h4>
+                                                        <p> <i class="far fa-clock"></i>{{superambitieuxarticle2.duree}} min ago<i class="fa fa-comment"></i>{{this.nombre_comms}}</p>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="all_news_right">
+                                                {{#each superambitieuxarticle}}
+                                                    <div class="fs_news_right" onclick="document.location= '/articles/{{this._id}}';">
+                                                        <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" /> </div>
+                                                        <div class="single_fs_news_right_text">
+                                                            <h4><a href="blog-single-slider-post.html">{{this.titre}}</a></h4>
+                                                            <p> <a href="/articles/{{this._id}}" class="violet-text">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago <i class="fa fa-comment"></i>{{this.nombre_comms}}</p>
+                                                        </div>
+                                                    </div>
+                                                {{/each}}
+                                            </div>
+                                        </div>
+                                    {{else}}
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="fs_news_left">
+                                                <h1 class="text-center">Aucun Article Dans cette section</h1>
+                                            </div>
+                                        </div>
+                                    {{/if}}
+                                </div>
+                            </div>
+                            <!-- End Super Ambitieux -->
+
+                            <!-- Life Style -->
+                            <div class="header_fasion gadgets_heading lifestyle_post_area" style="margin-top: 3rem;">
+                                <div class="left_fashion main_nav_box" >
+                                    <ul>
+                                        <li class="nav_gadgets"><a style="font-size: 20px !important;" href="#">Love & Relations</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="fashion_area_box">
+                                <div class="row">
+                                    {{#if lifestylearticle}}
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="fs_news_left" onclick="document.location= '/articles/{{this._id}}';">
+                                                    <div class="single_fs_news_left_text">
+                                                        <div class="fs_news_left_img"> <img src="{{lifestylearticle2.photo}}" alt="life" />
+                                                        </div>
+                                                        <h4><a href="/articles/{{this._id}}">{{lifestylearticle2.titre}}</a></h4>
+                                                        <p> <i class="far fa-clock"></i> {{lifestylearticle2.duree}} min ago <i class="fa fa-comment"></i> {{this.nombre_comms}} </p>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="all_news_right">
+                                                {{#each lifestylearticle}}
+                                                    <div class="fs_news_right" onclick="document.location= '/articles/{{this._id}}';">
+                                                        <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" />
+                                                            <div class="br_cam"> <a class="fa fa-camera" href="#"></a> </div>
+                                                        </div>
+                                                        <div class="single_fs_news_right_text">
+                                                            <h4><a href="/articles/{{this._id}}">{{this.titre}}</a></h4>
+                                                            <p> <a href="#" class="violet-text">{{this.type}} </a>| <i class="far fa-clock"></i> {{this.duree}} min ago <i class="fa fa-comment"></i> {{this.nombre_comms}}</p>
+                                                        </div>
+                                                    </div>
+                                                {{/each}}
+                                            </div>
+                                        </div>
+                                    {{else}}
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="fs_news_left">
+                                                <h1 class="text-center">Aucun Article Dans cette section</h1>
+                                            </div>
+                                        </div>
+                                    {{/if}}
+                                </div>
+                            </div>
+                            <!-- End Life Style -->
+
+
+                            <!-- Love & Relations -->
+                            <div class="header_fasion gadgets_heading lifestyle_post_area" style="margin-top: 3rem;">
+                                <div class="left_fashion main_nav_box" >
+                                    <ul>
+                                        <li class="nav_gadgets"><a style="font-size: 20px !important;" href="#">Love & Relations</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="fashion_area_box">
+                                <div class="row">
+                                    {{#if loverelationarticle}}
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="fs_news_left" onclick="document.location= '/articles/{{this._id}}';">
+                                                <div class="single_fs_news_left_text">
+                                                    <div class="fs_news_left_img"> <img src="{{loverelationarticle2.photo}}" alt="life" />
+                                                    </div>
+                                                    <h4><a href="/articles/{{this._id}}">{{loverelationarticle2.titre}}</a></h4>
+                                                    <p> <i class="far fa-clock"></i> {{loverelationarticle2.duree}} min ago <i class="fa fa-comment"></i> {{this.nombre_comms}} </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="all_news_right">
+                                                {{#each loverelationarticle}}
+                                                    <div class="fs_news_right" onclick="document.location= '/articles/{{this._id}}';">
+                                                        <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" />
+                                                        </div>
+                                                        <div class="single_fs_news_right_text">
+                                                            <h4><a href="/articles/{{this._id}}">{{this.titre}}</a></h4>
+                                                            <p> <a href="#" class="violet-text">{{this.type}} </a>| <i class="far fa-clock"></i> {{this.duree}} min ago <i class="fa fa-comment"></i> {{this.nombre_comms}}</p>
+                                                        </div>
+                                                    </div>
+                                                {{/each}}
+                                            </div>
+                                        </div>
+                                    {{else}}
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="fs_news_left">
+                                                <h1 class="text-center">Aucun Article Dans cette section</h1>
+                                            </div>
+                                        </div>
+                                    {{/if}}
+                                </div>
+                            </div>
+                            <!--End Love & Relations -->
+
+                            <!-- Edito -->
+                            <div class="header_fasion gadgets_heading" style="margin-top: 3rem;">
+                                <div class="left_fashion main_nav_box">
+                                    <ul>
+                                        <li class="nav_gadgets"><a style="font-size: 20px !important;" href="#">Edito</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="fashion_area_box video_area_box">
+                                <div class="row">
+                                    {{#if editoarticle}}
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="all_news_right">
+                                                {{#each editoarticle}}
+                                                    <div class="fs_news_right" onclick="document.location= '/articles/{{this._id}}';">
+                                                        <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" />
+                                                        </div>
+                                                        <div class="single_fs_news_right_text">
+                                                            <h4><a href="/articles/{{this._id}}">{{this.titre}}</a></h4>
+                                                            <p> <a class="violet-text" href="#">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
+                                                        </div>
+                                                    </div>
+                                                {{/each}}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="fs_news_left fs_news_vid_right" onclick="document.location= '/articles/{{this._id}}';">
+                                                    <div class="single_fs_news_left_text">
+                                                        <div class="fs_news_left_img"> <img src="{{editoarticle2.photo}}" alt="video" />
+                                                        </div>
+                                                        <h4><a href="/articles/{{this._id}}">{{editoarticle2.titre}}</a></h4>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    {{else}}
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="fs_news_left">
+                                                <h1 class="text-center">Aucun Article Dans cette section</h1>
+                                            </div>
+                                        </div>
+                                    {{/if}}
+                                </div>
+                            </div>
+                            <!-- End Edito -->
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- ~~~=| Fashion area END |=~~~ -->
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12">
+                <div class="home_sidebar">
+                    <div class="follow_us_side">
+                        <h2>Publicite</h2>
+                        <div class="purchase_sidebar_img">
+                            <img src="/images/Mboté.png" alt="" />
+                        </div>
+                        <div class="purchase_sidebar_img">
+                            <img src="/images/mulema.jpg" alt="" />
+                        </div>
+                    </div>
+                    <div class="follow_us_side">
+                        <h2>Follow Us</h2>
+                        <div class="all_single_follow">
+                            <div class="single_follow_us"> <a href="#"> <i class="fab fa-facebook-f"></i><br>
+                                5638<br>
+                                Fans </a> </div>
+                            <div class="single_follow_us twit"> <a href="#"> <i class="fab fa-twitter"></i><br>
+                                5638<br>
+                                Fans </a> </div>
+                            <div class="single_follow_us goopl"> <a href="#"> <i class="fab fa-google-plus"></i><br>
+                                5638<br>
+                                Fans </a> </div>
+                            <div class="single_follow_us last_one"> <a href="#"> <i class="fab fa-instagram"></i><br>
+                                5638<br>
+                                Fans </a> </div>
+                        </div>
+                    </div>
+                    <div class="follow_us_side">
+                        <h2>Latest Post</h2>
+                        <div class="all_news_right">
+                            {{#if recent_post}}
+                                {{#each recent_post}}
+                                    <div class="fs_news_right" onclick="document.location= '/articles/{{this._id}}';">
+                                        <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" /> </div>
+                                        <div class="single_fs_news_right_text">
+                                            <h4><a href="/articles/{{this._id}}">{{this.titre}}</a></h4>
+                                            <p> <a class="violet-text" href="#">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class="follow_us_side">
+                        <h2>Popular Post</h2>
+                        <div class="all_news_right">
+                            {{#if popular_post}}
+                                {{#each popular_post}}
+                                    <div class="fs_news_right" onclick="document.location= '/articles/{{this._id}}';">
+                                        <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" /> </div>
+                                        <div class="single_fs_news_right_text">
+                                            <h4><a href="/articles/{{this._id}}">{{this.titre}}</a></h4>
+                                            <p> <a class="violet-text" href="#">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="/javascripts/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+<script>
+    document.getElementById('1').classList.remove('active');
+    document.getElementById('2').classList.remove('active');
+</script>
