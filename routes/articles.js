@@ -12,7 +12,7 @@ var types = ['Super Ambitieux', 'LifeStyle', 'Edito',  'Empowering', 'Love & Rel
 
 const title = "SAG, Ambition & Distinction";
 
-router.get('/:article_id', function(req, res, next){
+router.get('/lecture/:article_id', function(req, res, next){
     Article.findById(req.params.article_id, function(err, article){
         Article.find({_id: {$gt: req.params.article_id}}).sort({_id: 1}).limit(1).exec(function(err, next){
             Article.find({_id: {$lt: req.params.article_id}}).sort({_id: -1}).limit(1).exec(function(err, previous){
@@ -57,7 +57,7 @@ router.post('/enroll_article', isAuthenticated, function(req, res, next){
 
     if(!req.files){
         req.flash('NewArticleMessage', 'Choissiez Une Image');
-        res.render('Admin/Article/new_article', {title, layout:'Admin/layout.hbs', admin: req.session.admin, message: req.flash('NewArticleMessage')});
+        res.redirect('/articles/new_article');
     }
 
     var file = req.files.photo;
@@ -67,13 +67,13 @@ router.post('/enroll_article', isAuthenticated, function(req, res, next){
         file.mv(img_path, function(err){
             if(err){
                 req.flash('NewArticleMessage', "Erreur lors de l'importation de l'image");
-                res.render('Admin/Article/new_article', {title, layout:'Admin/layout.hbs', admin: req.session.admin, message: req.flash('NewArticleMessage')});
+                throw err;
             }
         });
     }
     else{
         req.flash('NewArticleMessage', "Format Image Incompatible");
-        res.render('Admin/Article/new_article', {title, layout:'Admin/layout.hbs',admin: req.session.admin,message: req.flash('NewArticleMessage')});
+        res.redirect('/articles/new_article');
     }
     console.log(newArticle);
     newArticle.save(function(err){

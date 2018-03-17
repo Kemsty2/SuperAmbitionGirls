@@ -66,17 +66,17 @@
                         <div class="sp-next-prev">
                             {{#if previous}}
                                 <div class="sp-prev">
-                                    <a href="/articles/{{previous._id}}"><i class="fa fa-angle-double-left"></i>Previous post</a>
+                                    <a href="/articles/lecture/{{previous._id}}"><i class="fa fa-angle-double-left"></i>Previous post</a>
                                     <div class="sp-next-post">
-                                        <a href="/articles/{{previous._id}}">{{previous.titre}}</a>
+                                        <a href="/articles/lecture/{{previous._id}}">{{previous.titre}}</a>
                                     </div>
                                 </div>
                             {{/if}}
                             {{#if next}}
                                 <div class="sp-next">
-                                    <a href="/articles/{{next._id}}">Next Posts<i class="fa fa-angle-double-right"></i></a>
+                                    <a href="/articles/lecture/{{next._id}}">Next Posts<i class="fa fa-angle-double-right"></i></a>
                                     <div class="sp-next-post">
-                                        <a href="/articles/{{next._id}}">{{next.titre}}</a>
+                                        <a href="/articles/lecture/{{next._id}}">{{next.titre}}</a>
                                     </div>
                                 </div>
                             {{/if}}
@@ -173,10 +173,10 @@
                         <div class="all_news_right">
                             {{#if recent_post}}
                                 {{#each recent_post}}
-                                    <div class="fs_news_right" onclick="document.location= '/articles/{{this._id}}';">
+                                    <div class="fs_news_right" onclick="document.location= '/articles/lecture/{{this._id}}';">
                                         <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" /> </div>
                                         <div class="single_fs_news_right_text">
-                                            <h4><a href="/articles/{{this._id}}">{{this.titre}}</a></h4>
+                                            <h4><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
                                             <p> <a class="violet-text" href="#">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
                                         </div>
                                     </div>
@@ -189,10 +189,10 @@
                         <div class="all_news_right">
                             {{#if popular_post}}
                                 {{#each popular_post}}
-                                    <div class="fs_news_right" onclick="document.location= '/articles/{{this._id}}';">
+                                    <div class="fs_news_right" onclick="document.location= '/articles/lecture/{{this._id}}';">
                                         <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" /> </div>
                                         <div class="single_fs_news_right_text">
-                                            <h4><a href="/articles/{{this._id}}">{{this.titre}}</a></h4>
+                                            <h4><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
                                             <p> <a class="violet-text" href="#">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
                                         </div>
                                     </div>

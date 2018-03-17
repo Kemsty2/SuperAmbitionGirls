@@ -13,11 +13,11 @@
                             <div class="carousel-inner">
                                 {{#each articlesrecent}}
                                     <div class="carousel-item active" id="{{@key}}" value="0">
-                                        <div class="br_single_news" onclick="document.location= '/articles/{{this._id}}';">
+                                        <div class="br_single_news" onclick="document.location= '/articles/lecture/{{this._id}}';">
                                             <img alt="" src="{{this.photo}}">
                                             <div class="br_single_text">
                                                 <span class="blue_hp_span">{{this.type}}</span>
-                                                <h1 class="dark_hp_span"><a href="/articles/{{this._id}}">{{this.titre}}</a></h1>
+                                                <h1 class="dark_hp_span"><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h1>
                                             </div>
                                             <div class="br_cam">
                                                 <a class="fa fa-camera" href="#"></a>
@@ -36,11 +36,11 @@
                     </div>
                     <div class="col-md-4 col-sm-8 col-xs-12 " >
                         {{#each articlesrecent2}}
-                            <div class="br_single_news part wow slideInRight" data-wow-delay="2.2s" onclick="document.location= '/articles/{{this._id}}';">
+                            <div class="br_single_news part wow slideInRight" data-wow-delay="2.2s" onclick="document.location= '/articles/lecture/{{this._id}}';">
                                 <img class="img-responsive" src="{{this.photo}}" alt="" />
                                 <div class="br_single_text">
                                     <span class="blue_hp_span">{{this.type}}</span>
-                                    <h4 class="dark_hp_span"><a href="/articles/{{this._id}}">{{this.titre}}</a></h4>
+                                    <h4 class="dark_hp_span"><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
                                 </div>
                             </div>
                         {{/each}}
@@ -73,12 +73,12 @@
                                 <div class="row">
                                     {{# if superambitieuxarticle}}
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <div class="fs_news_left" onclick="document.location= '/articles/{{this._id}}';">
+                                            <div class="fs_news_left" onclick="document.location= '/articles/lecture/{{this._id}}';">
                                                     <div class="single_fs_news_left_text">
                                                         <div class="fs_news_left_img">
                                                             <img src="{{superambitieuxarticle2.photo}}" alt="" />
                                                         </div>
-                                                        <h4><a href="/articles/{{this._id}}">{{superambitieuxarticle2.titre}}</a></h4>
+                                                        <h4><a href="/articles/lecture/{{this._id}}">{{superambitieuxarticle2.titre}}</a></h4>
                                                         <p> <i class="far fa-clock"></i>{{superambitieuxarticle2.duree}} min ago<i class="fa fa-comment"></i>{{this.nombre_comms}}</p>
                                                     </div>
                                             </div>
@@ -86,11 +86,11 @@
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <div class="all_news_right">
                                                 {{#each superambitieuxarticle}}
-                                                    <div class="fs_news_right" onclick="document.location= '/articles/{{this._id}}';">
+                                                    <div class="fs_news_right" onclick="document.location= '/articles/lecture/{{this._id}}';">
                                                         <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" /> </div>
                                                         <div class="single_fs_news_right_text">
                                                             <h4><a href="blog-single-slider-post.html">{{this.titre}}</a></h4>
-                                                            <p> <a href="/articles/{{this._id}}" class="violet-text">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago <i class="fa fa-comment"></i>{{this.nombre_comms}}</p>
+                                                            <p> <a href="/articles/lecture/{{this._id}}" class="violet-text">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago <i class="fa fa-comment"></i>{{this.nombre_comms}}</p>
                                                         </div>
                                                     </div>
                                                 {{/each}}
@@ -119,11 +119,11 @@
                                 <div class="row">
                                     {{#if lifestylearticle}}
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <div class="fs_news_left" onclick="document.location= '/articles/{{this._id}}';">
+                                            <div class="fs_news_left" onclick="document.location= '/articles/lecture/{{this._id}}';">
                                                     <div class="single_fs_news_left_text">
                                                         <div class="fs_news_left_img"> <img src="{{lifestylearticle2.photo}}" alt="life" />
                                                         </div>
-                                                        <h4><a href="/articles/{{this._id}}">{{lifestylearticle2.titre}}</a></h4>
+                                                        <h4><a href="/articles/lecture/{{this._id}}">{{lifestylearticle2.titre}}</a></h4>
                                                         <p> <i class="far fa-clock"></i> {{lifestylearticle2.duree}} min ago <i class="fa fa-comment"></i> {{this.nombre_comms}} </p>
                                                     </div>
                                             </div>
@@ -131,12 +131,12 @@
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <div class="all_news_right">
                                                 {{#each lifestylearticle}}
-                                                    <div class="fs_news_right" onclick="document.location= '/articles/{{this._id}}';">
+                                                    <div class="fs_news_right" onclick="document.location= '/articles/lecture/{{this._id}}';">
                                                         <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" />
                                                             <div class="br_cam"> <a class="fa fa-camera" href="#"></a> </div>
                                                         </div>
                                                         <div class="single_fs_news_right_text">
-                                                            <h4><a href="/articles/{{this._id}}">{{this.titre}}</a></h4>
+                                                            <h4><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
                                                             <p> <a href="#" class="violet-text">{{this.type}} </a>| <i class="far fa-clock"></i> {{this.duree}} min ago <i class="fa fa-comment"></i> {{this.nombre_comms}}</p>
                                                         </div>
                                                     </div>
@@ -167,11 +167,11 @@
                                 <div class="row">
                                     {{#if loverelationarticle}}
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <div class="fs_news_left" onclick="document.location= '/articles/{{this._id}}';">
+                                            <div class="fs_news_left" onclick="document.location= '/articles/lecture/{{this._id}}';">
                                                 <div class="single_fs_news_left_text">
                                                     <div class="fs_news_left_img"> <img src="{{loverelationarticle2.photo}}" alt="life" />
                                                     </div>
-                                                    <h4><a href="/articles/{{this._id}}">{{loverelationarticle2.titre}}</a></h4>
+                                                    <h4><a href="/articles/lecture/{{this._id}}">{{loverelationarticle2.titre}}</a></h4>
                                                     <p> <i class="far fa-clock"></i> {{loverelationarticle2.duree}} min ago <i class="fa fa-comment"></i> {{this.nombre_comms}} </p>
                                                 </div>
                                             </div>
@@ -179,11 +179,11 @@
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <div class="all_news_right">
                                                 {{#each loverelationarticle}}
-                                                    <div class="fs_news_right" onclick="document.location= '/articles/{{this._id}}';">
+                                                    <div class="fs_news_right" onclick="document.location= '/articles/lecture/{{this._id}}';">
                                                         <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" />
                                                         </div>
                                                         <div class="single_fs_news_right_text">
-                                                            <h4><a href="/articles/{{this._id}}">{{this.titre}}</a></h4>
+                                                            <h4><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
                                                             <p> <a href="#" class="violet-text">{{this.type}} </a>| <i class="far fa-clock"></i> {{this.duree}} min ago <i class="fa fa-comment"></i> {{this.nombre_comms}}</p>
                                                         </div>
                                                     </div>
@@ -215,23 +215,23 @@
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <div class="all_news_right">
                                                 {{#each editoarticle}}
-                                                    <div class="fs_news_right" onclick="document.location= '/articles/{{this._id}}';">
+                                                    <div class="fs_news_right" onclick="document.location= '/articles/lecture/{{this._id}}';">
                                                         <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" />
                                                         </div>
                                                         <div class="single_fs_news_right_text">
-                                                            <h4><a href="/articles/{{this._id}}">{{this.titre}}</a></h4>
-                                                            <p> <a class="violet-text" href="#">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
+                                                            <h4><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
+                                                            <p> <a class="violet-text" href="">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
                                                         </div>
                                                     </div>
                                                 {{/each}}
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <div class="fs_news_left fs_news_vid_right" onclick="document.location= '/articles/{{this._id}}';">
+                                            <div class="fs_news_left fs_news_vid_right" onclick="document.location= '/articles/lecture/{{editoarticle2._id}}';">
                                                     <div class="single_fs_news_left_text">
                                                         <div class="fs_news_left_img"> <img src="{{editoarticle2.photo}}" alt="video" />
                                                         </div>
-                                                        <h4><a href="/articles/{{this._id}}">{{editoarticle2.titre}}</a></h4>
+                                                        <h4><a href="/articles/lecture/{{editoarticle2._id}}">{{editoarticle2.titre}}</a></h4>
                                                     </div>
                                             </div>
                                         </div>
@@ -285,10 +285,10 @@
                         <div class="all_news_right">
                             {{#if recent_post}}
                                 {{#each recent_post}}
-                                    <div class="fs_news_right" onclick="document.location= '/articles/{{this._id}}';">
+                                    <div class="fs_news_right" onclick="document.location= '/articles/lecture/{{this._id}}';">
                                         <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" /> </div>
                                         <div class="single_fs_news_right_text">
-                                            <h4><a href="/articles/{{this._id}}">{{this.titre}}</a></h4>
+                                            <h4><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
                                             <p> <a class="violet-text" href="#">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
                                         </div>
                                     </div>
@@ -301,10 +301,10 @@
                         <div class="all_news_right">
                             {{#if popular_post}}
                                 {{#each popular_post}}
-                                    <div class="fs_news_right" onclick="document.location= '/articles/{{this._id}}';">
+                                    <div class="fs_news_right" onclick="document.location= '/articles/lecture/{{this._id}}';">
                                         <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" /> </div>
                                         <div class="single_fs_news_right_text">
-                                            <h4><a href="/articles/{{this._id}}">{{this.titre}}</a></h4>
+                                            <h4><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
                                             <p> <a class="violet-text" href="#">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
                                         </div>
                                     </div>
