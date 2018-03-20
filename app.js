@@ -36,7 +36,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
     secret: 'secretkey',
-    resave: true,
+    resave: false,
     saveUninitialized: false,
     store: new MongoStore({ mongooseConnection: mongoose.connection}),
     cookie: {maxAge: 180 * 60 * 1000}

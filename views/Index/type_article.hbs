@@ -3,14 +3,14 @@
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="breadcum_c_left">
-                    <p>Super Ambitieux</p>
+                    <p>{{type_article}}</p>
                 </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="breadcum_c_right">
                     <ul>
                         <li><a href="#">Acceuil  /</a></li>
-                        <li><a href="#">{{type_article}}/</a></li>
+                        <li><a href="#">{{type_article}}</a></li>
                     </ul>
                 </div>
             </div>
@@ -22,17 +22,120 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="type_article_box">
-                    <p class="text-center"> Super Ambitieux</p>
-                </div>
-                <div class="br_single_news" onclick="document.location= '/articles/lecture/{{typthis._id}}';">
-                    <img alt="" src="/images/031214-b-real-are-you-entrepreneur-businesswoman-business-woman-computer....jpg">
-                    <div class="br_single_text">
-                        <span class="blue_hp_span">Super Ambitieux</span>
-                        <h1 class="dark_hp_span"><a href="/articles/lecture/{{this._id}}">Juste Un Petit Test</a></h1>
+                {{#if articlefirst}}
+                    <div class="type_article_box">
+                        <p class="text-center">{{type_article}}</p>
                     </div>
-                    <div class="br_cam">
-                        <a class="fa fa-camera" href="#"></a>
+                    {{#each articlefirst}}
+                        <div class="br_single_news" onclick="document.location= '/articles/lecture/{{this._id}}';">
+                            <img alt="" src="{{this.photo}}">
+                            <div class="br_single_text">
+                                <span class="blue_hp_span">{{this.type}}</span>
+                                <h1 class="dark_hp_span"><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h1>
+                            </div>
+                            <div class="br_cam">
+                                <a class="fa fa-camera" href="#"></a>
+                            </div>
+                        </div>
+                    {{/each}}
+                {{/if}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9 col-sm-9 col-xs-12">
+                {{#each articles}}
+                    <div class="br_single_news mt-5" onclick="document.location= '/articles/lecture/{{this._id}}';">
+                        <img alt="" src="{{this.photo}}">
+                        <div class="br_single_text">
+                            <span class="blue_hp_span">{{this.type}}</span>
+                            <h1 class="dark_hp_span"><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h1>
+                        </div>
+                        <div class="br_cam">
+                            <a class="fa fa-camera" href="#"></a>
+                        </div>
+                    </div>
+                {{/each}}
+                {{#if plus}}
+                    <div class="d-flex justify-content-end plus_article">
+                        <a type="button" href="/typearticle/{{type_article}}/pagination/{{last._id}}" class="btn btn-primary btn-lg col-md-12 col-sm-12 col-xs-12"><i class="far fa-plus-circle"></i>Plus D'articles...</a>
+                    </div>
+                {{/if}}
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12">
+                <div class="home_sidebar">
+                    <div class="follow_us_side">
+                        <h2>NewsLetter</h2>
+                        <div class="card">
+                            <div class="card-img-top text-center"><img class="img-responsive" src="/images/pro_logotype.png"></div>
+                            <div class="card-body">
+                                <form action="" method="post">
+                                    <p class="text-center text-white">Inscrivez-Vous à Notre NewsLetter pour recevoir nos articles</p>
+                                    <hr >
+                                    <input type="text" class="form-control mb-3" placeholder="Entrer votre Email">
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit" class="btn ">Je m'inscris</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="follow_us_side">
+                        <h2>Publicite</h2>
+                        <div class="purchase_sidebar_img">
+                            <img src="/images/Mboté.png" alt="" />
+                        </div>
+                        <div class="purchase_sidebar_img">
+                            <img src="/images/mulema.jpg" alt="" />
+                        </div>
+                    </div>
+                    <div class="follow_us_side">
+                        <h2>Follow Us</h2>
+                        <div class="all_single_follow">
+                            <div class="single_follow_us"> <a href="#"> <i class="fab fa-facebook-f"></i><br>
+                                5638<br>
+                                Fans </a> </div>
+                            <div class="single_follow_us twit"> <a href="#"> <i class="fab fa-twitter"></i><br>
+                                5638<br>
+                                Fans </a> </div>
+                            <div class="single_follow_us goopl"> <a href="#"> <i class="fab fa-google-plus"></i><br>
+                                5638<br>
+                                Fans </a> </div>
+                            <div class="single_follow_us last_one"> <a href="#"> <i class="fab fa-instagram"></i><br>
+                                5638<br>
+                                Fans </a> </div>
+                        </div>
+                    </div>
+                    <div class="follow_us_side">
+                        <h2>Latest Post</h2>
+                        <div class="all_news_right">
+                            {{#if recent_post}}
+                                {{#each recent_post}}
+                                    <div class="fs_news_right" onclick="document.location= '/articles/lecture/{{this._id}}';">
+                                        <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" /> </div>
+                                        <div class="single_fs_news_right_text">
+                                            <h4><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
+                                            <p> <a class="violet-text" href="#">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class="follow_us_side">
+                        <h2>Popular Post</h2>
+                        <div class="all_news_right">
+                            {{#if popular_post}}
+                                {{#each popular_post}}
+                                    <div class="fs_news_right" onclick="document.location= '/articles/lecture/{{this._id}}';">
+                                        <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" /> </div>
+                                        <div class="single_fs_news_right_text">
+                                            <h4><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
+                                            <p> <a class="violet-text" href="#">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            {{/if}}
+                        </div>
                     </div>
                 </div>
             </div>

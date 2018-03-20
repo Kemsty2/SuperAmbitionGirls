@@ -29,7 +29,7 @@ passport.use('login', new LocalStrategy({
             return done(err);
         if(!user)
             return done(null, false, req.flash('LoginMessage', 'Utilisateur Inexistant'));
-        if(!client.validPassword(password))
+        if(!user.validPassword(password))
             return done(null, false, req.flash('LoginMessage', 'Mot de Passe Incorect'))
 
         return done(null, user);

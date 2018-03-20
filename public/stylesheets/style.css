@@ -1656,6 +1656,7 @@ ul.lev2sub {
 .single_comment {
   overflow: hidden;
   padding: 36px 0;
+
 }
 .single_comment_pic {
   float: left;
@@ -1674,7 +1675,7 @@ ul.lev2sub {
   text-transform: uppercase;
 }
 .sp_title a h4:hover, .sp-prev > a:hover , .sp-next > a:hover, .sp-next-post > a:hover, .single_comment_text a:hover {
-  color: #F8928D;
+  color: #B61D8D;
   text-decoration:none;
 }
 .sp_title a:hover {
@@ -1701,17 +1702,8 @@ ul.lev2sub {
   text-align: right;
   width: 20%;
 }
-.single_comment:nth-child(3) .single_comment_text {
-  width: 68%;
-}
-.single_comment:nth-child(3) .single_comment_pic {
-  margin-left: 115px;
-}
-.single_comment:nth-child(3) {
-  margin-left: 50px;
-  border-top: 1px solid hsl(0, 0%, 93%);
-  border-bottom: 1px solid hsl(0, 0%, 93%);
-}
+
+
 .comment-form h2 {
   margin-bottom: 48px;
   margin-top: 13px;

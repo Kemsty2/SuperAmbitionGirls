@@ -22,6 +22,7 @@
       <link rel="stylesheet" href="/stylesheets/responsive.css">
       <link rel="stylesheet" href="/stylesheets/newStyle.css">
       <link rel="stylesheet" href="/stylesheets/animate.css">
+      <link rel="stylesheet" href="/stylesheets/util.css">
 
       <!-- Favicons -->
       <!--<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-precomposed.png">-->
@@ -58,8 +59,20 @@
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="header_top_right">
+
                             <div class="social_header">
                                 <ul>
+                                    {{#if user}}
+                                        <li class="dropdown">
+                                            <button id="profil_user" type="button" class="btn btn-outline-primary btn-sm fs-15 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;"><strong class="text-black mr-1">Bienvenue</strong>   {{user.local.pseudo}}</button>
+                                            <div class="dropdown-menu" aria-labelledby="profil_user">
+                                                <a class="dropdown-item" style="color:#B61D8D !important;" href="/users/logout"><i class="fas fa-power-off mr-2"></i>Deconnexion</a>
+                                            </div>
+                                        </li>
+                                    {{else}}
+                                        <li><a id="auser_login" href="#user_login" data-toggle="modal" style="font-size:12px;">Connexion /</a></li>
+                                        <li><a id="auser_register" href="#user_register" data-toggle="modal" style="font-size:12px; margin-left:-1.4rem;">Inscription</a></li>
+                                    {{/if}}
                                     <li><a class="fab fa-facebook-f" href="#"></a></li>
                                     <li><a class="fab fa-twitter" href="#"></a></li>
                                     <li><a class="fab fa-google-plus" href="#"></a></li>
@@ -84,7 +97,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-xs-12" style="margin-top: -2rem;">
-                        <div class="logo"> <a href="/"><img src="/images/pro_logotype.png" alt="Site Logo"/></a> </div>
+                        <div class="logo js-tilt" data-tilt> <a href="/"><img src="/images/pro_logotype.png" alt="Site Logo"/></a> </div>
                     </div>
                     <div class="col-md-8 col-sm-7 col-xs-12">
                         <div class="header_add">
@@ -101,46 +114,48 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <nav class="main_nav_box" style="margin-left:50px !important;">
-                            <ul id="nav">
-                                <li class="nav_news wow slideInDown"><a href="#">Acceuil</a>
-                                    <div class="mega_menu" style="width: 1337px;height: auto;">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-md-12 col-sm-12">
-                                                    <div class="single_mega">
-                                                        <ul>
-                                                            <li><a href="/">Home</a></li>
-                                                            <li><a href="/typearticle/LifeStyle">LifeStyle</a></li>
-                                                            <li><a href="/typearticle/Edito">Edito</a></li>
-                                                            <li class="active"><a href="/typearticle/Super Ambitieux">SuperAmbitieux</a></li>
-                                                            <li><a href="#">Love & Relations</a></li>
-                                                            <li><a href="#">Le Billet SAG</a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="single_mega single_mega2">
-                                                        <div class="single_fs_news_left_text">
-                                                            <div class="fs_news_left_img"> <img alt="" src="/images/amour1.jpg">
-                                                                <div class="br_cam br_vid_big_s"> <a href="#" class="fa fa-camera"></a> </div>
-                                                            </div>
-                                                            <h4><a class="mega_title" href="#">beautiful day in this neighborhood a beauty day for a neighbor</a></h4>
-                                                            <p> <i class="fab fa-clock"></i> 3 min ago <i class="fa fa-comment"></i> 19 </p>
+                        <div class="d-flex justify-content-center">
+                            <nav class="main_nav_box">
+                                <ul id="nav">
+                                    <li class="nav_news wow slideInDown"><a href="#">Acceuil</a>
+                                        <div class="mega_menu" style="width: 1337px;height: auto;">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12">
+                                                        <div class="single_mega">
+                                                            <ul>
+                                                                <li><a href="/">Home</a></li>
+                                                                <li><a href="/typearticle/LifeStyle">LifeStyle</a></li>
+                                                                <li><a href="/typearticle/Edito">Edito</a></li>
+                                                                <li class="active"><a href="/typearticle/Super Ambitieux">SuperAmbitieux</a></li>
+                                                                <li><a href="#">Love & Relations</a></li>
+                                                                <li><a href="#">Le Billet SAG</a></li>
+                                                            </ul>
                                                         </div>
-                                                    </div>
-                                                    <div class="single_mega single_mega3">
-                                                        <div class="all_news_right">
-                                                            <div class="fs_news_right">
-                                                                <div class="single_fs_news_img"> <img alt="Single News" src="/images/amour1.jpg"> </div>
-                                                                <div class="single_fs_news_right_text">
-                                                                    <h4><a class="mega_title1" href="#">Can you tell me how to get how to get to Sesame Street.</a></h4>
-                                                                    <p> <i class="fab fa-clock"></i> 1 hour ago </p>
+                                                        <div class="single_mega single_mega2">
+                                                            <div class="single_fs_news_left_text">
+                                                                <div class="fs_news_left_img"> <img alt="" src="/images/amour1.jpg">
+                                                                    <div class="br_cam br_vid_big_s"> <a href="#" class="fa fa-camera"></a> </div>
                                                                 </div>
+                                                                <h4><a class="mega_title" href="#">beautiful day in this neighborhood a beauty day for a neighbor</a></h4>
+                                                                <p> <i class="fab fa-clock"></i> 3 min ago <i class="fa fa-comment"></i> 19 </p>
                                                             </div>
-                                                            <div class="fs_news_right">
-                                                                <div class="single_fs_news_img"> <img alt="Single News" src="/images/amour1.jpg"> </div>
-                                                                <div class="single_fs_news_right_text">
-                                                                    <h4><a class="mega_title1" href="#">young loner on a crusade to cham pion the cause of the innocent</a></h4>
-                                                                    <p> <i class="fab fa-clock"></i> 1 hour ago </p>
+                                                        </div>
+                                                        <div class="single_mega single_mega3">
+                                                            <div class="all_news_right">
+                                                                <div class="fs_news_right">
+                                                                    <div class="single_fs_news_img"> <img alt="Single News" src="/images/amour1.jpg"> </div>
+                                                                    <div class="single_fs_news_right_text">
+                                                                        <h4><a class="mega_title1" href="#">Can you tell me how to get how to get to Sesame Street.</a></h4>
+                                                                        <p> <i class="fab fa-clock"></i> 1 hour ago </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="fs_news_right">
+                                                                    <div class="single_fs_news_img"> <img alt="Single News" src="/images/amour1.jpg"> </div>
+                                                                    <div class="single_fs_news_right_text">
+                                                                        <h4><a class="mega_title1" href="#">young loner on a crusade to cham pion the cause of the innocent</a></h4>
+                                                                        <p> <i class="fab fa-clock"></i> 1 hour ago </p>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -148,31 +163,31 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="nav_lifeguide wow slideInDown" data-wow-delay="0.3s">
-                                    <a href="/typearticle/Super Ambitieux">Super Ambitieux</a>
-                                    <div class="sub_menu sub_menu_p single_mega">
-                                        <ul>
-                                            <li style="cursor: pointer;"> <a href="/typearticle/Empowering">Empowering Time</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="nav_gadgets wow slideInDown" data-wow-delay="0.6s"><a href="/typearticle/LifeStyle">LifeStyle</a></li>
-                                <li class="nav_news wow slideInDown" data-wow-delay="0.9s" ><a href="/typearticle/Love & Relations">Love & Relations</a></li>
-                                <li class="nav_lifeguide wow slideInDown" data-wow-delay="1.2s"><a href="/typearticle/Edito">Edito</a></li>
-                                <li class="nav_gadgets wow slideInDown" data-wow-delay="1.5s"><a href="#">Le Billet SAG</a></li>
-                                <li class="nav_news wow slideInDown" data-wow-delay="1.8s">
-                                    <a href="#">About Us</a>
-                                    <div class="sub_menu sub_menu_p single_mega">
-                                        <ul>
-                                            <li style="cursor: pointer"> <a href="/aboutUs">Our Team</a></li>
-                                            <li style="cursor: pointer"> <a href="/contactUs">Contact Us</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </nav>
+                                    </li>
+                                    <li class="nav_lifeguide wow slideInDown" data-wow-delay="0.3s">
+                                        <a href="/typearticle/Super Ambitieux">Super Ambitieux</a>
+                                        <div class="sub_menu sub_menu_p single_mega">
+                                            <ul>
+                                                <li style="cursor: pointer;"> <a href="/typearticle/Empowering">Empowering Time</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav_gadgets wow slideInDown" data-wow-delay="0.6s"><a href="/typearticle/LifeStyle">LifeStyle</a></li>
+                                    <li class="nav_news wow slideInDown" data-wow-delay="0.9s" ><a href="/typearticle/Love & Relations">Love & Relations</a></li>
+                                    <li class="nav_lifeguide wow slideInDown" data-wow-delay="1.2s"><a href="/typearticle/Edito">Edito</a></li>
+                                    <li class="nav_gadgets wow slideInDown" data-wow-delay="1.5s"><a href="#">Le Billet SAG</a></li>
+                                    <li class="nav_news wow slideInDown" data-wow-delay="1.8s">
+                                        <a href="#">About Us</a>
+                                        <div class="sub_menu sub_menu_p single_mega">
+                                            <ul>
+                                                <li style="cursor: pointer"> <a href="/aboutUs">Our Team</a></li>
+                                                <li style="cursor: pointer"> <a href="/contactUs">Contact Us</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
 
                         <!-- ~~~=| Mobile Navigation END |=~~~ -->
                         <div class="only-for-mobile">
@@ -229,7 +244,10 @@
                         <div class="footer_top_box">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 col-xs-12">
-                                    <div class="footer_top_left"> <img src="/images/logo3.png" alt="Footer Logo" />
+                                    <div class="footer_top_left">
+                                        <div class="js-tilt" data-tilt>
+                                            <img src="/images/logo3.png" alt="Footer Logo" />
+                                        </div>
                                         <p>Vous Souhaitez grandir et épanouir dans votre domaine, vous souhaitez exploiter, vous ressourcer, exploiter votre potentiel et entreprendre, #SAG est pour vous...</p>
                                         <div class="ft_contact">
                                             <h4>Contact</h4>
@@ -337,10 +355,217 @@
         </div>
     </footer>
 
+    <div class="modal fade" id="user_login" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <!--<div class="modal-header text-center">
+                    <h5 class="modal-title text-center">Connexion Client</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>-->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12 ml-auto mr-auto js-tilt" data-tilt>
+                            <img src="/images/pro_logotype.png" alt="IMG">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12 ml-auto mr-auto" >
+                            <div class="social_header2 text-center">
+                                <ul>
+                                    <li><a href="" style="color:#0056b3">
+                                        <i class="fab fa-facebook-f"> </i>
+                                    </a></li>
+                                    <li>
+                                        <a href="" class="" style="color:#00ACED">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li><a href="" class="" style="color:#cc2127">
+                                        <i class="fab fa-google-plus"></i>
+                                    </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <h5 class="text-muted" style="font-family: Arial, Helvetica, sans-serif !important;"> Or Be Classical</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <form method="post" action="/users/login" class="col-md-11 col-sm-11 col-xs-12 ml-auto mr-auto">
+                            <div class="form-group">
+                                <label for="user_nom">Email: </label>
+                                <input type="email" class="form-control input-1" name="email" id="user_email">
+                            </div>
+                            <div class="form-group">
+                                <label for="user_password">Password</label>
+                                <input type="password" class="form-control input-1" name="password">
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button class="btn btn-primary" style="border-radius: 0px; background-color: #B61D8D; border-color:#B61D8D;"> Connexion</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="user_register" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12 mt-auto mb-auto">
+                                <div class="info info-horizontal mb-3">
+                                    <div class="icon icon-primary">
+                                        <i class=""></i>
+                                    </div>
+                                    <div class="description">
+                                        <h5 style="color:#4f2c84">Ambition</h5>
+                                        <p class="text-black">
+                                            We've created the marketing campaign of the website. It was a very interesting collaboration.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="info info-horizontal mb-3">
+                                    <div class="icon icon-primary">
+                                        <i class="now-ui-icons media-1_button-pause"></i>
+                                    </div>
+                                    <div class="description">
+                                        <h5 style="color:#B61D8D">Distinction</h5>
+                                        <p class="text-black">
+                                            We've developed the website with HTML5 and CSS3. The client has access to the code using GitHub.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="info info-horizontal mb-3">
+                                    <div class="icon icon-info">
+                                        <i class="now-ui-icons users_single-02"></i>
+                                    </div>
+                                    <div class="description">
+                                        <h5 style="color:#DC3151">Entrepretinariat</h5>
+                                        <p class="text-black">
+                                            There is also a Fully Customizable CMS Admin Dashboard for this product.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="info info-horizontal">
+                                    <div class="icon icon-info">
+                                        <i class="now-ui-icons users_single-02"></i>
+                                    </div>
+                                    <div class="description">
+                                        <h5 style="color:#201E4B">Empowering</h5>
+                                        <p class="text-black">
+                                            There is also a Fully Customizable CMS Admin Dashboard for this product.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+
+                                <div class="card" style="border-color:#B61D8D !important;">
+                                    <div class="card-img-top js-tilt text-center" data-tilt>
+                                        <img src="/images/pro_logotype.png" alt="">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="social text-center">
+                                            <a href="" class="mr-2" style="color:#00ACED">
+                                                <i class="fab fa-twitter fa-2x"></i>
+                                            </a>
+                                            <a href="" class="mr-2" style="color:#cc2127">
+                                                <i class="fab fa-google-plus fa-2x"></i>
+                                            </a>
+                                            <a href="" style="color:#0056b3">
+                                                <i class="fab fa-facebook-f fa-2x"> </i>
+                                            </a>
+                                            <h5 class="card-description mt-3"> or be classical </h5>
+                                        </div>
+
+                                        <form class="form" method="post" action="/users/register">
+                                            <div class="form-group mb-3">
+                                                <div class="row">
+                                                    <div class="col-md-1 col-sm-1 col-xs-12 mb-auto mt-auto">
+                                                        <span class="input-group-text"><i class="far fa-user"></i></span>
+                                                    </div>
+                                                    <div class="col-md-10 col-sm-10 col-xs-12 mr-auto ml-auto">
+                                                        <input type="text" class="form-control input-1" placeholder="Noms..." name="noms">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group mb-3">
+                                                <div class="row">
+                                                    <div class="col-md-1 col-sm-1 col-xs-12 mb-auto mt-auto">
+                                                        <span class="input-group-text"><i class="far fa-user"></i></span>
+                                                    </div>
+                                                    <div class="col-md-10 col-sm-10 col-xs-12 mr-auto ml-auto">
+                                                        <input type="text" class="form-control input-1" placeholder="Prenoms..." name="prenoms">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group mb-3">
+                                                <div class="row">
+                                                    <div class="col-md-1 col-sm-1 col-xs-12 mb-auto mt-auto">
+                                                        <span class="input-group-text"><i class="far fa-user"></i></span>
+                                                    </div>
+                                                    <div class="col-md-10 col-sm-10 col-xs-12 mr-auto ml-auto">
+                                                        <input type="text" class="form-control input-1" placeholder="Pseudo..." name="pseudo">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group mb-3">
+                                                <div class="row">
+                                                    <div class="col-md-1 col-sm-1 col-xs-12 mb-auto mt-auto">
+                                                        <span class="input-group-text"><i class="far fa-envelope"></i></span>
+                                                    </div>
+                                                    <div class="col-md-10 col-sm-10 col-xs-12 mr-auto ml-auto">
+                                                        <input type="email" class="form-control input-1" placeholder="Email..." name="email">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-1 col-sm-1 col-xs-12 mb-auto mt-auto">
+                                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                                    </div>
+                                                    <div class="col-md-10 col-sm-10 col-xs-12 mr-auto ml-auto">
+                                                        <input type="password" class="form-control input-1" placeholder="Password..." name="password">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="card-footer text-center">
+                                                <button type="submit" id="btn_register" class="btn btn-outline-primary">Inscription</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="/javascripts/jquery-3.3.1.js"></script>
+    <script src="/javascripts/popper.min.js"></script>
     <script src="/javascripts/bootstrap.min.js"></script>
     <script src="/javascripts/main.js"></script>
+    <script src="/javascripts/tilt.jquery.min.js"></script>
+    <script >
+        $('.js-tilt').tilt({
+            scale: 1.1
+        });
+    </script>
 
   </body>
 </html>
