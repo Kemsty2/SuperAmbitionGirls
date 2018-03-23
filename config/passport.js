@@ -28,10 +28,12 @@ passport.use('login', new LocalStrategy({
         if(err)
             return done(err);
         if(!user)
-            return done(null, false, req.flash('LoginMessage', 'Utilisateur Inexistant'));
+            return done(null, false, req.flash('LoginFailureMessage', 'Utilisateur Inexistant'));
         if(!user.validPassword(password))
-            return done(null, false, req.flash('LoginMessage', 'Mot de Passe Incorect'))
+            return done(null, false, req.flash('LoginFailureMessage', 'Mot de Passe Incorect'))
 
+
+        req.flash('LoginSuccessMessage', 'Bienvenue Sur SAG , ' + user.local.prenoms + '!!');
         return done(null, user);
     });
 }));
@@ -45,7 +47,7 @@ passport.use('register', new LocalStrategy({
         if(err)
             return done(err);
         if(user){
-            return done(null, false, req.flash('RegisterMessage', 'Utilisateur Existant'))
+            return done(null, false, req.flash('RegisterFailureMessage', 'Utilisateur Existant'))
         }
         else{
             var newUser = new User();
@@ -60,7 +62,7 @@ passport.use('register', new LocalStrategy({
             newUser.save(function(err){
                 if(err)
                     throw err;
-                req.flash('RegisterMessage', 'Vous avez été enregistré');
+                req.flash('RegisterSuccessMessage', 'Vous avez été enregistré');
                 return done(null, newUser)
             });
         }

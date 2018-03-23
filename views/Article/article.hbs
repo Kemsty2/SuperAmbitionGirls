@@ -172,12 +172,13 @@
                         <div class="card">
                             <div class="card-img-top text-center"><img class="img-responsive" src="/images/pro_logotype.png"></div>
                             <div class="card-body">
-                                <form action="" method="post">
+                                <form action="/users/enroll_newsletter" method="post">
+                                    <input type="hidden" name="href" id="href">
                                     <p class="text-center text-white">Inscrivez-Vous à Notre NewsLetter pour recevoir nos articles</p>
                                     <hr >
-                                    <input type="text" class="form-control mb-3" placeholder="Entrer votre Email">
+                                    <input type="text" class="form-control mb-3" placeholder="Entrer votre Email" name="email">
                                     <div class="d-flex justify-content-center">
-                                        <button type="submit" class="btn ">Je m'inscris</button>
+                                        <button type="submit" class="btn " id="newsletterbtn">Je m'inscris</button>
                                     </div>
                                 </form>
                             </div>

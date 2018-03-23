@@ -1,3 +1,30 @@
+{{#each EnrollFailureNewsletter}}
+    <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
+{{#each EnrollSuccessNewsletter}}
+    <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
+{{#each EmailSuccess}}
+    <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
 <div class="breadcumb_common_area">
     <div class="container">
         <div class="row">
@@ -34,16 +61,17 @@
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <!-- ~~~=| form START |=~~~ -->
                 <div class="contact-page-form">
-                    <h2>Send Us An E-mail</h2>
+                    <h2>Envoyez Nous Un Email</h2>
                     <div class="comments_form">
-                        <form action="http://premiumlayers.net/demo/html/hash/contact_process.php" method="post">
+                        <form action="/contactUs" method="post">
                             <div class="contact_cc_name">
-                                <input type="text" name="name" placeholder="Your name *" required/>
+                                <input type="text" name="nom" placeholder="Your name *" required/>
                                 <input type="text" name="email" placeholder="Your E-mail *" required/>
-                                <input type="text" name="phone" placeholder="Phone number" required/>
+                                <input type="text" name="tel" placeholder="Phone number" required/>
+                                <input type="hidden" name="href" id="href">
                             </div>
-                            <textarea name="message" cols="30" rows="10" placeholder="Message"></textarea>
-                            <input name="submit" type="submit" value="Send Message"/>
+                            <textarea name="message" cols="30" rows="10" placeholder="Message" ></textarea>
+                            <input name="submit" type="submit" value="Envoyez"/>
                         </form>
                     </div>
                 </div>
@@ -51,19 +79,17 @@
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="contact_address">
-                    <h2>Visit Us</h2>
-                    <p>Hash is one of the excellent magazine in the world.Hash magazine reached many a
-                        the readers very soon by his unique stories the magazine.Hash is known for his  to
-                        excellent magazine.</p>
+                    <h2>Nous Rendre Visite</h2>
+                    <p>Super Ambition Girls est un webzine dédié à la jeune femme ambitieuse qui souhaite se réaliser et entreprendre grâce à son talent. Nos rubriques abordent des thématiques liés à la vie d’une femme, sur le plan professionnel, social et spirituel .</p>
                     <div class="visit_us_contact">
                         <ul>
                             <li><a href="#">
                                 <div class="visit_img"><img src="/images/map_ico.png" alt="map ico" /></div><div class="visit_text">Washington Square Park, New York, NY,
                                 <br>United States</div></a></li>
                             <li><a href="#">
-                                <div class="visit_img"><img src="/images/ph_ico.png" alt="map ico" /></div><div class="visit_text">Telephone : +1 000 123 54657</div></a></li>
+                                <div class="visit_img"><img src="/images/ph_ico.png" alt="map ico" /></div><div class="visit_text">Telephone : +33 6 89 13 29 81</div></a></li>
                             <li><a href="tell:+100012354657">
-                                <div class="visit_img"><img src="/images/msg_ico.png" alt="map ico" /></div><div class="visit_text">E-mail : Info@News.com</div></a></li>
+                                <div class="visit_img"><img src="/images/msg_ico.png" alt="map ico" /></div><div class="visit_text">E-mail : superambitiongirls@gmail.com</div></a></li>
                         </ul>
                     </div>
                 </div>

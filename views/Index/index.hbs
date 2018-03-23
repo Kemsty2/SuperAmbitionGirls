@@ -1,3 +1,30 @@
+{{#each LoginSuccessMessage}}
+    <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
+{{#each EnrollFailureNewsletter}}
+    <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
+{{#each EnrollSuccessNewsletter}}
+    <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
 <section class="hp_banner_area section_padding">
     <div class="container">
         <div class="row">
@@ -259,12 +286,13 @@
                         <div class="card">
                             <div class="card-img-top text-center"><img class="img-responsive" src="/images/pro_logotype.png"></div>
                             <div class="card-body">
-                                <form action="" method="post">
+                                <form action="/users/enroll_newsletter" method="post">
+                                    <input type="hidden" name="href" id="href">
                                     <p class="text-center text-white">Inscrivez-Vous à Notre NewsLetter pour recevoir nos articles</p>
                                     <hr >
-                                    <input type="text" class="form-control mb-3" placeholder="Entrer votre Email">
+                                    <input type="text" class="form-control mb-3" placeholder="Entrer votre Email" name="email">
                                     <div class="d-flex justify-content-center">
-                                        <button type="submit" class="btn ">Je m'inscris</button>
+                                        <button type="submit" class="btn " id="newsletterbtn">Je m'inscris</button>
                                     </div>
                                 </form>
                             </div>

@@ -7,6 +7,7 @@
 var express = require('express');
 var router = express.Router();
 var Admin = require('../models/admin');
+var Newsletter = require('../models/newsletter');
 const title = "SAG, Ambition & Distinction";
 
 
@@ -49,6 +50,12 @@ router.get('/profil', isAuthenticated, function(req, res, next){
 
 router.get('/edit_profil', isAuthenticated, function(req, res, next){
     res.render('Admin/Redacteur/edit_profil', {title, layout: 'Admin/layout.hbs', admin: req.session.admin});
+});
+
+router.get('/list_newsletter', isAuthenticated, function (req, res, next) {
+    Newsletter.find({}, function (err, newsletters) {
+        res.render('Admin/Newsletter/list_newsletter', {newsletters: newsletters, title, layout: 'Admin/layout.hbs', admin: req.session.admin});
+    });
 });
 
 function isAuthenticated(req, res, next){

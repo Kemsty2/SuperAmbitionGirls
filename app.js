@@ -12,6 +12,7 @@ var MongoStore = require('connect-mongo')(session);
 var busboy = require('then-busboy');
 var fileUpload = require('express-fileupload');
 
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 var articles = require('./routes/articles');
@@ -45,6 +46,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 app.use(fileUpload());
+
 
 
 app.use('/', index);

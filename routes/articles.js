@@ -18,8 +18,9 @@ router.get('/lecture/:article_id', function(req, res, next){
             Article.find({_id: {$lt: req.params.article_id}}).sort({_id: -1}).limit(1).exec(function(err, previous){
                 Article.find({}).sort({'nombre_comms': -1}).limit(3).exec(function(err, popular_post){
                     Article.find({}).sort({'date_publication': -1}).limit(3).exec(function(err, recent_post){
-                        console.log(article);
-                        res.render('Article/article', {title, layout: 'Index/layout.hbs', article: article, next: next, previous: previous, popular_post:popular_post, recent_post:recent_post, article1: recent_post.slice(0,1), user:req.user});
+                        var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
+                        var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
+                        res.render('Article/article', {title, layout: 'Index/layout.hbs', article: article, next: next, previous: previous, popular_post:popular_post, recent_post:recent_post, article1: recent_post.slice(0,1), user:req.user, EnrollSuccessNewsletter: EnrollSuccessNewsletter, EnrollFailureNewsletter: EnrollFailureNewsletter});
                     });
                 });
             });

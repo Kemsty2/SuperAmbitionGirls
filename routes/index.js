@@ -6,6 +6,9 @@ var Publicite = require('../models/publicite');
 var Reponse = require('../models/reponse');
 var User = require('../models/user');
 var Commentaire = require('../models/commentaires');
+var mailer = require('nodemailer');
+
+
 
 const title = "SAG, Ambition & Distinction"
 
@@ -22,7 +25,10 @@ router.get('/', function(req, res, next) {
                         Publicite.find(function(err, pubs){
                             Article.find({}).sort({'nombre_comms': -1}).limit(3).exec(function(err, popular_post){
                                 Article.find({}).sort({'date_publication': -1}).limit(3).exec(function(err, recent_post){
-                                    res.render('Index/index', { title , layout: '/Index/layout.hbs',article1:articlesrecent.slice(0,1), articlesrecent: articlesrecent.slice(0, 3), articlesrecent2:articlesrecent.slice(3,5), superambitieuxarticle: superambitieuxarticle,superambitieuxarticle: superambitieuxarticle[0], editoarticle:editoarticle,editoarticle2:editoarticle[0], lifestylearticle: lifestylearticle,lifestylearticle2: lifestylearticle[0], loverelationarticle: loverelationarticle,loverelationarticle2: loverelationarticle[0], popular_post: popular_post, recent_post: recent_post, user:req.user});
+                                    var LoginSuccessMessage = req.flash('LoginSuccessMessage');
+                                    var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
+                                    var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
+                                    res.render('Index/index', { title , layout: '/Index/layout.hbs',article1:articlesrecent.slice(0,1), articlesrecent: articlesrecent.slice(0, 3), articlesrecent2:articlesrecent.slice(3,5), superambitieuxarticle: superambitieuxarticle,superambitieuxarticle: superambitieuxarticle[0], editoarticle:editoarticle,editoarticle2:editoarticle[0], lifestylearticle: lifestylearticle,lifestylearticle2: lifestylearticle[0], loverelationarticle: loverelationarticle,loverelationarticle2: loverelationarticle[0], popular_post: popular_post, recent_post: recent_post, user:req.user, LoginSuccessMessage: LoginSuccessMessage, EnrollFailureNewsletter: EnrollFailureNewsletter, EnrollSuccessNewsletter: EnrollSuccessNewsletter});
                                 });
                             });
                         });
@@ -39,7 +45,9 @@ router.get('/typearticle/:type_article', function(req, res, next){
         if(articles.length > 10){
             var plus = true;
         }
-        res.render('Index/type_article', {title, layout: 'Index/layout.hbs', articlefirst: articles.slice(0,1), articles: articles.slice(1,10), last: articles[articles.length -2], type_article: req.params.type_article, plus:plus,user:req.user});
+        var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
+        var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
+        res.render('Index/type_article', {title, layout: 'Index/layout.hbs', articlefirst: articles.slice(0,1), articles: articles.slice(1,10), last: articles[articles.length -2], type_article: req.params.type_article, plus:plus,user:req.user, EnrollSuccessNewsletter:EnrollSuccessNewsletter, EnrollFailureNewsletter:EnrollFailureNewsletter});
     });
 });
 
@@ -48,18 +56,57 @@ router.get('/typearticle/:type_article/pagination/:last_id', function(req, res, 
         if(articles.length > 10){
             var plus = true;
         }
-        res.render('Index/type_article', {title, layout: 'Index/layout.hbs', articles: articles.slice(0,10), last: articles[articles.length -2], type_article: req.params.type_article, plus:plus, user:req.user});
+        var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
+        var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
+        res.render('Index/type_article', {title, layout: 'Index/layout.hbs', articles: articles.slice(0,10), last: articles[articles.length -2], type_article: req.params.type_article, plus:plus, user:req.user, EnrollFailureNewsletter:EnrollFailureNewsletter, EnrollSuccessNewsletter: EnrollSuccessNewsletter});
     });
 });
 
 router.get('/aboutUs', function(req, res, next){
-  res.render('Index/aboutUs', {title, layout: 'Index/layout.hbs', user:req.user});
+    var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
+    var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
+    res.render('Index/aboutUs', {title, layout: 'Index/layout.hbs', user:req.user, EnrollSuccessNewsletter: EnrollSuccessNewsletter, EnrollFailureNewsletter: EnrollFailureNewsletter});
 });
 
 router.get('/contactUs', function(req, res, next){
-    res.render('Index/contactUs', {title, layout: 'Index/layout.hbs', user:req.user});
+    var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
+    var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
+    var EmailSuccess = req.flash('EmailSuccess');
+    res.render('Index/contactUs', {title, layout: 'Index/layout.hbs', user:req.user, EnrollFailureNewsletter: EnrollFailureNewsletter, EnrollSuccessNewsletter: EnrollSuccessNewsletter, EmailSuccess: EmailSuccess});
 });
 
+router.post('/contactUs', function (req, res, next) {
+    var smtpTransport = mailer.createTransport({
+        service: "Gmail",
+        auth: {
+            user: "sagcontactus@gmail.com",
+            pass: "Naruto1997"
+        }
+    });
+
+    var message = `<p>Vous avez une nouvelle requete contact</p>
+        <h3>Information sur le message</h3>
+        <ul><li>Nom: ${req.body.nom}</li><li>Email: ${req.body.email}</li><li>Téléphone: ${req.body.tel}</li></ul>
+        <h3>Message</h3>
+        <p>${req.body.message}</p>`
+
+    var mail = {
+        from: "sagcontactus@gmail.com",
+        to: "superambitiongirls@gmail.com",
+        subject: "Contact Request",
+        html: message
+    }
+
+    smtpTransport.sendMail(mail, function (err, response) {
+        if(err){
+            throw err;
+        }
+        console.log("Mail envoyé");
+        req.flash('EmailSuccess', 'Votre Mail a été envoyé');
+        res.redirect('/contactUs');
+        smtpTransport.close();
+    });
+});
 
 
 module.exports = router;
