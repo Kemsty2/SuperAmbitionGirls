@@ -1525,7 +1525,7 @@ ul.lev2sub {
 }
 .post_inner {
   border-left: 2px solid #B61D8D;
-  height: 60px;
+  height: auto;
   line-height: 24px;
   margin-bottom: 25px;
   margin-left: 20px;

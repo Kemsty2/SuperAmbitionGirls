@@ -39,6 +39,7 @@ router.get('/list_article', isAuthenticated, function(req, res, next){
 });
 
 router.post('/enroll_article', isAuthenticated, function(req, res, next){
+    console.log(req.body.type);
     var newArticle = new Article({
         titre: req.body.titre,
         type: types[parseInt(req.body.type) - 1],
