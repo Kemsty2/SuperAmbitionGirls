@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
     Article.find({}).sort({'date_publication': -1}).limit(5).exec(function(err, articlesrecent){
         if(err)
             throw err;
-        Article.find({}).or([{'type': 'Super Ambition'}, {'type': 'Empowering'}]).sort({'date_publication': 1}).limit(3).exec(function(err, superambitieuxarticle){
+        Article.find({}).or([{'type': 'Super Ambitieux'}, {'type': 'Empowering'}]).sort({'date_publication': 1}).limit(3).exec(function(err, superambitieuxarticle){
             Article.find({'type': 'Edito'}).sort({'date_publication': -1}).limit(3).exec(function(err, editoarticle){
                 Article.find({'type': 'LifeStyle'}).sort({'date_publication': -1}).limit(3).exec(function(err, lifestylearticle){
                     Article.find({'type': 'Love & RelationShip'}).sort({'date_publication': -1}).limit(3).exec(function(err, loverelationarticle){
@@ -28,7 +28,8 @@ router.get('/', function(req, res, next) {
                                     var LoginSuccessMessage = req.flash('LoginSuccessMessage');
                                     var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
                                     var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
-                                    res.render('Index/index', { title , layout: '/Index/layout.hbs',article1:articlesrecent.slice(0,1), articlesrecent: articlesrecent.slice(0, 3), articlesrecent2:articlesrecent.slice(3,5), superambitieuxarticle: superambitieuxarticle,superambitieuxarticle: superambitieuxarticle[0], editoarticle:editoarticle,editoarticle2:editoarticle[0], lifestylearticle: lifestylearticle,lifestylearticle2: lifestylearticle[0], loverelationarticle: loverelationarticle,loverelationarticle2: loverelationarticle[0], popular_post: popular_post, recent_post: recent_post, user:req.user, LoginSuccessMessage: LoginSuccessMessage, EnrollFailureNewsletter: EnrollFailureNewsletter, EnrollSuccessNewsletter: EnrollSuccessNewsletter});
+                                    console.log(superambitieuxarticle);
+                                    res.render('Index/index', { title , layout: '/Index/layout.hbs',article1:articlesrecent.slice(0,1), articlesrecent: articlesrecent.slice(0, 3), articlesrecent2:articlesrecent.slice(3,5), superambitieuxarticles: superambitieuxarticle,superambitieuxarticle: superambitieuxarticle[0], editoarticle:editoarticle,editoarticle2:editoarticle[0], lifestylearticle: lifestylearticle,lifestylearticle2: lifestylearticle[0], loverelationarticle: loverelationarticle,loverelationarticle2: loverelationarticle[0], popular_post: popular_post, recent_post: recent_post, user:req.user, LoginSuccessMessage: LoginSuccessMessage, EnrollFailureNewsletter: EnrollFailureNewsletter, EnrollSuccessNewsletter: EnrollSuccessNewsletter});
                                 });
                             });
                         });

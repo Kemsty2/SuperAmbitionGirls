@@ -100,24 +100,24 @@
                                 <div class="row">
                                     {{# if superambitieuxarticle}}
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <div class="fs_news_left" onclick="document.location= '/articles/lecture/{{this._id}}';">
+                                            <div class="fs_news_left" onclick="document.location= '/articles/lecture/{{superambitieuxarticle._id}}';">
                                                     <div class="single_fs_news_left_text">
                                                         <div class="fs_news_left_img">
-                                                            <img src="{{superambitieuxarticle2.photo}}" alt="" />
+                                                            <img src="{{superambitieuxarticle.photo}}" alt="" />
                                                         </div>
-                                                        <h4><a href="/articles/lecture/{{this._id}}">{{superambitieuxarticle2.titre}}</a></h4>
-                                                        <p> <i class="far fa-clock"></i>{{superambitieuxarticle2.duree}} min ago<i class="fa fa-comment"></i>{{this.nombre_comms}}</p>
+                                                        <h4><a href="/articles/lecture/{{this._id}}">{{superambitieuxarticle.titre}}</a></h4>
+                                                        <p> <i class="far fa-clock"></i>{{superambitieuxarticle.duree}} min ago<i class="fa fa-comment"></i>{{superambitieuxarticle.nombre_comms}}</p>
                                                     </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <div class="all_news_right">
-                                                {{#each superambitieuxarticle}}
+                                                {{#each superambitieuxarticles}}
                                                     <div class="fs_news_right" onclick="document.location= '/articles/lecture/{{this._id}}';">
                                                         <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" /> </div>
                                                         <div class="single_fs_news_right_text">
-                                                            <h4><a href="blog-single-slider-post.html">{{this.titre}}</a></h4>
-                                                            <p> <a href="/articles/lecture/{{this._id}}" class="violet-text">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago <i class="fa fa-comment"></i>{{this.nombre_comms}}</p>
+                                                            <h4><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
+                                                            <p> <a href="" class="violet-text">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago <i class="fa fa-comment"></i>{{this.nombre_comms}}</p>
                                                         </div>
                                                     </div>
                                                 {{/each}}
@@ -138,7 +138,7 @@
                             <div class="header_fasion gadgets_heading lifestyle_post_area" style="margin-top: 3rem;">
                                 <div class="left_fashion main_nav_box" >
                                     <ul>
-                                        <li class="nav_gadgets"><a style="font-size: 20px !important;" href="#">Love & Relations</a></li>
+                                        <li class="nav_gadgets"><a style="font-size: 20px !important;" href="#">LifeStyle</a></li>
                                     </ul>
                                 </div>
                             </div>

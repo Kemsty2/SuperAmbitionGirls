@@ -19,7 +19,7 @@ body{
 
 
 h1, h2, h3, h4, h5, h6{
-    font-family: Langdon, Renogare !important;
+    font-family: 'Amaranth', Renogare !important;
 }
 
 p{
@@ -27,7 +27,7 @@ p{
 }
 
 .pr-1 label{
-    font-family: Langdon, Renogare !important;
+    font-family: Amaranth, Renogare !important;
 }
 
 .carousel-item .br_single_news{
@@ -59,25 +59,25 @@ li[ data-target="#carousel-example-generic"]{
 }
 
 #nav {
-    font-family: Langdon, Renogare !important;
+    font-family: Amaranth, Renogare !important;
 }
 #nav li a{
-    font-size: 15px !important;
+    font-size: 12px !important;
 }
 
 .nav_lifeguide .sub_menu ul li a{
-    font-family: Langdon, Renogare !important;
+    font-family: Amaranth, Renogare !important;
     font-size: 12px;
 }
 
 .sub_menu li a {
-    font-family: Langdon, Renogare !important;
+    font-family: Amaranth, Renogare !important;
     font-size: 12px;
 }
 
 .left_fashion li a{
-    font-family: Langdon, Renogare !important;
-    font-size: 15px !important;
+    font-family: Amaranth, Renogare !important;
+    font-size: 14px !important;
     color: white !important;
 }
 
@@ -152,13 +152,13 @@ li[ data-target="#carousel-example-generic"]{
 
 .breadcumb_common_area p {
     color: #4f2c84 ;
-    font-family: Langdon !important;
+    font-family: Amaranth !important;
     font-size: 18px !important;
 }
 
 .breadcum_c_right a{
     color: #4f2c84 !important;
-    font-family: Langdon !important;
+    font-family: Amaranth !important;
     font-size: 16px !important;
 }
 
@@ -168,7 +168,7 @@ li[ data-target="#carousel-example-generic"]{
 }
 
 .mega_menu li a{
-    font-family: Langdon, Renogare !important;
+    font-family: Amaranth, Renogare !important;
 }
 
 .br_single_news img:hover{
@@ -655,4 +655,12 @@ textarea.input1 + .shadow-input1 {
 
 .comments_form textarea:focus{
     border-color: #B61D8D;
+}
+
+.text-red{
+    color: #DC3151;
+}
+
+.text-pink{
+    color: #4f2c84;
 }

@@ -32,135 +32,138 @@
                             </div>
                         </div>
                     </div>
-                    <div class="sp_details">
-                        <a href="#">{{article.type}}</a>
-                        <h1>{{article.titre}}</h1>
-                        <div class="post_meta">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-user"></i>By {{article.auteur_nom}}</a></li>
-                                <li><a href="#"><i class="far fa-clock"></i>{{article.duree}} min</a></li>
-                                <li><a href="#"><i class="fa fa-comment-o"></i>{{article.nombre_comms}}</a></li>
-                            </ul>
-                        </div>
-                        <div class="post_text">
-                            <p id="contenu"></p>
-                        </div>
-                        <div class="social_tags">
-                            <div class="social_tags_left">
-                                <p>Tags :</p>
-                                <ul>
-                                    {{#each article.tags}}
-                                        <li><a href="#">{{this}}</a></li>
-                                    {{/each}}
-                                </ul>
-                            </div>
-                            <div class="social_tags_right">
-                                <ul>
-                                    <li class="facebook"><a class="fab fa-facebook-f" href="#"></a></li>
-                                    <li class="twitter"><a class="fab fa-twitter" href="#"></a></li>
-                                    <li class="google-plus"><a class="fab fa-google-plus" href="#"></a></li>
-                                    <li class="linkedin"><a class="fab fa-linkedin" href="#"></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="sp-next-prev">
-                            {{#if previous}}
-                                <div class="sp-prev">
-                                    <a href="/articles/lecture/{{previous._id}}"><i class="fa fa-angle-double-left"></i>Previous post</a>
-                                    <div class="sp-next-post">
-                                        <a href="/articles/lecture/{{previous._id}}">{{previous.titre}}</a>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="sp_details">
+                                <a href="#">{{article.type}}</a>
+                                <h1>{{article.titre}}</h1>
+                                <div class="post_meta">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-user"></i>By {{article.auteur_nom}}</a></li>
+                                        <li><a href="#"><i class="far fa-clock"></i>{{article.duree}} min</a></li>
+                                        <li><a href="#"><i class="fa fa-comment-o"></i>{{article.nombre_comms}}</a></li>
+                                    </ul>
+                                </div>
+                                <div class="post_text" id="contenu">
+                                </div>
+                                <div class="social_tags">
+                                    <div class="social_tags_left">
+                                        <p>Tags :</p>
+                                        <ul>
+                                            {{#each article.tags}}
+                                                <li><a href="#">{{this}}</a></li>
+                                            {{/each}}
+                                        </ul>
+                                    </div>
+                                    <div class="social_tags_right">
+                                        <ul>
+                                            <li class="facebook"><a class="fab fa-facebook-f" href="#"></a></li>
+                                            <li class="twitter"><a class="fab fa-twitter" href="#"></a></li>
+                                            <li class="google-plus"><a class="fab fa-google-plus" href="#"></a></li>
+                                            <li class="linkedin"><a class="fab fa-linkedin" href="#"></a></li>
+                                        </ul>
                                     </div>
                                 </div>
-                            {{/if}}
-                            {{#if next}}
-                                <div class="sp-next">
-                                    <a href="/articles/lecture/{{next._id}}">Next Posts<i class="fa fa-angle-double-right"></i></a>
-                                    <div class="sp-next-post">
-                                        <a href="/articles/lecture/{{next._id}}">{{next.titre}}</a>
-                                    </div>
-                                </div>
-                            {{/if}}
-                        </div>
-                        <div class="sp-comments-box">
-                            <h2>Commentaires</h2>
-                            {{#if article.commentaires}}
-                                {{#each article.commentaires}}
-                                    <div class="single_comment comms">
-                                        <div class="single_comment_pic">
-                                            <img src="images/comment-pic1.png" alt="" />
-                                        </div>
-                                        <div class="single_comment_text">
-                                            <div class="sp_title">
-                                                <a href="#"><h4>Chris Hemsworth</h4></a>
-                                                <p>10 Min ago</p>
+                                <div class="sp-next-prev">
+                                    {{#if previous}}
+                                        <div class="sp-prev">
+                                            <a href="/articles/lecture/{{previous._id}}"><i class="fa fa-angle-double-left"></i>Previous post</a>
+                                            <div class="sp-next-post">
+                                                <a href="/articles/lecture/{{previous._id}}">{{previous.titre}}</a>
                                             </div>
-                                            <p>They call him Flipper Flipper faster than lightning. No one you see is smarter than he. They call him Flipper Flipper the faster than lightning. No one you see is smarter than he</p>
-                                            <a href="javascript:myfunction('comm1');"><i class="fa fa-reply"></i>Reply</a>
                                         </div>
-                                    </div>
-                                    <div class="row" id="comm1">
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <div class="card">
-                                                <div class="card-header text-center">Reponses <a href="javascript:close('comm1');"><i class="fa fa-times "></i></a></div>
-                                                <div class="card-body">
-                                                    {{#if user}}
-                                                        <form action="" method="post">
-                                                            <!--<div class="row mb-3">
-                                                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                    <input type="text" class="form-control" placeholder="Votre Nom">
+                                    {{/if}}
+                                    {{#if next}}
+                                        <div class="sp-next">
+                                            <a href="/articles/lecture/{{next._id}}">Next Posts<i class="fa fa-angle-double-right"></i></a>
+                                            <div class="sp-next-post">
+                                                <a href="/articles/lecture/{{next._id}}">{{next.titre}}</a>
+                                            </div>
+                                        </div>
+                                    {{/if}}
+                                </div>
+                                <div class="sp-comments-box">
+                                    <h2>Commentaires</h2>
+                                    {{#if article.commentaires}}
+                                        {{#each article.commentaires}}
+                                            <div class="single_comment comms">
+                                                <div class="single_comment_pic">
+                                                    <img src="images/comment-pic1.png" alt="" />
+                                                </div>
+                                                <div class="single_comment_text">
+                                                    <div class="sp_title">
+                                                        <a href="#"><h4>Chris Hemsworth</h4></a>
+                                                        <p>10 Min ago</p>
+                                                    </div>
+                                                    <p>They call him Flipper Flipper faster than lightning. No one you see is smarter than he. They call him Flipper Flipper the faster than lightning. No one you see is smarter than he</p>
+                                                    <a href="javascript:myfunction('comm1');"><i class="fa fa-reply"></i>Reply</a>
+                                                </div>
+                                            </div>
+                                            <div class="row" id="comm1">
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <div class="card">
+                                                        <div class="card-header text-center">Reponses <a href="javascript:close('comm1');"><i class="fa fa-times "></i></a></div>
+                                                        <div class="card-body">
+                                                            {{#if user}}
+                                                                <form action="" method="post">
+                                                                    <!--<div class="row mb-3">
+                                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                            <input type="text" class="form-control" placeholder="Votre Nom">
+                                                                        </div>
+                                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                            <input type="text" class="form-control" placeholder="votre prenom">
+                                                                        </div>
+                                                                    </div>-->
+                                                                    <div class="row mb-3">
+                                                                        <div class="col-md-12">
+                                                                            <textarea class="form-control" placeholder="Message"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-center">
+                                                                        <button class="btn btn-primary">Repondre</button>
+                                                                    </div>
+                                                                </form>
+                                                            {{else}}
+                                                                <div class="row">
+                                                                    <h5><a href="#user_register" data-toggle="modal">Inscrivez</a> Vous Pour Poster un commentaire</h5>
                                                                 </div>
-                                                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                    <input type="text" class="form-control" placeholder="votre prenom">
-                                                                </div>
-                                                            </div>-->
-                                                            <div class="row mb-3">
-                                                                <div class="col-md-12">
-                                                                    <textarea class="form-control" placeholder="Message"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="d-flex justify-content-center">
-                                                                <button class="btn btn-primary">Repondre</button>
-                                                            </div>
-                                                        </form>
-                                                    {{else}}
-                                                        <div class="row">
-                                                            <h5><a href="#user_register" data-toggle="modal">Inscrivez</a> Vous Pour Poster un commentaire</h5>
+                                                            {{/if}}
                                                         </div>
-                                                    {{/if}}
+                                                    </div>
                                                 </div>
                                             </div>
+                                            {{#each this.reponses}}
+                                                <div class="single_comment reponse">
+                                                    <div class="single_comment_pic">
+                                                        <img src="images/comment-pic2.png" alt="" />
+                                                    </div>
+                                                    <div class="single_comment_text">
+                                                        <div class="sp_title">
+                                                            <a href="#"><h4>Chris Hemsworth</h4></a>
+                                                            <p>10 Min ago</p>
+                                                        </div>
+                                                        <p>They call him Flipper Flipper faster than lightning. No one you see is smarter than he. They call him Flipper Flipper the faster than lightning. No one you see is smarter than he</p>
+                                                    </div>
+                                                </div>
+                                            {{/each}}
+                                        {{/each}}
+                                    {{else}}
+                                        <p class="fs-15 ml-3">Aucun commentaire pour l'instant, Soyez le premier à commenter</p>
+                                    {{/if}}
+                                </div>
+                                {{#if user}}
+                                    <div class="comment-form">
+                                        <h2 class="mt-3">Laissez un commentaire</h2>
+                                        <div class="comments_form">
+                                            <form>
+                                                <textarea cols="20" rows="10" placeholder="Message" name="message"></textarea>
+                                                <input type="submit" value="Postez Commentaire"/>
+                                            </form>
                                         </div>
                                     </div>
-                                    {{#each this.reponses}}
-                                        <div class="single_comment reponse">
-                                            <div class="single_comment_pic">
-                                                <img src="images/comment-pic2.png" alt="" />
-                                            </div>
-                                            <div class="single_comment_text">
-                                                <div class="sp_title">
-                                                    <a href="#"><h4>Chris Hemsworth</h4></a>
-                                                    <p>10 Min ago</p>
-                                                </div>
-                                                <p>They call him Flipper Flipper faster than lightning. No one you see is smarter than he. They call him Flipper Flipper the faster than lightning. No one you see is smarter than he</p>
-                                            </div>
-                                        </div>
-                                    {{/each}}
-                                {{/each}}
-                            {{else}}
-                                <p class="fs-15 ml-3">Aucun commentaire pour l'instant, Soyez le premier à commenter</p>
-                            {{/if}}
-                        </div>
-                        {{#if user}}
-                            <div class="comment-form">
-                                <h2 class="mt-3">Laissez un commentaire</h2>
-                                <div class="comments_form">
-                                    <form>
-                                        <textarea cols="20" rows="10" placeholder="Message" name="message"></textarea>
-                                        <input type="submit" value="Postez Commentaire"/>
-                                    </form>
-                                </div>
+                                {{/if}}
                             </div>
-                        {{/if}}
+                        </div>
                     </div>
                 </div>
                 <!-- ~~~=| Fashion area END |=~~~ -->

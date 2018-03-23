@@ -1526,6 +1526,9 @@ ul.lev2sub {
 .post_inner {
   border-left: 2px solid #B61D8D;
   height: auto;
+  width: auto;
+  overflow: auto;
+  text-wrap: normal;
   line-height: 24px;
   margin-bottom: 25px;
   margin-left: 20px;
