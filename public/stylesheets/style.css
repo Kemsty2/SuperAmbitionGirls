@@ -248,17 +248,42 @@ a:hover { color: #000 }
   color:#fff;
 }
 .main_nav_box ul li.nav_news:hover {
-  background: #4f2c84 url("images/004-home.png") no-repeat scroll 27px 25px !important;
   transition: all 0.1s ease 0s;
 }
+
+.main_nav_box ul li.home:hover{
+  background: #4f2c84 url("/images/Icons/005-home.png") no-repeat scroll 27px 25px !important;
+}
+
+.main_nav_box ul li.teamsag:hover{
+  background: #4f2c84 url("/images/Icons/003-cogwheel.png") no-repeat scroll 27px 25px !important;
+}
+
+.main_nav_box ul li.loverelation:hover{
+  background: #4f2c84 url("/images/Icons/011-like.png") no-repeat scroll 27px 25px !important;
+}
+
+.main_nav_box ul li.loverelation{
+  background: rgba(0, 0, 0, 0) url("/images/Icons/011-like.png") no-repeat scroll 27px 25px !important;
+}
+
+
 .main_nav_box ul li.nav_fashion:hover {
   background: #c66196 url("images/nav_fashion_hr.png") no-repeat scroll 27px 25px !important;
   transition: all 0.1s ease 0s;
 }
 .main_nav_box ul li.nav_gadgets:hover {
-  background: #201E4B url("images/002-fist.png") no-repeat scroll 27px 25px !important;
   transition: all 0.1s ease 0s;
 }
+
+.main_nav_box ul li.lifestyle:hover{
+  background: #201E4B url("/images/Icons/001-hair-brush.png") no-repeat scroll 27px 25px !important;
+}
+
+.main_nav_box ul li.billetsag:hover{
+  background: #201E4B url("/images/Icons/007-team.png") no-repeat scroll 27px 25px !important;
+}
+
 .main_nav_box ul li.nav_lifestyle:hover {
   background: #c66196 url("images/002-fist.png") no-repeat scroll 27px 25px !important;
   transition: all 0.1s ease 0s;
@@ -272,15 +297,26 @@ a:hover { color: #000 }
   transition: all 0.1s ease 0s;
 }
 .main_nav_box ul li.nav_lifeguide:hover {
-  background: #DC3151 url("images/002-fist.png") no-repeat scroll 27px 25px !important;
   transition: all 0.1s ease 0s;
 }
+
+.main_nav_box ul li.super_ambitieux:hover{
+  background: #DC3151 url("/images/Icons/006-idea.png") no-repeat scroll 27px 25px !important;
+}
+
 .main_nav_box ul li:hover a {
   border-right:1px solid #c66196;
 }
 .main_nav_box ul li.nav_news {
-  background: rgba(0, 0, 0, 0) url("images/004-home.png") no-repeat scroll 27px 25px;
   border-top: 2px solid #B61D8D;
+}
+
+.main_nav_box ul li.home{
+  background: rgba(0, 0, 0, 0) url("/images/Icons/005-home.png") no-repeat scroll 27px 25px;
+}
+
+.main_nav_box ul li.teamsag{
+  background: rgba(0, 0, 0, 0) url("/images/Icons/003-cogwheel.png") no-repeat scroll 27px 25px;
 }
 .main_nav_box ul li.nav_news a {
   position: relative;
@@ -299,9 +335,17 @@ a:hover { color: #000 }
   border-top:2px solid #B4BD00;
 }
 .main_nav_box ul li.nav_gadgets {
-  background: rgba(0, 0, 0, 0) url("images/002-fist.png") no-repeat scroll 27px 25px;
   border-top:2px solid #201E4B;
 }
+
+.main_nav_box ul li.lifestyle{
+  background: rgba(0, 0, 0, 0) url("/images/Icons/001-hair-brush.png") no-repeat scroll 27px 25px;
+}
+
+.main_nav_box ul li.billetsag{
+  background: rgba(0, 0, 0, 0) url("/images/Icons/007-team.png") no-repeat scroll 27px 25px;
+}
+
 .main_nav_box ul li.nav_lifestyle {
   background: rgba(0, 0, 0, 0) url("images/nav_lifestyle.png") no-repeat scroll 27px 25px;
   border-top:2px solid #DC3151;
@@ -315,9 +359,13 @@ a:hover { color: #000 }
   border-top:2px solid #5B4282;
 }
 .main_nav_box ul li.nav_lifeguide {
-  background: rgba(0, 0, 0, 0) url("images/002-fist.png") no-repeat scroll 27px 25px;
   border-top:2px solid #DC3151;
 }
+
+.main_nav_box ul li.super_ambitieux{
+  background: rgba(0, 0, 0, 0) url("/images/Icons/006-idea.png") no-repeat scroll 27px 25px;
+}
+
 .main_nav_box ul li a {
   border-right: 1px solid #efefef;
   color: #444444;
@@ -1654,13 +1702,19 @@ ul.lev2sub {
   font-size: 18px;
   margin-bottom: 0;
   margin-top: 36px;
-  text-transform: uppercase;
 }
 .single_comment {
   overflow: hidden;
-  padding: 36px 0;
-
 }
+
+.reponse{
+  padding: 5px 0;
+}
+
+.comms{
+  padding: 36px 0;
+}
+
 .single_comment_pic {
   float: left;
   margin-right: 35px;
@@ -1759,9 +1813,8 @@ ul.lev2sub {
   margin-bottom: 57px;
   margin-top: 12px;
   width: 100%;
-  font-size: 12px;
+  font-size: 14px;
   color:#777;
-  text-transform: uppercase;
 }
 .comments_form input[type="submit"] {
   background: #fff none repeat scroll 0 0;
@@ -1772,7 +1825,7 @@ ul.lev2sub {
   text-transform: uppercase;
 }
 .comments_form input[type="submit"]:hover {
-  color: #F8928D;
+  color: #B61D8D;
 }
 
 /* =============================

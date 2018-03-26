@@ -7,20 +7,25 @@
 var express = require('express');
 var router = express.Router();
 var Article = require('../models/article');
+var Commentaire = require('../models/commentaires');
 var types = ['Super Ambitieux', 'LifeStyle', 'Edito',  'Empowering', 'Love & RelationShip'];
+var csurf = require('csurf');
+var csrfProtection = csurf({cookie: true});
 
 
 const title = "SAG, Ambition & Distinction";
 
-router.get('/lecture/:article_id', function(req, res, next){
+router.get('/lecture/:article_id', csrfProtection, function(req, res, next){
     Article.findById(req.params.article_id, function(err, article){
         Article.find({_id: {$gt: req.params.article_id}}).sort({_id: 1}).limit(1).exec(function(err, next){
             Article.find({_id: {$lt: req.params.article_id}}).sort({_id: -1}).limit(1).exec(function(err, previous){
                 Article.find({}).sort({'nombre_comms': -1}).limit(3).exec(function(err, popular_post){
                     Article.find({}).sort({'date_publication': -1}).limit(3).exec(function(err, recent_post){
-                        var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
-                        var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
-                        res.render('Article/article', {title, layout: 'Index/layout.hbs', article: article, next: next, previous: previous, popular_post:popular_post, recent_post:recent_post, article1: recent_post.slice(0,1), user:req.user, EnrollSuccessNewsletter: EnrollSuccessNewsletter, EnrollFailureNewsletter: EnrollFailureNewsletter});
+                        Commentaire.find({article_id: req.params.article_id}, function (err, commentaires) {
+                            var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
+                            var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
+                            res.render('Article/article', {title, layout: 'Index/layout.hbs', article: article, next: next, previous: previous, popular_post:popular_post, recent_post:recent_post, article1: recent_post.slice(0,1), user:req.user, EnrollSuccessNewsletter: EnrollSuccessNewsletter, EnrollFailureNewsletter: EnrollFailureNewsletter, commentaires:commentaires, csrfToken: req.csrfToken()});
+                        });
                     });
                 });
             });

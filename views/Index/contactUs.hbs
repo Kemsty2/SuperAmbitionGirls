@@ -30,14 +30,14 @@
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="breadcum_c_left">
-                    <p>Contact</p>
+                    <p>Contactez Nous</p>
                 </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="breadcum_c_right">
                     <ul>
-                        <li><a href="#">Home</a> /</li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Accueil</a> /</li>
+                        <li><a href="#">Contactez Nous</a></li>
                     </ul>
                 </div>
             </div>
@@ -61,17 +61,17 @@
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <!-- ~~~=| form START |=~~~ -->
                 <div class="contact-page-form">
-                    <h2>Envoyez Nous Un Email</h2>
+                    <h2>Envoyer Nous Un Email</h2>
                     <div class="comments_form">
                         <form action="/contactUs" method="post">
                             <div class="contact_cc_name">
-                                <input type="text" name="nom" placeholder="Your name *" required/>
-                                <input type="text" name="email" placeholder="Your E-mail *" required/>
-                                <input type="text" name="tel" placeholder="Phone number" required/>
+                                <input type="text" name="nom" placeholder="Votre Nom" required/>
+                                <input type="text" name="email" placeholder="Votre Adresse Email" required/>
+                                <input type="text" name="tel" placeholder="Votre Numéro" required/>
                                 <input type="hidden" name="href" id="href">
                             </div>
-                            <textarea name="message" cols="30" rows="10" placeholder="Message" ></textarea>
-                            <input name="submit" type="submit" value="Envoyez"/>
+                            <textarea name="message" cols="30" rows="10" placeholder="Votre Message" required ></textarea>
+                            <input name="submit" type="submit" value="Envoyer"/>
                         </form>
                     </div>
                 </div>
@@ -83,13 +83,14 @@
                     <p>Super Ambition Girls est un webzine dédié à la jeune femme ambitieuse qui souhaite se réaliser et entreprendre grâce à son talent. Nos rubriques abordent des thématiques liés à la vie d’une femme, sur le plan professionnel, social et spirituel .</p>
                     <div class="visit_us_contact">
                         <ul>
-                            <li><a href="#">
-                                <div class="visit_img"><img src="/images/map_ico.png" alt="map ico" /></div><div class="visit_text">Washington Square Park, New York, NY,
-                                <br>United States</div></a></li>
-                            <li><a href="#">
-                                <div class="visit_img"><img src="/images/ph_ico.png" alt="map ico" /></div><div class="visit_text">Telephone : +33 6 89 13 29 81</div></a></li>
-                            <li><a href="tell:+100012354657">
-                                <div class="visit_img"><img src="/images/msg_ico.png" alt="map ico" /></div><div class="visit_text">E-mail : superambitiongirls@gmail.com</div></a></li>
+                            <li>
+                                <div class="visit_img"><img src="/images/map_ico.png" alt="map ico" /></div><div class="visit_text">Rue Trumeau 92500 Rueil-Mailmaison
+                                <br>France</div></li>
+                            <!--<li><a href="">
+                                <div class="visit_img"><img src="/images/ph_ico.png" alt="map ico" /></div><div class="visit_text">Telephone : +33 6 89 13 29 81</div></a>
+                            </li>-->
+                            <li>
+                                <div class="visit_img"><img src="/images/msg_ico.png" alt="map ico" /></div><div class="visit_text">E-mail : superambitiongirls@gmail.com</div></li>
                         </ul>
                     </div>
                 </div>
@@ -102,7 +103,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7z3qSfW7_1ArWHGs69jHLbLw-jOOGwuk"></script>
 
 <script>
-    var myCenter=new google.maps.LatLng(51.508742,-0.120850);
+    var myCenter=new google.maps.LatLng(48.877390,2.182434);
     var marker;
 
     function initialize()

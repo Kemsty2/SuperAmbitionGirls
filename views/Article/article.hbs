@@ -3,13 +3,13 @@
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="breadcum_c_left">
-                    <p>Super Ambitieux</p>
+                    <p>{{article.type}}</p>
                 </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="breadcum_c_right">
                     <ul>
-                        <li><a href="#">Acceuil  /</a></li>
+                        <li><a href="#">Accueil  /</a></li>
                         <li><a href="#">{{article.type}} /</a></li>
                     </ul>
                 </div>
@@ -65,58 +65,51 @@
                                     </div>
                                 </div>
                                 <div class="sp-next-prev">
-                                    {{#if previous}}
+                                    {{#each previous}}
                                         <div class="sp-prev">
-                                            <a href="/articles/lecture/{{previous._id}}"><i class="fa fa-angle-double-left"></i>Previous post</a>
+                                            <a href="/articles/lecture/{{this._id}}"><i class="fa fa-angle-double-left"></i>Previous post</a>
                                             <div class="sp-next-post">
-                                                <a href="/articles/lecture/{{previous._id}}">{{previous.titre}}</a>
+                                                <a href="/articles/lecture/{{this._id}}">{{this.titre}}</a>
                                             </div>
                                         </div>
-                                    {{/if}}
-                                    {{#if next}}
+                                    {{/each}}
+                                    {{#each next}}
                                         <div class="sp-next">
-                                            <a href="/articles/lecture/{{next._id}}">Next Posts<i class="fa fa-angle-double-right"></i></a>
+                                            <a href="/articles/lecture/{{this._id}}">Next Posts<i class="fa fa-angle-double-right"></i></a>
                                             <div class="sp-next-post">
-                                                <a href="/articles/lecture/{{next._id}}">{{next.titre}}</a>
+                                                <a href="/articles/lecture/{{this._id}}">{{this.titre}}</a>
                                             </div>
                                         </div>
-                                    {{/if}}
+                                    {{/each}}
                                 </div>
                                 <div class="sp-comments-box">
                                     <h2>Commentaires</h2>
-                                    {{#if article.commentaires}}
-                                        {{#each article.commentaires}}
+                                    {{#if commentaires}}
+                                        {{#each commentaires}}
                                             <div class="single_comment comms">
-                                                <div class="single_comment_pic">
-                                                    <img src="images/comment-pic1.png" alt="" />
-                                                </div>
                                                 <div class="single_comment_text">
                                                     <div class="sp_title">
-                                                        <a href="#"><h4>Chris Hemsworth</h4></a>
-                                                        <p>10 Min ago</p>
+                                                        <a href="#"><h4>{{this.user_FullName}}</h4></a>
+                                                        <p>11 min ago</p>
                                                     </div>
-                                                    <p>They call him Flipper Flipper faster than lightning. No one you see is smarter than he. They call him Flipper Flipper the faster than lightning. No one you see is smarter than he</p>
-                                                    <a href="javascript:myfunction('comm1');"><i class="fa fa-reply"></i>Reply</a>
+                                                    <p>{{this.contenu}}</p>
+                                                    <a href="javascript:myfunction('{{this._id}}');"><i class="fa fa-reply"></i>Reply</a>
                                                 </div>
                                             </div>
-                                            <div class="row" id="comm1">
+                                            <div class="row" id="{{this._id}}">
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                                     <div class="card">
-                                                        <div class="card-header text-center">Reponses <a href="javascript:close('comm1');"><i class="fa fa-times "></i></a></div>
+                                                        <div class="card-header text-center">Reponses <a href="javascript:close('{{this._id}}');"><i class="fa fa-times "></i></a></div>
                                                         <div class="card-body">
-                                                            {{#if user}}
-                                                                <form action="" method="post">
-                                                                    <!--<div class="row mb-3">
-                                                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                            <input type="text" class="form-control" placeholder="Votre Nom">
-                                                                        </div>
-                                                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                            <input type="text" class="form-control" placeholder="votre prenom">
-                                                                        </div>
-                                                                    </div>-->
+                                                            {{#if ../user}}
+                                                                <form action="/users/post_reply" method="post">
                                                                     <div class="row mb-3">
+                                                                        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                                                                        <input type="hidden" name="article_id" value="{{../article._id}}">
+                                                                        <input type="hidden" name="comms_id" value="{{this._id}}">
+                                                                        <input type="hidden" name="comms_tab_id" value="{{@index}}">
                                                                         <div class="col-md-12">
-                                                                            <textarea class="form-control" placeholder="Message"></textarea>
+                                                                            <textarea class="form-control" placeholder="Message" name="message" required></textarea>
                                                                         </div>
                                                                     </div>
                                                                     <div class="d-flex justify-content-center">
@@ -125,7 +118,7 @@
                                                                 </form>
                                                             {{else}}
                                                                 <div class="row">
-                                                                    <h5><a href="#user_register" data-toggle="modal">Inscrivez</a> Vous Pour Poster un commentaire</h5>
+                                                                    <p><a href="#user_register" data-toggle="modal">Inscrivez</a> Vous Pour Poster un commentaire </p>
                                                                 </div>
                                                             {{/if}}
                                                         </div>
@@ -134,15 +127,12 @@
                                             </div>
                                             {{#each this.reponses}}
                                                 <div class="single_comment reponse">
-                                                    <div class="single_comment_pic">
-                                                        <img src="images/comment-pic2.png" alt="" />
-                                                    </div>
                                                     <div class="single_comment_text">
                                                         <div class="sp_title">
-                                                            <a href="#"><h4>Chris Hemsworth</h4></a>
+                                                            <a href="#"><h4>{{this.user_FullName}}</h4></a>
                                                             <p>10 Min ago</p>
                                                         </div>
-                                                        <p>They call him Flipper Flipper faster than lightning. No one you see is smarter than he. They call him Flipper Flipper the faster than lightning. No one you see is smarter than he</p>
+                                                        <p>{{this.contenu}}</p>
                                                     </div>
                                                 </div>
                                             {{/each}}
@@ -155,11 +145,17 @@
                                     <div class="comment-form">
                                         <h2 class="mt-3">Laissez un commentaire</h2>
                                         <div class="comments_form">
-                                            <form>
-                                                <textarea cols="20" rows="10" placeholder="Message" name="message"></textarea>
+                                            <form action="/users/post_commentaire" method="post">
+                                                <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                                                <input type="hidden" name="article_id" value="{{article._id}}">
+                                                <textarea cols="20" rows="10" placeholder="Message" name="message" required></textarea>
                                                 <input type="submit" value="Postez Commentaire"/>
                                             </form>
                                         </div>
+                                    </div>
+                                {{else}}
+                                    <div class="row">
+                                        <p><a href="#user_register" data-toggle="modal">Inscrivez</a> Vous ou <a href="#user_login" data-toggle="modal">Connectez Vous</a> Pour Poster un commentaire</p>
                                     </div>
                                 {{/if}}
                             </div>
@@ -177,9 +173,10 @@
                             <div class="card-body">
                                 <form action="/users/enroll_newsletter" method="post">
                                     <input type="hidden" name="href" id="href">
+                                    <input type="hidden" name="_csrf" value="{{csrfToken}}">
                                     <p class="text-center text-white">Inscrivez-Vous à Notre NewsLetter pour recevoir nos articles</p>
                                     <hr >
-                                    <input type="text" class="form-control mb-3" placeholder="Entrer votre Email" name="email">
+                                    <input type="text" class="form-control mb-3" placeholder="Entrer votre Email" name="email" required>
                                     <div class="d-flex justify-content-center">
                                         <button type="submit" class="btn " id="newsletterbtn">Je m'inscris</button>
                                     </div>
@@ -197,7 +194,7 @@
                         </div>
                     </div>
                     <div class="follow_us_side">
-                        <h2>Follow Us</h2>
+                        <h2>Suivez Nous</h2>
                         <div class="all_single_follow">
                             <div class="single_follow_us"> <a href="#"> <i class="fab fa-facebook-f"></i><br>
                                 5638<br>
@@ -214,7 +211,7 @@
                         </div>
                     </div>
                     <div class="follow_us_side">
-                        <h2>Latest Post</h2>
+                        <h2>Articles Récents</h2>
                         <div class="all_news_right">
                             {{#if recent_post}}
                                 {{#each recent_post}}
@@ -230,7 +227,7 @@
                         </div>
                     </div>
                     <div class="follow_us_side">
-                        <h2>Popular Post</h2>
+                        <h2>Articles Populaires</h2>
                         <div class="all_news_right">
                             {{#if popular_post}}
                                 {{#each popular_post}}

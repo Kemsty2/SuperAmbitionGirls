@@ -27,7 +27,7 @@
             <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="breadcum_c_right">
                     <ul>
-                        <li><a href="#">Acceuil  /</a></li>
+                        <li><a href="#">Accueil  /</a></li>
                         <li><a href="#">{{type_article}}</a></li>
                     </ul>
                 </div>
@@ -88,9 +88,10 @@
                             <div class="card-body">
                                 <form action="/users/enroll_newsletter" method="post">
                                     <input type="hidden" name="href" id="href">
+                                    <input type="hidden" name="_csrf" value="{{csrfToken}}">
                                     <p class="text-center text-white">Inscrivez-Vous à Notre NewsLetter pour recevoir nos articles</p>
                                     <hr >
-                                    <input type="text" class="form-control mb-3" placeholder="Entrer votre Email" name="email">
+                                    <input type="text" class="form-control mb-3" placeholder="Entrer votre Email" name="email" required>
                                     <div class="d-flex justify-content-center">
                                         <button type="submit" class="btn " id="newsletterbtn">Je m'inscris</button>
                                     </div>
@@ -108,7 +109,7 @@
                         </div>
                     </div>
                     <div class="follow_us_side">
-                        <h2>Follow Us</h2>
+                        <h2>Suivez Nous</h2>
                         <div class="all_single_follow">
                             <div class="single_follow_us"> <a href="#"> <i class="fab fa-facebook-f"></i><br>
                                 5638<br>
@@ -125,7 +126,7 @@
                         </div>
                     </div>
                     <div class="follow_us_side">
-                        <h2>Latest Post</h2>
+                        <h2>Articles Récents</h2>
                         <div class="all_news_right">
                             {{#if recent_post}}
                                 {{#each recent_post}}
@@ -141,7 +142,7 @@
                         </div>
                     </div>
                     <div class="follow_us_side">
-                        <h2>Popular Post</h2>
+                        <h2>Articles Populaires</h2>
                         <div class="all_news_right">
                             {{#if popular_post}}
                                 {{#each popular_post}}

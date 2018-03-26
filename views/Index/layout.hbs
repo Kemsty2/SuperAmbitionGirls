@@ -26,7 +26,15 @@
       <link rel="stylesheet" href="/stylesheets/util.css">
 
       <!-- Favicons -->
-      <!--<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-precomposed.png">-->
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+      <link rel="manifest" href="/site.webmanifest">
+      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+      <meta name="msapplication-TileColor" content="#da532c">
+      <meta name="theme-color" content="#ffffff">
+
+
   </head>
   <body>
 
@@ -74,11 +82,11 @@
                                         <li><a id="auser_login" href="#user_login" data-toggle="modal" style="font-size:12px;">Connexion /</a></li>
                                         <li><a id="auser_register" href="#user_register" data-toggle="modal" style="font-size:12px; margin-left:-1.4rem;">Inscription</a></li>
                                     {{/if}}
-                                    <li><a class="fab fa-facebook-f" href="#"></a></li>
-                                    <li><a class="fab fa-twitter" href="#"></a></li>
+                                    <li><a target="_blank" class="fab fa-facebook-f" href="https://www.facebook.com/Superambitiongirls/"></a></li>
+                                    <li><a target="_blank" class="fab fa-twitter" href="#"></a></li>
+                                    <li><a target="_blank" class="fab fa-snapchat" href="#"></a></li>
+                                    <li><a target="_blank" class="fab fa-instagram" href="https://www.instagram.com/superambitiongirls/"></a></li>
                                     <li><a class="fab fa-google-plus" href="#"></a></li>
-                                    <li><a class="fab fa-linkedin" href="#"></a></li>
-                                    <li><a class="fab fa-behance" href="#"></a></li>
                                 </ul>
                             </div>
                             <div class="header_search_box">
@@ -118,7 +126,7 @@
                         <div class="d-flex justify-content-center">
                             <nav class="main_nav_box">
                                 <ul id="nav">
-                                    <li class="nav_news wow slideInDown"><a href="#">Acceuil</a>
+                                    <li class="nav_news home wow slideInDown"><a href="/">Accueil</a>
                                         <div class="mega_menu" style="width: 1337px;height: auto;">
                                             <div class="container">
                                                 <div class="row">
@@ -165,7 +173,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="nav_lifeguide wow slideInDown" data-wow-delay="0.3s">
+                                    <li class="nav_lifeguide wow slideInDown super_ambitieux" data-wow-delay="0.3s">
                                         <a href="/typearticle/Super Ambitieux">Super Ambitieux</a>
                                         <div class="sub_menu sub_menu_p single_mega">
                                             <ul>
@@ -173,16 +181,16 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li class="nav_gadgets wow slideInDown" data-wow-delay="0.6s"><a href="/typearticle/LifeStyle">LifeStyle</a></li>
-                                    <li class="nav_news wow slideInDown" data-wow-delay="0.9s" ><a href="/typearticle/Love & RelationShip">Love & Relations</a></li>
-                                    <li class="nav_lifeguide wow slideInDown" data-wow-delay="1.2s"><a href="/typearticle/Edito">Edito</a></li>
-                                    <li class="nav_gadgets wow slideInDown" data-wow-delay="1.5s"><a href="#">Le Billet SAG</a></li>
-                                    <li class="nav_news wow slideInDown" data-wow-delay="1.8s">
-                                        <a href="#">About Us</a>
+                                    <li class="nav_gadgets wow slideInDown lifestyle" data-wow-delay="0.6s"><a href="/typearticle/LifeStyle">LifeStyle</a></li>
+                                    <li class="nav_news wow slideInDown loverelation" data-wow-delay="0.9s" ><a href="/typearticle/Love & RelationShip">Love & Relations</a></li>
+                                    <!--<li class="nav_lifeguide wow slideInDown" data-wow-delay="1.2s"><a href="/typearticle/Edito">Edito</a></li>-->
+                                    <li class="nav_gadgets wow slideInDown billetsag" data-wow-delay="1.5s"><a href="#">Le Billet SAG</a></li>
+                                    <li class="nav_news wow slideInDown teamsag" data-wow-delay="1.8s">
+                                        <a href="#">Team SAG</a>
                                         <div class="sub_menu sub_menu_p single_mega">
                                             <ul>
-                                                <li style="cursor: pointer"> <a href="/aboutUs">Our Team</a></li>
-                                                <li style="cursor: pointer"> <a href="/contactUs">Contact Us</a></li>
+                                                <li style="cursor: pointer"> <a href="/aboutUs">A Propos de Nous</a></li>
+                                                <li style="cursor: pointer"> <a href="/contactUs">Contactez-Nous</a></li>
                                             </ul>
                                         </div>
                                     </li>
@@ -201,7 +209,7 @@
                                 <div class="mobi-menu">
                                     <div id='cssmenu'>
                                         <ul>
-                                            <li> <a href='/'><span>Acceuil</span></a>
+                                            <li> <a href='/'><span>Accueil</span></a>
                                             </li>
                                             <li class='has-sub'> <a href='/typearticle/Super Ambitieux'><span>SuperAmbitieux</span></a>
                                                 <ul class="sub-nav">
@@ -210,14 +218,14 @@
                                             </li>
                                             <li> <a href='/typearticle/LifeStyle'><span>LifeStyle</span></a> </li>
                                             <li> <a href='/typearticle/Love & RelationShip'><span>Love & Relations</span></a> </li>
-                                            <li> <a href='/typearticle/Edito'><span>Edito</span></a>
+                                            <!--<li> <a href='/typearticle/Edito'><span>Edito</span></a>-->
                                             </li>
                                             <li> <a href='#'><span>Le Billet SAG</span></a> </li>
                                             <li class="has-sub">
-                                                <a href='#'><span>About Us</span></a>
+                                                <a href='#'><span>Team SAG</span></a>
                                                 <ul class="sub-nav">
-                                                    <li><a href="/aboutUs">Our Team</a></li>
-                                                    <li><a href="/contactUs">Contact Us</a></li>
+                                                    <li><a href="/aboutUs">A Propos de Nous</a></li>
+                                                    <li><a href="/contactUs">Contactez Nous</a></li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -253,19 +261,19 @@
                                         <div class="ft_contact">
                                             <h4>Contact</h4>
                                             <address>
-                                                <p> <i class="fa fa-map-marker"></i>Washington Square Park, New York, NY, United States</p>
-                                                <p ><i class="fa fa-phone"></i>Telephone : +1 000 123 54657</p><br>
-                                                <p ><i class="fa fa-phone"></i> E-mail : Info@News.com</p>
+                                                <p> <i class="fa fa-map-marker"></i>5 Rue Trumeau 92500 Rueil-Mailmaison</p>
+                                                <!--<p ><i class="fa fa-phone"></i>Telephone : +33 6 89 13 29 81</p><br>-->
+                                                <p ><i class="fa fa-envelope"></i> E-mail : superambitiongirls@gmail.com</p>
                                             </address>
                                         </div>
                                         <div class="ft_connected">
                                             <h4>Stay connected</h4>
                                             <p>Suivez nous sur les réseaux sociaux et restez informer de chaque mise à jour</p>
                                             <ul>
-                                                <li><a class="fab fa-facebook-f" href="#"></a></li>
+                                                <li><a class="fab fa-facebook-f" href="https://www.facebook.com/Superambitiongirls/"></a></li>
                                                 <li><a class="fab fa-twitter" href="#"></a></li>
                                                 <li><a class="fab fa-google-plus" href="#"></a></li>
-                                                <li><a class="fab fa-linkedin" href="#"></a></li>
+                                                <li><a class="fab fa-instagram" href="https://www.instagram.com/superambitiongirls/"></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -276,31 +284,31 @@
                                             <h4>Navigation</h4>
                                             <div class="single_related_post">
                                                 <div class="srp_img"> <a href="blog-single-slider-post.html"> <img src="/images/logo3.jpeg" alt="" /> </a> </div>
-                                                <div class="rel_post_text"> <h5><a>Acceuil</a></h5>
+                                                <div class="rel_post_text"> <h5><a>Accueil</a></h5>
                                                     <p> #SAG, Ambition & Innovation</p>
                                                 </div>
                                             </div>
                                             <div class="single_related_post">
                                                 <div class="srp_img"> <a href="blog-single-slider-post.html"> <img src="/images/blogggg.jpg" alt="" /> </a> </div>
-                                                <div class="rel_post_text"> <h5><a>Super Ambitieux</a></h5>
+                                                <div class="rel_post_text"> <h5><a href="/typearticle/Super Ambitieux">Super Ambitieux</a></h5>
                                                     <p>Votre ambition n'a pas de limite</p>
                                                 </div>
                                             </div>
-                                            <div class="single_related_post">
+                                            <!--<div class="single_related_post">
                                                 <div class="srp_img"> <a href="blog-single-slider-post.html"> <img src="/images/blogggg.jpg" alt="" /> </a> </div>
                                                 <div class="rel_post_text"> <h5><a>Edito</a></h5>
                                                     <p>Votre ambition n'a pas de limite</p>
                                                 </div>
-                                            </div>
+                                            </div>-->
                                             <div class="single_related_post">
                                                 <div class="srp_img"> <a href="blog-single-slider-post.html"> <img src="images/blogggg.jpg" alt="" /> </a> </div>
-                                                <div class="rel_post_text"> <h5><a>Love & Relation</a></h5>
+                                                <div class="rel_post_text"> <h5><a href="/typearticle/Love & RelationShip">Love & Relation</a></h5>
                                                     <p>Votre ambition n'a pas de limite</p>
                                                 </div>
                                             </div>
                                             <div class="single_related_post">
-                                                <div class="srp_img"> <a href="blog-single-slider-post.html"> <img src="images/blogggg.jpg" alt="" /> </a> </div>
-                                                <div class="rel_post_text"> <h5><a>LifeStyle</a></h5>
+                                                <div class="srp_img"> <a href="/typearticle/LifeStyle"> <img src="images/blogggg.jpg" alt="" /> </a> </div>
+                                                <div class="rel_post_text"> <h5><a href="/typearticle/LifeStyle">LifeStyle</a></h5>
                                                     <p>Votre ambition n'a pas de limite</p>
                                                 </div>
                                             </div>
@@ -310,7 +318,8 @@
                                             <p>Inscrivez vous à notre newsletter et recevez gratuitement nos articles</p>
                                             <form action="/users/enroll_newsletter" method="post">
                                                 <input type="hidden" name="href" id="href2">
-                                                <input type="text" value="" placeholder="Adresse Email" name="email"/>
+                                                <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                                                <input type="text" value="" placeholder="Adresse Email" name="email" required/>
                                                 <input type="submit" class="fm_newsletter" value="Submit"/>
                                             </form>
                                         </div>
@@ -360,12 +369,11 @@
     <div class="modal fade" id="user_login" role="dialog" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <!--<div class="modal-header text-center">
-                    <h5 class="modal-title text-center">Connexion Client</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div class="modal-header text-center">
+                    <button type="button" class="close " data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                </div>-->
+                </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-12 ml-auto mr-auto js-tilt" data-tilt>
@@ -393,19 +401,32 @@
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-12 text-center">
-                            <h5 class="text-muted" style="font-family: Arial, Helvetica, sans-serif !important;"> Or Be Classical</h5>
+                            <h5 class="text-muted" style="font-family: Arial, Helvetica, sans-serif !important;"> Ambition & Distinction</h5>
                         </div>
                     </div>
                     <div class="row">
-                        <form method="post" action="/users/login" class="col-md-11 col-sm-11 col-xs-12 ml-auto mr-auto">
-                            <div class="form-group">
-                                <label for="user_nom">Email: </label>
-                                <input type="email" class="form-control input-1" name="email" id="user_email">
+                        <form method="post" id="user_login" action="/users/login" class="col-md-11 col-sm-11 col-xs-12 ml-auto mr-auto">
+                            <div class="form-group mb-3">
+                                <div class="row">
+                                    <div class="col-md-1 col-sm-1 col-xs-12 mb-auto mt-auto">
+                                        <span class="input-group-text"><i class="far fa-envelope"></i></span>
+                                    </div>
+                                    <div class="col-md-11 col-sm-11 col-xs-12 mr-auto ml-auto">
+                                        <input type="email" class="form-control input-1" placeholder="Email..." name="email" required>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="user_password">Password</label>
-                                <input type="password" class="form-control input-1" name="password">
+                                <div class="row">
+                                    <div class="col-md-1 col-sm-1 col-xs-12 mb-auto mt-auto">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    </div>
+                                    <div class="col-md-11 col-sm-11 col-xs-12 mr-auto ml-auto">
+                                        <input type="password" class="form-control input-1" placeholder="Password..." name="password" required>
+                                    </div>
+                                </div>
                             </div>
+                            <input type="hidden" name="_csrf" value="{{csrfToken}}">
                             <div class="d-flex justify-content-center">
                                 <button class="btn btn-primary" style="border-radius: 0px; background-color: #B61D8D; border-color:#B61D8D;"> Connexion</button>
                             </div>
@@ -418,6 +439,11 @@
     <div class="modal fade" id="user_register" role="dialog" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close floatright" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="row">
@@ -429,7 +455,7 @@
                                     <div class="description">
                                         <h5 style="color:#4f2c84">Ambition</h5>
                                         <p class="text-black">
-                                            Mettre en avant toutes les initiatives des femmes ambitieuses au travers d’interviews, reportages et articles de presse.
+                                            Cet onglet met en avant toutes les initiatives de femmes ambitieuses au travers d’interviews, reportages et articles.
                                         </p>
                                     </div>
                                 </div>
@@ -440,7 +466,7 @@
                                     <div class="description">
                                         <h5 style="color:#B61D8D">LifeStyle</h5>
                                         <p class="text-black">
-                                            Le Style de vie particulier et distingué de ces femmes. Astuces modes et beauté pour les plus élégantes.
+                                            C'est ce style de vie distingué de ces femmes. Astuces modes et beauté pour les plus élégantes.
                                         </p>
                                     </div>
                                 </div>
@@ -462,7 +488,7 @@
                                     <div class="description">
                                         <h5 style="color:#201E4B">Le Billet SAG</h5>
                                         <p class="text-black">
-                                            Donner de la voix à notre communauté. Elle sert de livre ouvert à toutes celles qui voudront traiter d’un sujet, partager une expérience, une confession...
+                                            Pour donner de la voix à notre communauté. C'est un livre ouvert à toutes celles qui voudront traiter d’un sujet, partager une expérience, une confession...
                                         </p>
                                     </div>
                                 </div>
@@ -484,7 +510,7 @@
                                             <a href="" style="color:#0056b3">
                                                 <i class="fab fa-facebook-f fa-2x"> </i>
                                             </a>
-                                            <h5 class="card-description mt-3"> or be classical </h5>
+                                            <h5 class="card-description mt-3"> Ambition & Distinction </h5>
                                         </div>
 
                                         <form class="form" method="post" action="/users/register">
@@ -494,7 +520,7 @@
                                                         <span class="input-group-text"><i class="far fa-user"></i></span>
                                                     </div>
                                                     <div class="col-md-10 col-sm-10 col-xs-12 mr-auto ml-auto">
-                                                        <input type="text" class="form-control input-1" placeholder="Noms..." name="noms">
+                                                        <input type="text" class="form-control input-1" placeholder="Noms..." name="noms" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -505,7 +531,7 @@
                                                         <span class="input-group-text"><i class="far fa-user"></i></span>
                                                     </div>
                                                     <div class="col-md-10 col-sm-10 col-xs-12 mr-auto ml-auto">
-                                                        <input type="text" class="form-control input-1" placeholder="Prenoms..." name="prenoms">
+                                                        <input type="text" class="form-control input-1" placeholder="Prenoms..." name="prenoms" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -516,7 +542,7 @@
                                                         <span class="input-group-text"><i class="far fa-user"></i></span>
                                                     </div>
                                                     <div class="col-md-10 col-sm-10 col-xs-12 mr-auto ml-auto">
-                                                        <input type="text" class="form-control input-1" placeholder="Pseudo..." name="pseudo">
+                                                        <input type="text" class="form-control input-1" placeholder="Pseudo..." name="pseudo" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -527,7 +553,7 @@
                                                         <span class="input-group-text"><i class="far fa-envelope"></i></span>
                                                     </div>
                                                     <div class="col-md-10 col-sm-10 col-xs-12 mr-auto ml-auto">
-                                                        <input type="email" class="form-control input-1" placeholder="Email..." name="email">
+                                                        <input type="email" class="form-control input-1" placeholder="Email..." name="email" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -538,11 +564,11 @@
                                                         <span class="input-group-text"><i class="fas fa-key"></i></span>
                                                     </div>
                                                     <div class="col-md-10 col-sm-10 col-xs-12 mr-auto ml-auto">
-                                                        <input type="password" class="form-control input-1" placeholder="Password..." name="password">
+                                                        <input type="password" class="form-control input-1" placeholder="Password..." name="password" required>
                                                     </div>
                                                 </div>
                                             </div>
-
+                                            <input type="hidden" name="_csrf" value="{{csrfToken}}">
                                             <div class="card-footer text-center">
                                                 <button type="submit" id="btn_register" class="btn btn-outline-primary">Inscription</button>
                                             </div>
@@ -561,8 +587,10 @@
     <script src="/javascripts/jquery-3.3.1.js"></script>
     <script src="/javascripts/popper.min.js"></script>
     <script src="/javascripts/bootstrap.min.js"></script>
-    <script src="/javascripts/main.js"></script>
     <script src="/javascripts/tilt.jquery.min.js"></script>
+    <script src="/assets/js/plugins/jquery.validate.min.js"></script>
+    <script src="/javascripts/main.js"></script>
+
     <script >
         $('.js-tilt').tilt({
             scale: 1.1

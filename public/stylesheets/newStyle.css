@@ -664,3 +664,7 @@ textarea.input1 + .shadow-input1 {
 .text-pink{
     color: #4f2c84;
 }
+
+form .error {
+    color: #ff0000;
+}

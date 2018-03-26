@@ -5,14 +5,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var commsSchema = new Schema({
-    type: String,
-    register: {
-        user_id: String
-    },
-    non_register: {
-        nom: String,
-        prenom: String
-    },
+    article_id: String,
+    user_FullName: String,
     reponses: [],
     contenu: String,
     date_publication: {type: Date, default: Date.now}

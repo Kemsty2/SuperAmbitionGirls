@@ -105,7 +105,7 @@
                                                         <div class="fs_news_left_img">
                                                             <img src="{{superambitieuxarticle.photo}}" alt="" />
                                                         </div>
-                                                        <h4><a href="/articles/lecture/{{this._id}}">{{superambitieuxarticle.titre}}</a></h4>
+                                                        <h4><a href="/articles/lecture/{{superambitieuxarticle._id}}">{{superambitieuxarticle.titre}}</a></h4>
                                                         <p> <i class="far fa-clock"></i>{{superambitieuxarticle.duree}} min ago<i class="fa fa-comment"></i>{{superambitieuxarticle.nombre_comms}}</p>
                                                     </div>
                                             </div>
@@ -117,7 +117,7 @@
                                                         <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" /> </div>
                                                         <div class="single_fs_news_right_text">
                                                             <h4><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
-                                                            <p> <a href="" class="violet-text">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago <i class="fa fa-comment"></i>{{this.nombre_comms}}</p>
+                                                            <p> <a href="/typearticle/{{this.type}}" class="violet-text">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago <i class="fa fa-comment"></i>{{this.nombre_comms}}</p>
                                                         </div>
                                                     </div>
                                                 {{/each}}
@@ -146,11 +146,11 @@
                                 <div class="row">
                                     {{#if lifestylearticle}}
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <div class="fs_news_left" onclick="document.location= '/articles/lecture/{{this._id}}';">
+                                            <div class="fs_news_left" onclick="document.location= '/articles/lecture/{{lifestylearticle2._id}}';">
                                                     <div class="single_fs_news_left_text">
                                                         <div class="fs_news_left_img"> <img src="{{lifestylearticle2.photo}}" alt="life" />
                                                         </div>
-                                                        <h4><a href="/articles/lecture/{{this._id}}">{{lifestylearticle2.titre}}</a></h4>
+                                                        <h4><a href="/articles/lecture/{{lifestylearticle2._id}}">{{lifestylearticle2.titre}}</a></h4>
                                                         <p> <i class="far fa-clock"></i> {{lifestylearticle2.duree}} min ago <i class="fa fa-comment"></i> {{this.nombre_comms}} </p>
                                                     </div>
                                             </div>
@@ -164,7 +164,7 @@
                                                         </div>
                                                         <div class="single_fs_news_right_text">
                                                             <h4><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
-                                                            <p> <a href="#" class="violet-text">{{this.type}} </a>| <i class="far fa-clock"></i> {{this.duree}} min ago <i class="fa fa-comment"></i> {{this.nombre_comms}}</p>
+                                                            <p> <a href="/typearticle/{{this.type}}" class="violet-text">{{this.type}} </a>| <i class="far fa-clock"></i> {{this.duree}} min ago <i class="fa fa-comment"></i> {{this.nombre_comms}}</p>
                                                         </div>
                                                     </div>
                                                 {{/each}}
@@ -194,12 +194,12 @@
                                 <div class="row">
                                     {{#if loverelationarticle}}
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <div class="fs_news_left" onclick="document.location= '/articles/lecture/{{this._id}}';">
+                                            <div class="fs_news_left" onclick="document.location= '/articles/lecture/{{loverelationarticle2._id}}';">
                                                 <div class="single_fs_news_left_text">
                                                     <div class="fs_news_left_img"> <img src="{{loverelationarticle2.photo}}" alt="life" />
                                                     </div>
-                                                    <h4><a href="/articles/lecture/{{this._id}}">{{loverelationarticle2.titre}}</a></h4>
-                                                    <p> <i class="far fa-clock"></i> {{loverelationarticle2.duree}} min ago <i class="fa fa-comment"></i> {{this.nombre_comms}} </p>
+                                                    <h4><a href="/articles/lecture/{{loverelationarticle2._id}}">{{loverelationarticle2.titre}}</a></h4>
+                                                    <p> <i class="far fa-clock"></i> {{loverelationarticle2.duree}} min ago <i class="fa fa-comment"></i> {{loverelationarticle2.nombre_comms}} </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -211,7 +211,7 @@
                                                         </div>
                                                         <div class="single_fs_news_right_text">
                                                             <h4><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
-                                                            <p> <a href="#" class="violet-text">{{this.type}} </a>| <i class="far fa-clock"></i> {{this.duree}} min ago <i class="fa fa-comment"></i> {{this.nombre_comms}}</p>
+                                                            <p> <a href="/typearticle/{{this.type}}" class="violet-text">{{this.type}} </a>| <i class="far fa-clock"></i> {{this.duree}} min ago <i class="fa fa-comment"></i> {{this.nombre_comms}}</p>
                                                         </div>
                                                     </div>
                                                 {{/each}}
@@ -228,7 +228,7 @@
                             </div>
                             <!--End Love & Relations -->
 
-                            <!-- Edito -->
+                            <!-- Edito
                             <div class="header_fasion gadgets_heading" style="margin-top: 3rem;">
                                 <div class="left_fashion main_nav_box">
                                     <ul>
@@ -247,7 +247,7 @@
                                                         </div>
                                                         <div class="single_fs_news_right_text">
                                                             <h4><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
-                                                            <p> <a class="violet-text" href="">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
+                                                            <p> <a class="violet-text" href="/typearticle/{{this.type}}">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
                                                         </div>
                                                     </div>
                                                 {{/each}}
@@ -284,13 +284,14 @@
                     <div class="follow_us_side">
                         <h2>NewsLetter</h2>
                         <div class="card">
-                            <div class="card-img-top text-center"><img class="img-responsive" src="/images/pro_logotype.png"></div>
+                            <div class="card-img-top text-center js-tilt" data-tilt><img class="img-responsive" src="/images/pro_logotype.png"></div>
                             <div class="card-body">
                                 <form action="/users/enroll_newsletter" method="post">
                                     <input type="hidden" name="href" id="href">
+                                    <input type="hidden" name="_csrf" value="{{csrfToken}}">
                                     <p class="text-center text-white">Inscrivez-Vous à Notre NewsLetter pour recevoir nos articles</p>
                                     <hr >
-                                    <input type="text" class="form-control mb-3" placeholder="Entrer votre Email" name="email">
+                                    <input type="text" class="form-control mb-3" placeholder="Entrer votre Email" name="email" required>
                                     <div class="d-flex justify-content-center">
                                         <button type="submit" class="btn " id="newsletterbtn">Je m'inscris</button>
                                     </div>
@@ -308,7 +309,7 @@
                         </div>
                     </div>
                     <div class="follow_us_side">
-                        <h2>Follow Us</h2>
+                        <h2>Suivez Nous</h2>
                         <div class="all_single_follow">
                             <div class="single_follow_us"> <a href="#"> <i class="fab fa-facebook-f"></i><br>
                                 5638<br>
@@ -325,7 +326,7 @@
                         </div>
                     </div>
                     <div class="follow_us_side">
-                        <h2>Latest Post</h2>
+                        <h2>Articles Récents</h2>
                         <div class="all_news_right">
                             {{#if recent_post}}
                                 {{#each recent_post}}
@@ -333,7 +334,7 @@
                                         <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" /> </div>
                                         <div class="single_fs_news_right_text">
                                             <h4><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
-                                            <p> <a class="violet-text" href="#">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
+                                            <p> <a class="violet-text" href="/typearticle/{{this.type}}">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
                                         </div>
                                     </div>
                                 {{/each}}
@@ -341,7 +342,7 @@
                         </div>
                     </div>
                     <div class="follow_us_side">
-                        <h2>Popular Post</h2>
+                        <h2>Articles Populaires</h2>
                         <div class="all_news_right">
                             {{#if popular_post}}
                                 {{#each popular_post}}
@@ -349,7 +350,7 @@
                                         <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" /> </div>
                                         <div class="single_fs_news_right_text">
                                             <h4><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
-                                            <p> <a class="violet-text" href="#">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
+                                            <p> <a class="violet-text" href="/typearticle/{{this.type}}">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
                                         </div>
                                     </div>
                                 {{/each}}

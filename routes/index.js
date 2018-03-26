@@ -7,13 +7,16 @@ var Reponse = require('../models/reponse');
 var User = require('../models/user');
 var Commentaire = require('../models/commentaires');
 var mailer = require('nodemailer');
+var csurf = require('csurf');
+var csrfProtection = csurf({ cookie: true });
+
 
 
 
 const title = "SAG, Ambition & Distinction"
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', csrfProtection, function(req, res, next) {
 
     Article.find({}).sort({'date_publication': -1}).limit(5).exec(function(err, articlesrecent){
         if(err)
@@ -28,8 +31,7 @@ router.get('/', function(req, res, next) {
                                     var LoginSuccessMessage = req.flash('LoginSuccessMessage');
                                     var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
                                     var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
-                                    console.log(superambitieuxarticle);
-                                    res.render('Index/index', { title , layout: '/Index/layout.hbs',article1:articlesrecent.slice(0,1), articlesrecent: articlesrecent.slice(0, 3), articlesrecent2:articlesrecent.slice(3,5), superambitieuxarticles: superambitieuxarticle,superambitieuxarticle: superambitieuxarticle[0], editoarticle:editoarticle,editoarticle2:editoarticle[0], lifestylearticle: lifestylearticle,lifestylearticle2: lifestylearticle[0], loverelationarticle: loverelationarticle,loverelationarticle2: loverelationarticle[0], popular_post: popular_post, recent_post: recent_post, user:req.user, LoginSuccessMessage: LoginSuccessMessage, EnrollFailureNewsletter: EnrollFailureNewsletter, EnrollSuccessNewsletter: EnrollSuccessNewsletter});
+                                    res.render('Index/index', { title , layout: '/Index/layout.hbs',article1:articlesrecent.slice(0,1), articlesrecent: articlesrecent.slice(0, 3), articlesrecent2:articlesrecent.slice(3,5), superambitieuxarticles: superambitieuxarticle,superambitieuxarticle: superambitieuxarticle[0], editoarticle:editoarticle,editoarticle2:editoarticle[0], lifestylearticle: lifestylearticle,lifestylearticle2: lifestylearticle[0], loverelationarticle: loverelationarticle,loverelationarticle2: loverelationarticle[0], popular_post: popular_post, recent_post: recent_post, user:req.user, LoginSuccessMessage: LoginSuccessMessage, EnrollFailureNewsletter: EnrollFailureNewsletter, EnrollSuccessNewsletter: EnrollSuccessNewsletter, csrfToken: req.csrfToken()});
                                 });
                             });
                         });
@@ -40,7 +42,7 @@ router.get('/', function(req, res, next) {
     });
 });
 
-router.get('/typearticle/:type_article', function(req, res, next){
+router.get('/typearticle/:type_article', csrfProtection, function(req, res, next){
     Article.find({'type': req.params.type_article}).sort({'date_publication': -1}).limit(11).exec(function(err, articles){
 
         if(articles.length > 10){
@@ -48,35 +50,35 @@ router.get('/typearticle/:type_article', function(req, res, next){
         }
         var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
         var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
-        res.render('Index/type_article', {title, layout: 'Index/layout.hbs', articlefirst: articles.slice(0,1), articles: articles.slice(1,10), last: articles[articles.length -2], type_article: req.params.type_article, plus:plus,user:req.user, EnrollSuccessNewsletter:EnrollSuccessNewsletter, EnrollFailureNewsletter:EnrollFailureNewsletter});
+        res.render('Index/type_article', {title, layout: 'Index/layout.hbs', articlefirst: articles.slice(0,1), articles: articles.slice(1,10), last: articles[articles.length -2], type_article: req.params.type_article, plus:plus,user:req.user, EnrollSuccessNewsletter:EnrollSuccessNewsletter, EnrollFailureNewsletter:EnrollFailureNewsletter, csrfToken: req.csrfToken()});
     });
 });
 
-router.get('/typearticle/:type_article/pagination/:last_id', function(req, res, next){
+router.get('/typearticle/:type_article/pagination/:last_id', csrfProtection,  function(req, res, next){
     Article.find({}).or([{'type' : req.params.type_article}, {'_id': {$lt: req.params.article_id}}]).sort({'date_publication': -1}).limit(11).exec(function(err, articles){
         if(articles.length > 10){
             var plus = true;
         }
         var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
         var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
-        res.render('Index/type_article', {title, layout: 'Index/layout.hbs', articles: articles.slice(0,10), last: articles[articles.length -2], type_article: req.params.type_article, plus:plus, user:req.user, EnrollFailureNewsletter:EnrollFailureNewsletter, EnrollSuccessNewsletter: EnrollSuccessNewsletter});
+        res.render('Index/type_article', {title, layout: 'Index/layout.hbs', articles: articles.slice(0,10), last: articles[articles.length -2], type_article: req.params.type_article, plus:plus, user:req.user, EnrollFailureNewsletter:EnrollFailureNewsletter, EnrollSuccessNewsletter: EnrollSuccessNewsletter, csrfToken: req.csrfToken()});
     });
 });
 
-router.get('/aboutUs', function(req, res, next){
+router.get('/aboutUs', csrfProtection, function(req, res, next){
     var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
     var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
-    res.render('Index/aboutUs', {title, layout: 'Index/layout.hbs', user:req.user, EnrollSuccessNewsletter: EnrollSuccessNewsletter, EnrollFailureNewsletter: EnrollFailureNewsletter});
+    res.render('Index/aboutUs', {title, layout: 'Index/layout.hbs', user:req.user, EnrollSuccessNewsletter: EnrollSuccessNewsletter, EnrollFailureNewsletter: EnrollFailureNewsletter, csrfToken: req.csrfToken()});
 });
 
-router.get('/contactUs', function(req, res, next){
+router.get('/contactUs', csrfProtection, function(req, res, next){
     var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
     var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
     var EmailSuccess = req.flash('EmailSuccess');
-    res.render('Index/contactUs', {title, layout: 'Index/layout.hbs', user:req.user, EnrollFailureNewsletter: EnrollFailureNewsletter, EnrollSuccessNewsletter: EnrollSuccessNewsletter, EmailSuccess: EmailSuccess});
+    res.render('Index/contactUs', {title, layout: 'Index/layout.hbs', user:req.user, EnrollFailureNewsletter: EnrollFailureNewsletter, EnrollSuccessNewsletter: EnrollSuccessNewsletter, EmailSuccess: EmailSuccess, csrfToken: req.csrfToken()});
 });
 
-router.post('/contactUs', function (req, res, next) {
+router.post('/contactUs', csrfProtection, function (req, res, next) {
     var smtpTransport = mailer.createTransport({
         service: "Gmail",
         auth: {

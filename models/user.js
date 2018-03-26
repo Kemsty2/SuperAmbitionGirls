@@ -47,7 +47,7 @@ userSchema.methods.validPassword = function(password){
 };
 
 userSchema.virtual('FullName').get(function () {
-    return this.noms + ' ' + this.prenoms;
+    return this.local.noms + ' ' + this.local.prenoms;
 });
 
 module.exports = mongoose.model('User', userSchema);

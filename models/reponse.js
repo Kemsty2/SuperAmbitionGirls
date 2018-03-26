@@ -5,14 +5,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var reponseSchema = new Schema({
-    type: String,
-    register: {
-        user_id: String
-    },
-    non_register: {
-        nom: String,
-        prenom: String
-    },
+    user_FullName: String,
     contenu: String,
     date_publication: {type: Date, default: Date.now}
 });
