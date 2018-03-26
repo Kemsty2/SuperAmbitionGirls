@@ -44,24 +44,31 @@ router.get('/', csrfProtection, function(req, res, next) {
 
 router.get('/typearticle/:type_article', csrfProtection, function(req, res, next){
     Article.find({'type': req.params.type_article}).sort({'date_publication': -1}).limit(11).exec(function(err, articles){
-
-        if(articles.length > 10){
-            var plus = true;
-        }
-        var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
-        var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
-        res.render('Index/type_article', {title, layout: 'Index/layout.hbs', articlefirst: articles.slice(0,1), articles: articles.slice(1,10), last: articles[articles.length -2], type_article: req.params.type_article, plus:plus,user:req.user, EnrollSuccessNewsletter:EnrollSuccessNewsletter, EnrollFailureNewsletter:EnrollFailureNewsletter, csrfToken: req.csrfToken()});
+        Article.find({}).sort({'nombre_comms': -1}).limit(3).exec(function(err, popular_post){
+            Article.find({}).sort({'date_publication': -1}).limit(3).exec(function(err, recent_post){
+                if(articles.length > 10){
+                    var plus = true;
+                }
+                var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
+                var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
+                res.render('Index/type_article', {title, layout: 'Index/layout.hbs', articlefirst: articles.slice(0,1), articles: articles.slice(1,10), last: articles[articles.length -2], type_article: req.params.type_article, plus:plus,user:req.user, EnrollSuccessNewsletter:EnrollSuccessNewsletter, EnrollFailureNewsletter:EnrollFailureNewsletter, csrfToken: req.csrfToken(), popular_post:popular_post, recent_post:recent_post});
+            });
+        });
     });
 });
 
 router.get('/typearticle/:type_article/pagination/:last_id', csrfProtection,  function(req, res, next){
     Article.find({}).or([{'type' : req.params.type_article}, {'_id': {$lt: req.params.article_id}}]).sort({'date_publication': -1}).limit(11).exec(function(err, articles){
-        if(articles.length > 10){
-            var plus = true;
-        }
-        var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
-        var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
-        res.render('Index/type_article', {title, layout: 'Index/layout.hbs', articles: articles.slice(0,10), last: articles[articles.length -2], type_article: req.params.type_article, plus:plus, user:req.user, EnrollFailureNewsletter:EnrollFailureNewsletter, EnrollSuccessNewsletter: EnrollSuccessNewsletter, csrfToken: req.csrfToken()});
+        Article.find({}).sort({'nombre_comms': -1}).limit(3).exec(function(err, popular_post){
+            Article.find({}).sort({'date_publication': -1}).limit(3).exec(function(err, recent_post){
+                if(articles.length > 10){
+                    var plus = true;
+                }
+                var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
+                var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
+                res.render('Index/type_article', {title, layout: 'Index/layout.hbs', articles: articles.slice(0,10), last: articles[articles.length -2], type_article: req.params.type_article, plus:plus, user:req.user, EnrollFailureNewsletter:EnrollFailureNewsletter, EnrollSuccessNewsletter: EnrollSuccessNewsletter, csrfToken: req.csrfToken(), recent_post: recent_post, popular_post: popular_post});
+            });
+        });
     });
 });
 

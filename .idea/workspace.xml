@@ -5,27 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7dcfdc3-9886-4932-b658-a8a266c77857" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/favicon.ico" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/models/commentaires.js" afterPath="$PROJECT_DIR$/models/commentaires.js" />
-      <change beforePath="$PROJECT_DIR$/models/reponse.js" afterPath="$PROJECT_DIR$/models/reponse.js" />
-      <change beforePath="$PROJECT_DIR$/models/user.js" afterPath="$PROJECT_DIR$/models/user.js" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/plugins/jquery.validate.min.js" afterPath="$PROJECT_DIR$/public/assets/js/plugins/jquery.validate.min.js" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/main.js" afterPath="$PROJECT_DIR$/public/javascripts/main.js" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/newStyle.css" afterPath="$PROJECT_DIR$/public/stylesheets/newStyle.css" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
-      <change beforePath="$PROJECT_DIR$/routes/articles.js" afterPath="$PROJECT_DIR$/routes/articles.js" />
       <change beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
-      <change beforePath="$PROJECT_DIR$/routes/users.js" afterPath="$PROJECT_DIR$/routes/users.js" />
-      <change beforePath="$PROJECT_DIR$/views/Article/article.hbs" afterPath="$PROJECT_DIR$/views/Article/article.hbs" />
-      <change beforePath="$PROJECT_DIR$/views/Index/aboutUs.hbs" afterPath="$PROJECT_DIR$/views/Index/aboutUs.hbs" />
-      <change beforePath="$PROJECT_DIR$/views/Index/contactUs.hbs" afterPath="$PROJECT_DIR$/views/Index/contactUs.hbs" />
-      <change beforePath="$PROJECT_DIR$/views/Index/index.hbs" afterPath="$PROJECT_DIR$/views/Index/index.hbs" />
-      <change beforePath="$PROJECT_DIR$/views/Index/layout.hbs" afterPath="$PROJECT_DIR$/views/Index/layout.hbs" />
-      <change beforePath="$PROJECT_DIR$/views/Index/login.hbs" afterPath="$PROJECT_DIR$/views/Index/login.hbs" />
-      <change beforePath="$PROJECT_DIR$/views/Index/type_article.hbs" afterPath="$PROJECT_DIR$/views/Index/type_article.hbs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,7 +31,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.hbs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="layout.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/Index/layout.hbs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1159">
@@ -59,6 +41,21 @@
                 <element signature="n#li#1;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="386">
+              <caret line="53" column="428" lean-forward="false" selection-start-line="53" selection-start-column="428" selection-end-line="53" selection-end-column="428" />
+              <folding>
+                <element signature="e#5224#5584#0" expanded="false" />
+                <element signature="e#6165#7088#0" expanded="false" />
+                <element signature="n#!!block;n#isLoggedIn#0" expanded="false" />
+                <element signature="n#!!block;n#notLoggedIn#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -103,16 +100,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="176">
               <caret line="61" column="31" lean-forward="false" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="newStyle.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/stylesheets/newStyle.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="669" column="1" lean-forward="false" selection-start-line="669" selection-start-column="1" selection-end-line="669" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -174,13 +161,13 @@
       <find>envoyez</find>
       <find>Acceuil</find>
       <find>nav_lifegui</find>
-      <find>form</find>
       <find>nav_gad</find>
       <find>lifestyle</find>
       <find>home</find>
       <find>super</find>
       <find>nav_gadgets</find>
       <find>nav_news</find>
+      <find>form</find>
     </findStrings>
     <replaceStrings>
       <replace>/articles/lecture</replace>
@@ -218,7 +205,6 @@
         <option value="$PROJECT_DIR$/views/Index/aboutUs.hbs" />
         <option value="$PROJECT_DIR$/routes/users.js" />
         <option value="$PROJECT_DIR$/routes/articles.js" />
-        <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/views/Index/login.hbs" />
         <option value="$PROJECT_DIR$/public/stylesheets/newStyle.css" />
         <option value="$PROJECT_DIR$/public/javascripts/main.js" />
@@ -228,6 +214,8 @@
         <option value="$PROJECT_DIR$/views/Index/contactUs.hbs" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/views/Index/layout.hbs" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
       </list>
     </option>
   </component>
@@ -288,60 +276,7 @@
             <path>
               <item name="SuperAmbitionGirls" type="b2602c69:ProjectViewProjectNode" />
               <item name="SuperAmbitionGirls" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SuperAmbitionGirls" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SuperAmbitionGirls" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SuperAmbitionGirls" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SuperAmbitionGirls" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="Icons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SuperAmbitionGirls" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SuperAmbitionGirls" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SuperAmbitionGirls" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SuperAmbitionGirls" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SuperAmbitionGirls" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SuperAmbitionGirls" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SuperAmbitionGirls" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SuperAmbitionGirls" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SuperAmbitionGirls" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SuperAmbitionGirls" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Article" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SuperAmbitionGirls" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SuperAmbitionGirls" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Index" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SuperAmbitionGirls" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SuperAmbitionGirls" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="User" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -420,12 +355,12 @@
       <workItem from="1521810902161" duration="3492000" />
       <workItem from="1521835826181" duration="5509000" />
       <workItem from="1521974772314" duration="12870000" />
-      <workItem from="1522049903371" duration="10079000" />
+      <workItem from="1522049903371" duration="10911000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132190000" />
+    <option name="totallyTimeSpent" value="133022000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -440,7 +375,7 @@
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29166666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29166666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -492,18 +427,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/Index/error.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/popper.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -665,22 +593,6 @@
         <state relative-caret-position="-72">
           <caret line="12" column="47" lean-forward="false" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-          <folding>
-            <element signature="e#581#2836#0" expanded="false" />
-            <element signature="e#2921#3653#0" expanded="false" />
-            <element signature="e#3759#4506#0" expanded="false" />
-            <element signature="e#4573#4933#0" expanded="false" />
-            <element signature="e#5514#6437#0" expanded="false" />
-            <element signature="n#!!block;n#isLoggedIn#0" expanded="false" />
-            <element signature="n#!!block;n#notLoggedIn#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -870,6 +782,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="12" lean-forward="false" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/Index/layout.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1159">
@@ -879,6 +799,19 @@
             <element signature="n#li#1;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="53" column="428" lean-forward="false" selection-start-line="53" selection-start-column="428" selection-end-line="53" selection-end-column="428" />
+          <folding>
+            <element signature="e#5224#5584#0" expanded="false" />
+            <element signature="e#6165#7088#0" expanded="false" />
+            <element signature="n#!!block;n#isLoggedIn#0" expanded="false" />
+            <element signature="n#!!block;n#notLoggedIn#0" expanded="false" />
           </folding>
         </state>
       </provider>
