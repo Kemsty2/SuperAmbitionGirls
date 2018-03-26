@@ -9,6 +9,7 @@ var commsSchema = new Schema({
     user_FullName: String,
     reponses: [],
     contenu: String,
+    user_email: String,
     date_publication: {type: Date, default: Date.now}
 });
 

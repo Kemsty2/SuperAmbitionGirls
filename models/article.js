@@ -24,5 +24,9 @@ articleSchema.virtual('duree').get(function(){
     return Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) + "h" + Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 });
 
+articleSchema.virtual('date_pub').get(function () {
+    return this.date_publication.toDateString();
+});
+
 
 module.exports = mongoose.model('Articles', articleSchema);

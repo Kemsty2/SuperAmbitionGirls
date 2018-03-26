@@ -846,10 +846,17 @@ position:relative;
   border: solid 0.5px #4f2c84;
   color: #999999;
   font-size: 15px;
-  padding: 13px 20px;
+  padding: 10px 15px;
   width: 71%;
-  padding-bottom:14px;
-  border-radius: 40px;
+  padding-bottom:12px;
+}
+
+.ftm_newsletter input[type="submit"]{
+  border-radius: 0px;
+  padding: 10px 15px;
+  padding-bottom:12px;
+  background-color: #B61D8D;
+  border-color: #B61D8D;
 }
 
 .ftm_newsletter input[type="text"]:focus{
@@ -1576,12 +1583,12 @@ ul.lev2sub {
   height: auto;
   width: auto;
   overflow: auto;
-  text-wrap: normal;
+  text-wrap: none;
   line-height: 24px;
   margin-bottom: 25px;
-  margin-left: 20px;
   margin-top: 25px;
   padding-left: 20px;
+  padding-right: 20px;
 }
 .post_inner > p {
   color: #222222;
@@ -1670,7 +1677,7 @@ ul.lev2sub {
   padding: 38px 0;
 }
 .sp-next {
-  float: left;
+  float: right;
   margin-right: 2%;
   text-align: right;
   width: 46%;
@@ -2220,12 +2227,6 @@ width: 197px;
 }
 
 
-/*@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
-    .ftm_newsletter input[type="text"] {
-		border:none;
-		float:left;
-}
-}*/
 
 
 /* END of Style */

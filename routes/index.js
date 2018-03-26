@@ -24,7 +24,7 @@ router.get('/', csrfProtection, function(req, res, next) {
         Article.find({}).or([{'type': 'Super Ambitieux'}, {'type': 'Empowering'}]).sort({'date_publication': 1}).limit(3).exec(function(err, superambitieuxarticle){
             Article.find({'type': 'Edito'}).sort({'date_publication': -1}).limit(3).exec(function(err, editoarticle){
                 Article.find({'type': 'LifeStyle'}).sort({'date_publication': -1}).limit(3).exec(function(err, lifestylearticle){
-                    Article.find({'type': 'Love & RelationShip'}).sort({'date_publication': -1}).limit(3).exec(function(err, loverelationarticle){
+                    Article.find({'type': 'Love & Relation'}).sort({'date_publication': -1}).limit(3).exec(function(err, loverelationarticle){
                         Publicite.find(function(err, pubs){
                             Article.find({}).sort({'nombre_comms': -1}).limit(3).exec(function(err, popular_post){
                                 Article.find({}).sort({'date_publication': -1}).limit(3).exec(function(err, recent_post){

@@ -40,8 +40,8 @@
                                 <div class="post_meta">
                                     <ul>
                                         <li><a href="#"><i class="fa fa-user"></i>By {{article.auteur_nom}}</a></li>
-                                        <li><a href="#"><i class="far fa-clock"></i>{{article.duree}} min</a></li>
-                                        <li><a href="#"><i class="fa fa-comment-o"></i>{{article.nombre_comms}}</a></li>
+                                        <li><a href="#"><i class="far fa-clock"></i>{{article.date_pub}} min</a></li>
+                                        <li><a href="#"><i class="fa fa-comment"></i>{{article.nombre_comms}}</a></li>
                                     </ul>
                                 </div>
                                 <div class="post_text" id="contenu">
@@ -67,7 +67,7 @@
                                 <div class="sp-next-prev">
                                     {{#each previous}}
                                         <div class="sp-prev">
-                                            <a href="/articles/lecture/{{this._id}}"><i class="fa fa-angle-double-left"></i>Previous post</a>
+                                            <a href="/articles/lecture/{{this._id}}"><i class="fa fa-angle-double-left"></i>Article Précedent</a>
                                             <div class="sp-next-post">
                                                 <a href="/articles/lecture/{{this._id}}">{{this.titre}}</a>
                                             </div>
@@ -75,7 +75,7 @@
                                     {{/each}}
                                     {{#each next}}
                                         <div class="sp-next">
-                                            <a href="/articles/lecture/{{this._id}}">Next Posts<i class="fa fa-angle-double-right"></i></a>
+                                            <a href="/articles/lecture/{{this._id}}">Article Suivant<i class="fa fa-angle-double-right"></i></a>
                                             <div class="sp-next-post">
                                                 <a href="/articles/lecture/{{this._id}}">{{this.titre}}</a>
                                             </div>
@@ -90,7 +90,7 @@
                                                 <div class="single_comment_text">
                                                     <div class="sp_title">
                                                         <a href="#"><h4>{{this.user_FullName}}</h4></a>
-                                                        <p>11 min ago</p>
+                                                        <p>11 </p>
                                                     </div>
                                                     <p>{{this.contenu}}</p>
                                                     <a href="javascript:myfunction('{{this._id}}');"><i class="fa fa-reply"></i>Reply</a>
@@ -130,7 +130,7 @@
                                                     <div class="single_comment_text">
                                                         <div class="sp_title">
                                                             <a href="#"><h4>{{this.user_FullName}}</h4></a>
-                                                            <p>10 Min ago</p>
+                                                            <p>10 </p>
                                                         </div>
                                                         <p>{{this.contenu}}</p>
                                                     </div>
@@ -219,7 +219,7 @@
                                         <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" /> </div>
                                         <div class="single_fs_news_right_text">
                                             <h4><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
-                                            <p> <a class="violet-text" href="#">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
+                                            <p> <a class="violet-text" href="#">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.date_pub}} </p>
                                         </div>
                                     </div>
                                 {{/each}}
@@ -235,7 +235,7 @@
                                         <div class="single_fs_news_img"> <img src="{{this.photo}}" alt="Single News" /> </div>
                                         <div class="single_fs_news_right_text">
                                             <h4><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
-                                            <p> <a class="violet-text" href="#">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.duree}} min ago </p>
+                                            <p> <a class="violet-text" href="#">{{this.type}}</a>| <i class="far fa-clock"></i> {{this.date_pub}}  </p>
                                         </div>
                                     </div>
                                 {{/each}}

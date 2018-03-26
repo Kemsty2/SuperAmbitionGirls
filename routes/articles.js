@@ -8,7 +8,7 @@ var express = require('express');
 var router = express.Router();
 var Article = require('../models/article');
 var Commentaire = require('../models/commentaires');
-var types = ['Super Ambitieux', 'LifeStyle', 'Edito',  'Empowering', 'Love & RelationShip'];
+var types = ['Super Ambitieux', 'LifeStyle', 'Edito',  'Empowering', 'Love & Relation'];
 var csurf = require('csurf');
 var csrfProtection = csurf({cookie: true});
 
