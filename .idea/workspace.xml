@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7dcfdc3-9886-4932-b658-a8a266c77857" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/views/Article/article.hbs" afterPath="$PROJECT_DIR$/views/Article/article.hbs" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/config/auth.js" afterPath="$PROJECT_DIR$/config/auth.js" />
+      <change beforePath="$PROJECT_DIR$/config/passport.js" afterPath="$PROJECT_DIR$/config/passport.js" />
+      <change beforePath="$PROJECT_DIR$/routes/users.js" afterPath="$PROJECT_DIR$/routes/users.js" />
+      <change beforePath="$PROJECT_DIR$/views/Index/layout.hbs" afterPath="$PROJECT_DIR$/views/Index/layout.hbs" />
+      <change beforePath="$PROJECT_DIR$/views/Index/type_article.hbs" afterPath="$PROJECT_DIR$/views/Index/type_article.hbs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,49 +24,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="article.hbs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/Article/article.hbs">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="42" column="104" lean-forward="false" selection-start-line="42" selection-start-column="104" selection-end-line="42" selection-end-column="104" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.hbs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/Index/layout.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="318" column="91" lean-forward="false" selection-start-line="318" selection-start-column="91" selection-end-line="318" selection-end-column="91" />
+            <state relative-caret-position="432">
+              <caret line="18" column="57" lean-forward="false" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
               <folding>
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="newStyle.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/stylesheets/newStyle.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="77" column="5" lean-forward="false" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.hbs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/Index/index.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="69" column="39" lean-forward="false" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
-              <folding>
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+                <element signature="e#581#2832#0" expanded="false" />
+                <element signature="e#5220#5580#0" expanded="false" />
+                <element signature="e#5649#6089#0" expanded="false" />
+                <element signature="e#6161#7084#0" expanded="false" />
+                <element signature="n#!!block;n#isLoggedIn#0" expanded="false" />
+                <element signature="n#!!block;n#notLoggedIn#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -70,18 +44,8 @@
       <file leaf-file-name="aboutUs.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/Index/aboutUs.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
+            <state relative-caret-position="1608">
               <caret line="67" column="103" lean-forward="false" selection-start-line="67" selection-start-column="103" selection-end-line="67" selection-end-column="103" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contactUs.hbs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/Index/contactUs.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="104" column="7" lean-forward="false" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -90,29 +54,81 @@
       <file leaf-file-name="type_article.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/Index/type_article.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3648">
-              <caret line="152" column="144" lean-forward="false" selection-start-line="152" selection-start-column="144" selection-end-line="152" selection-end-column="144" />
+            <state relative-caret-position="336">
+              <caret line="152" column="143" lean-forward="false" selection-start-line="152" selection-start-column="143" selection-end-line="152" selection-end-column="143" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <file leaf-file-name="auth.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/auth.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-121">
-              <caret line="1679" column="15" lean-forward="false" selection-start-line="1679" selection-start-column="15" selection-end-line="1679" selection-end-column="15" />
+            <state relative-caret-position="216">
+              <caret line="9" column="49" lean-forward="false" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="commentaires.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/commentaires.js">
+      <file leaf-file-name="passport.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/passport.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+            <state relative-caret-position="1248">
+              <caret line="118" column="17" lean-forward="false" selection-start-line="118" selection-start-column="17" selection-end-line="118" selection-end-column="17" />
+              <folding>
+                <element signature="e#637#727#0" expanded="false" />
+                <element signature="e#827#1263#0" expanded="false" />
+                <element signature="e#1315#1405#0" expanded="false" />
+                <element signature="e#1505#2343#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/users.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="115" column="4" lean-forward="false" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="4" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.hbs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/Index/layout.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="505" column="67" lean-forward="false" selection-start-line="505" selection-start-column="67" selection-end-line="505" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="871">
+              <caret line="50" column="3" lean-forward="true" selection-start-line="50" selection-start-column="3" selection-end-line="50" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="articles.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/articles.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="10" column="85" lean-forward="true" selection-start-line="10" selection-start-column="85" selection-end-line="10" selection-end-column="85" />
+              <folding>
+                <element signature="e#1980#2064#0" expanded="false" />
+                <element signature="e#2137#2295#0" expanded="false" />
+                <element signature="e#2371#3836#0" expanded="false" />
+                <element signature="n#!!block;n#isAuthenticated#0" expanded="false" />
+                <element signature="n#!!block;n#notAuthenticated#0" expanded="false" />
+                <element signature="n#!!block;n#isEmpty#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,8 +136,8 @@
       <file leaf-file-name="article.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/article.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="28" column="3" lean-forward="false" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+            <state relative-caret-position="624">
+              <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -188,7 +204,6 @@
         <option value="$USER_HOME$/Téléchargements/ContactFrom_v1/index.html" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/bin/www" />
-        <option value="$PROJECT_DIR$/config/passport.js" />
         <option value="$PROJECT_DIR$/views/Admin/Newsletter/list_newsletter.hbs" />
         <option value="$PROJECT_DIR$/routes/admin.js" />
         <option value="$PROJECT_DIR$/app.js" />
@@ -196,7 +211,6 @@
         <option value="$PROJECT_DIR$/views/User/login.hbs" />
         <option value="$PROJECT_DIR$/models/user.js" />
         <option value="$PROJECT_DIR$/models/reponse.js" />
-        <option value="$PROJECT_DIR$/routes/users.js" />
         <option value="$PROJECT_DIR$/views/Index/login.hbs" />
         <option value="$PROJECT_DIR$/public/stylesheets/newStyle.css" />
         <option value="$PROJECT_DIR$/public/javascripts/main.js" />
@@ -205,14 +219,17 @@
         <option value="$PROJECT_DIR$/routes/articles.js" />
         <option value="$PROJECT_DIR$/views/Admin/Article/new_article.hbs" />
         <option value="$PROJECT_DIR$/routes/index.js" />
-        <option value="$PROJECT_DIR$/views/Index/layout.hbs" />
         <option value="$PROJECT_DIR$/views/Index/aboutUs.hbs" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/models/commentaires.js" />
         <option value="$PROJECT_DIR$/models/article.js" />
-        <option value="$PROJECT_DIR$/views/Index/type_article.hbs" />
         <option value="$PROJECT_DIR$/views/Index/index.hbs" />
         <option value="$PROJECT_DIR$/views/Article/article.hbs" />
+        <option value="$PROJECT_DIR$/views/Index/type_article.hbs" />
+        <option value="$PROJECT_DIR$/config/auth.js" />
+        <option value="$PROJECT_DIR$/config/passport.js" />
+        <option value="$PROJECT_DIR$/routes/users.js" />
+        <option value="$PROJECT_DIR$/views/Index/layout.hbs" />
       </list>
     </option>
   </component>
@@ -233,7 +250,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="687" />
     <option name="width" value="679" />
     <option name="height" value="768" />
@@ -253,7 +270,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -261,10 +277,37 @@
               <item name="SuperAmbitionGirls" type="b2602c69:ProjectViewProjectNode" />
               <item name="SuperAmbitionGirls" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="SuperAmbitionGirls" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SuperAmbitionGirls" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SuperAmbitionGirls" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SuperAmbitionGirls" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SuperAmbitionGirls" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SuperAmbitionGirls" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SuperAmbitionGirls" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SuperAmbitionGirls" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SuperAmbitionGirls" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SuperAmbitionGirls" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="Index" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -338,12 +381,13 @@
       <workItem from="1521835826181" duration="5509000" />
       <workItem from="1521974772314" duration="12870000" />
       <workItem from="1522049903371" duration="11053000" />
-      <workItem from="1522086390976" duration="9528000" />
+      <workItem from="1522086390976" duration="11264000" />
+      <workItem from="1522136147158" duration="2271000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142692000" />
+    <option name="totallyTimeSpent" value="146699000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -355,10 +399,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="768" extended-state="7" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3422619" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -415,13 +459,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/Admin/login.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="43" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/util.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -500,13 +537,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="50" column="3" lean-forward="true" selection-start-line="50" selection-start-column="3" selection-end-line="50" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/reponse.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -514,24 +544,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/passport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1704">
-          <caret line="71" column="2" lean-forward="false" selection-start-line="71" selection-start-column="2" selection-end-line="71" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-72">
           <caret line="12" column="47" lean-forward="false" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="84" column="55" lean-forward="false" selection-start-line="84" selection-start-column="55" selection-end-line="84" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -553,7 +569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
           <caret line="33" column="18" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -561,7 +576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2016">
           <caret line="84" column="30" lean-forward="false" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -636,22 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/articles.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="85" lean-forward="true" selection-start-line="10" selection-start-column="85" selection-end-line="10" selection-end-column="85" />
-          <folding>
-            <element signature="e#1980#2064#0" expanded="false" />
-            <element signature="e#2137#2295#0" expanded="false" />
-            <element signature="e#2371#3836#0" expanded="false" />
-            <element signature="n#!!block;n#isAuthenticated#0" expanded="false" />
-            <element signature="n#!!block;n#notAuthenticated#0" expanded="false" />
-            <element signature="n#!!block;n#isEmpty#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -659,22 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-216">
           <caret line="27" column="77" lean-forward="false" selection-start-line="27" selection-start-column="77" selection-end-line="27" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-91">
-          <caret line="26" column="58" lean-forward="false" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
-          <folding>
-            <element signature="e#4079#5153#0" expanded="false" />
-            <element signature="e#5220#5580#0" expanded="false" />
-            <element signature="e#5649#6089#0" expanded="false" />
-            <element signature="e#6161#7084#0" expanded="false" />
-            <element signature="n#!!block;n#isLoggedIn#0" expanded="false" />
-            <element signature="n#!!block;n#notLoggedIn#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -682,24 +664,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="77" column="5" lean-forward="false" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/Index/layout.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="318" column="91" lean-forward="false" selection-start-line="318" selection-start-column="91" selection-end-line="318" selection-end-column="91" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/Index/contactUs.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
+        <state relative-caret-position="2496">
           <caret line="104" column="7" lean-forward="false" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
           <folding />
         </state>
@@ -720,17 +690,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/Index/aboutUs.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="67" column="103" lean-forward="false" selection-start-line="67" selection-start-column="103" selection-end-line="67" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-121">
+        <state relative-caret-position="40296">
           <caret line="1679" column="15" lean-forward="false" selection-start-line="1679" selection-start-column="15" selection-end-line="1679" selection-end-column="15" />
           <folding />
         </state>
@@ -744,39 +706,117 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/Index/index.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1656">
+          <caret line="69" column="39" lean-forward="false" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/Article/article.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="42" column="104" lean-forward="false" selection-start-line="42" selection-start-column="104" selection-end-line="42" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="18" column="57" lean-forward="false" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
+          <folding>
+            <element signature="e#581#2832#0" expanded="false" />
+            <element signature="e#5220#5580#0" expanded="false" />
+            <element signature="e#5649#6089#0" expanded="false" />
+            <element signature="e#6161#7084#0" expanded="false" />
+            <element signature="n#!!block;n#isLoggedIn#0" expanded="false" />
+            <element signature="n#!!block;n#notLoggedIn#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/articles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="85" lean-forward="true" selection-start-line="10" selection-start-column="85" selection-end-line="10" selection-end-column="85" />
+          <folding>
+            <element signature="e#1980#2064#0" expanded="false" />
+            <element signature="e#2137#2295#0" expanded="false" />
+            <element signature="e#2371#3836#0" expanded="false" />
+            <element signature="n#!!block;n#isAuthenticated#0" expanded="false" />
+            <element signature="n#!!block;n#notAuthenticated#0" expanded="false" />
+            <element signature="n#!!block;n#isEmpty#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/models/article.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="28" column="3" lean-forward="false" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+        <state relative-caret-position="624">
+          <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/Index/aboutUs.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1608">
+          <caret line="67" column="103" lean-forward="false" selection-start-line="67" selection-start-column="103" selection-end-line="67" selection-end-column="103" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/Index/type_article.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3648">
-          <caret line="152" column="144" lean-forward="false" selection-start-line="152" selection-start-column="144" selection-end-line="152" selection-end-column="144" />
+        <state relative-caret-position="336">
+          <caret line="152" column="143" lean-forward="false" selection-start-line="152" selection-start-column="143" selection-end-line="152" selection-end-column="143" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/Index/index.hbs">
+    <entry file="file://$PROJECT_DIR$/config/auth.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="69" column="39" lean-forward="false" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
+        <state relative-caret-position="216">
+          <caret line="9" column="49" lean-forward="false" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="871">
+          <caret line="50" column="3" lean-forward="true" selection-start-line="50" selection-start-column="3" selection-end-line="50" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/passport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1248">
+          <caret line="118" column="17" lean-forward="false" selection-start-line="118" selection-start-column="17" selection-end-line="118" selection-end-column="17" />
           <folding>
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="e#637#727#0" expanded="false" />
+            <element signature="e#827#1263#0" expanded="false" />
+            <element signature="e#1315#1405#0" expanded="false" />
+            <element signature="e#1505#2343#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/Article/article.hbs">
+    <entry file="file://$PROJECT_DIR$/routes/users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="42" column="104" lean-forward="false" selection-start-line="42" selection-start-column="104" selection-end-line="42" selection-end-column="104" />
+        <state relative-caret-position="425">
+          <caret line="115" column="4" lean-forward="false" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/Index/layout.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="505" column="67" lean-forward="false" selection-start-line="505" selection-start-column="67" selection-end-line="505" selection-end-column="67" />
           <folding />
         </state>
       </provider>

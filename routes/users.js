@@ -106,6 +106,15 @@ router.get('/logout', function(req, res, next){
     res.redirect('/');
 });
 
+router.get('/auth/facebook', passport.authenticate('facebook', {
+    scope : ['public_profile', 'email']
+}));
+
+router.get('/auth/facebook/callback', passport.authenticate('facebook', {
+    successRedirect: '/',
+    failureRedirect: '/',
+}));
+
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
         return next();

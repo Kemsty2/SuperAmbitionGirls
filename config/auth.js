@@ -3,9 +3,11 @@
  */
 module.exports = {
     'facebookAuth': {
-        'clientID' : '1697066057017901',
-        'clientSecret':'3bb03b51d9a92f26a3646f1c89900678',
-        'callbackURL': 'http://localhost:3000/users/auth/facebook/callback'
+        'clientID' : '1616907168428310',
+        'clientSecret':'72d4a1de22884406590e7ca47adc42ba',
+        'callbackURL': 'www.superambitiongirls.com/users/auth/facebook/callback',
+        'profileURL'    : 'https://graph.facebook.com/v2.12/me?fields=first_name,last_name,email',
+        'profileFields' : ['id', 'email', 'name']
     },
 
     'twitterAuth' : {
