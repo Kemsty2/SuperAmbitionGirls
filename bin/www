@@ -6,7 +6,7 @@
 
 var app = require('../app');
 var debug = require('debug')('sag:server');
-var http = require('http');
+var http = require('https');
 
 /**
  * Get port from environment and store in Express.
@@ -15,11 +15,17 @@ var http = require('http');
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
+var options = {
+      key: fs.readFileSync('/etc/letsencrypt/live/www.superambitiongirls.com/privkey.pem'),
+      cert: fs.readFileSync('/etc/letsencrypt/live/www.superambitiongirls.com/cert.pem'),
+      ca: fs.readFileSync('/etc/letsencrypt/live/www.superambitiongirls.com/chain.pem')
+};
+
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = http.createServer(options, app);
 
 /**
  * Listen on provided port, on all network interfaces.
