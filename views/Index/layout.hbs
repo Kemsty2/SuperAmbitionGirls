@@ -24,6 +24,8 @@
       <link rel="stylesheet" href="/stylesheets/newStyle.css">
       <link rel="stylesheet" href="/stylesheets/animate.css">
       <link rel="stylesheet" href="/stylesheets/util.css">
+      <link rel="stylesheet" type="text/css" href="/stylesheets/jssocials.css" />
+      <link rel="stylesheet" type="text/css" href="/stylesheets/jssocials-theme-flat.css" />
 
       <!-- Favicons -->
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -45,7 +47,7 @@
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="header_top_left">
                             <div class="news_twiks">
-                                <h4>Breaking</h4>
+                                <h4>Citations</h4>
                             </div>
                             <div class="news_twiks_items">
                                 <div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
@@ -53,13 +55,16 @@
                                     <!-- Wrapper for slides -->
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
-                                            <p>Take Interior Design to a New Level</p>
+                                            <p>Nous avons tous deux vies. La deuxième commence lorsque nous nous apercevons que nous n’avons qu’une</p>
                                         </div>
                                         <div class="carousel-item">
-                                            <p>Take Interior Design to a New Level two</p>
+                                            <p>Je n’ai pas échoué. J’ai simplement trouvé 10.000 solutions qui ne fonctionnent pas</p>
                                         </div>
                                         <div class="carousel-item">
-                                            <p>Take Interior Design to a New Level three</p>
+                                            <p>L’échec est une épice qui de donne de la saveur au succès. </p>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <p>Une journée nuageuse ne peut rien contre un tempérament radieux</p>
                                         </div>
                                     </div>
                                 </div>
@@ -133,39 +138,39 @@
                                                     <div class="col-md-12 col-sm-12">
                                                         <div class="single_mega">
                                                             <ul>
-                                                                <li><a href="/">Home</a></li>
+                                                                <li class="active"><a href="/">Home</a></li>
                                                                 <li><a href="/typearticle/LifeStyle">LifeStyle</a></li>
-                                                                <li><a href="/typearticle/Edito">Edito</a></li>
-                                                                <li class="active"><a href="/typearticle/Super Ambitieux">SuperAmbitieux</a></li>
-                                                                <li><a href="#">Love & Relations</a></li>
+                                                                <li><a href="/typearticle/Super Ambitieux">SuperAmbitieux</a></li>
+                                                                <li><a href="/typearticle/Empowering">SuperAmbitieux</a></li>
+                                                                <li><a href="/typearticle/Love & Relation">Love & Relations</a></li>
                                                                 <li><a href="#">Le Billet SAG</a></li>
                                                             </ul>
                                                         </div>
-                                                        <div class="single_mega single_mega2">
-                                                            <div class="single_fs_news_left_text">
-                                                                <div class="fs_news_left_img"> <img alt="" src="/images/amour1.jpg">
-                                                                    <div class="br_cam br_vid_big_s"> <a href="#" class="fa fa-camera"></a> </div>
+                                                        {{#each recent_post2}}
+                                                            <div class="single_mega single_mega2">
+                                                                <div class="single_fs_news_left_text">
+                                                                    <div class="fs_news_left_img" onclick="document.location= '/articles/lecture/{{this._id}}';">
+                                                                        <img alt="" src="{{this.photo}}">
+                                                                        <div class="br_cam br_vid_big_s"> <a href="#" class="fa fa-camera"></a> </div>
+                                                                    </div>
+                                                                    <h4><a class="mega_title" href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>
+                                                                    <p> <i class="fab fa-clock"></i>{{this.date_pub}}<i class="fa fa-comment"></i>{{this.nombre_comms}}</p>
                                                                 </div>
-                                                                <h4><a class="mega_title" href="#">beautiful day in this neighborhood a beauty day for a neighbor</a></h4>
-                                                                <p> <i class="fab fa-clock"></i> 3 min ago <i class="fa fa-comment"></i> 19 </p>
                                                             </div>
-                                                        </div>
+                                                        {{/each}}
                                                         <div class="single_mega single_mega3">
                                                             <div class="all_news_right">
-                                                                <div class="fs_news_right">
-                                                                    <div class="single_fs_news_img"> <img alt="Single News" src="/images/amour1.jpg"> </div>
-                                                                    <div class="single_fs_news_right_text">
-                                                                        <h4><a class="mega_title1" href="#">Can you tell me how to get how to get to Sesame Street.</a></h4>
-                                                                        <p> <i class="fab fa-clock"></i> 1 hour ago </p>
+                                                                {{#each recent_post}}
+                                                                    <div class="fs_news_right">
+                                                                        <div class="single_fs_news_img" onclick="document.location= '/articles/lecture/{{this._id}}';">
+                                                                            <img alt="Single News" src="{{this.photo}}">
+                                                                        </div>
+                                                                        <div class="single_fs_news_right_text">
+                                                                            <h5><a class="mega_title1" href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h5>
+                                                                            <p> <i class="fab fa-clock"></i>{{this.date_pub}}</p>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                                <div class="fs_news_right">
-                                                                    <div class="single_fs_news_img"> <img alt="Single News" src="/images/amour1.jpg"> </div>
-                                                                    <div class="single_fs_news_right_text">
-                                                                        <h4><a class="mega_title1" href="#">young loner on a crusade to cham pion the cause of the innocent</a></h4>
-                                                                        <p> <i class="fab fa-clock"></i> 1 hour ago </p>
-                                                                    </div>
-                                                                </div>
+                                                                {{/each}}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -384,11 +389,11 @@
                                         <i class="fab fa-facebook-f"> </i>
                                     </a></li>
                                     <li>
-                                        <a href="" class="" style="color:#00ACED">
+                                        <a href="/users/auth/twitter" class="" style="color:#00ACED">
                                             <i class="fab fa-twitter"></i>
                                         </a>
                                     </li>
-                                    <li><a href="" class="" style="color:#cc2127">
+                                    <li><a href="/users/auth/google" class="" style="color:#cc2127">
                                         <i class="fab fa-google-plus"></i>
                                     </a></li>
                                 </ul>
@@ -497,13 +502,13 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="social text-center">
-                                            <a href="" class="mr-2" style="color:#00ACED">
+                                            <a href="/users/auth/twitter" class="mr-2" style="color:#00ACED">
                                                 <i class="fab fa-twitter fa-2x"></i>
                                             </a>
-                                            <a href="" class="mr-2" style="color:#cc2127">
+                                            <a href="/users/auth/google" class="mr-2" style="color:#cc2127">
                                                 <i class="fab fa-google-plus fa-2x"></i>
                                             </a>
-                                            <a href="/auth/facebook" style="color:#0056b3">
+                                            <a href="/users/auth/facebook" style="color:#0056b3">
                                                 <i class="fab fa-facebook-f fa-2x"> </i>
                                             </a>
                                             <h5 class="card-description mt-3"> Ambition & Distinction </h5>
@@ -586,10 +591,17 @@
     <script src="/javascripts/tilt.jquery.min.js"></script>
     <script src="/assets/js/plugins/jquery.validate.min.js"></script>
     <script src="/javascripts/main.js"></script>
+    <script src="/javascripts/jssocials.js"></script>
 
     <script >
         $('.js-tilt').tilt({
             scale: 1.1
+        });
+    </script>
+    <script>
+        $("#share").jsSocials({
+            showLabel: false,
+            shares: ["twitter", "facebook", "googleplus", "linkedin","whatsapp"]
         });
     </script>
 

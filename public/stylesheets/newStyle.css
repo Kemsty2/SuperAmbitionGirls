@@ -668,3 +668,5 @@ textarea.input1 + .shadow-input1 {
 form .error {
     color: #ff0000;
 }
+
+.jssocials-share-link { border-radius: 50%; font-size: 12px;}

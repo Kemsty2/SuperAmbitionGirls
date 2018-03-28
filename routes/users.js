@@ -24,13 +24,14 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/login', csrfProtection, function(req, res, next){
-    console.log(req.user);
-    var message = req.flash('RegisterSuccessMessage');
-    var message2 = req.flash('RegisterFailureMessage');
-    var message3 = req.flash('LoginFailureMessage');
-    var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
-    var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
-    res.render('Index/login', {title, layout: 'Index/layout.hbs', RegisterSuccessMessage: message, RegisterFailureMessage: message2.slice(0,1), LoginFailureMessage: message3.slice(0,1), EnrollFailureNewsletter: EnrollFailureNewsletter, EnrollSuccessNewsletter: EnrollSuccessNewsletter, csrfToken: req.csrfToken()});
+    Article.find({}).sort({'date_publication': -1}).limit(3).exec(function(err, recent_post){
+        var message = req.flash('RegisterSuccessMessage');
+        var message2 = req.flash('RegisterFailureMessage');
+        var message3 = req.flash('LoginFailureMessage');
+        var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
+        var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
+        res.render('Index/login', {title, layout: 'Index/layout.hbs', RegisterSuccessMessage: message, RegisterFailureMessage: message2.slice(0,1), LoginFailureMessage: message3.slice(0,1), EnrollFailureNewsletter: EnrollFailureNewsletter, EnrollSuccessNewsletter: EnrollSuccessNewsletter, csrfToken: req.csrfToken(), recent_post: recent_post, recent_post2:recent_post.slice(0,1)});
+    });
 });
 
 router.post('/login', csrfProtection,  passport.authenticate('login', {
@@ -106,13 +107,27 @@ router.get('/logout', function(req, res, next){
     res.redirect('/');
 });
 
+router.get('/auth/facebook', passport.authorize('facebook', { scope : ['email'] }));
+
 router.get('/auth/facebook', passport.authenticate('facebook', {
-    scope : ['public_profile', 'email']
+    scope : ['email']
 }));
 
 router.get('/auth/facebook/callback', passport.authenticate('facebook', {
     successRedirect: '/',
     failureRedirect: '/',
+}));
+
+router.get('/auth/twitter', passport.authenticate('twitter'));
+router.get('/auth/twitter/callback', passport.authenticate('twitter', {
+    successRedirect: '/',
+    failureRedirect: '/'
+}));
+
+router.get('/auth/google', passport.authenticate('google', { scope : 'https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/plus.profile.emails.read https://www.googleapis.com/auth/userinfo.profile'}));
+router.get('/auth/google/callback', passport.authenticate('google', {
+    successRedirect: '/',
+    failureRedirect: '/'
 }));
 
 function isLoggedIn(req, res, next){

@@ -5,19 +5,19 @@ module.exports = {
     'facebookAuth': {
         'clientID' : '1616907168428310',
         'clientSecret':'72d4a1de22884406590e7ca47adc42ba',
-        'callbackURL': 'www.superambitiongirls.com/users/auth/facebook/callback',
+        'callbackURL': 'https://www.superambitiongirls.com/users/auth/facebook/callback',
         'profileURL'    : 'https://graph.facebook.com/v2.12/me?fields=first_name,last_name,email',
         'profileFields' : ['id', 'email', 'name']
     },
 
     'twitterAuth' : {
-        'consumerKey': ' csm22voaz0xtRLIs4kkpTl1zI',
-        'consumerSecret': 'GWbmQ2vf4VkzzRRowH8ZQipadEfLXa2SVHvAfHYwoZBcekZo6u',
-        'callbackURL': 'http://localhost:3000/users/auth/twitter/callback'
+        'consumerKey': '9TzeuTGNeNMNBAEj4Ukg2QMQD',
+        'consumerSecret': 'POPxW2EuUI67PFGCXtD7owsb0tD0izpzcOyMDrucTf4XTiLfb4',
+        'callbackURL': 'https://www.superambitiongirls.com/users/auth/twitter/callback'
     },
     'googleAuth' : {
-        'clientID' : ' 143766307213-3a0pa0p295kn6q7sst43hmna25jq7j5q.apps.googleusercontent.com ',
-        'clientSecret': ' ntJUN7Au-Tf5sPVY1F4m5rLY ',
-        'callbackURL': 'http://localhost:3000/users/auth/google/callback'
+        'clientID' : '571284055306-1hlgcqo93kuo0pes7td9dvhucahnn933.apps.googleusercontent.com',
+        'clientSecret': 'ivq5vmLg9V6wQSFPgbTEfS2J',
+        'callbackURL': 'https://www.superambitiongirls.com/users/auth/google/callback'
     }
 };

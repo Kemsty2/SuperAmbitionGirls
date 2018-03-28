@@ -24,7 +24,7 @@ router.get('/lecture/:article_id', csrfProtection, function(req, res, next){
                         Commentaire.find({article_id: req.params.article_id}, function (err, commentaires) {
                             var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
                             var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
-                            res.render('Article/article', {title, layout: 'Index/layout.hbs', article: article, next: next, previous: previous, popular_post:popular_post, recent_post:recent_post, article1: recent_post.slice(0,1), user:req.user, EnrollSuccessNewsletter: EnrollSuccessNewsletter, EnrollFailureNewsletter: EnrollFailureNewsletter, commentaires:commentaires, csrfToken: req.csrfToken()});
+                            res.render('Article/article', {title, layout: 'Index/layout.hbs', article: article, next: next, previous: previous, popular_post:popular_post, recent_post:recent_post,recent_post2: recent_post.slice(0,1), article1: recent_post.slice(0,1), user:req.user, EnrollSuccessNewsletter: EnrollSuccessNewsletter, EnrollFailureNewsletter: EnrollFailureNewsletter, commentaires:commentaires, csrfToken: req.csrfToken()});
                         });
                     });
                 });
@@ -91,13 +91,6 @@ router.post('/enroll_article', isAuthenticated, function(req, res, next){
     res.redirect('/articles/list_article');
 });
 
-router.post('/post_commentaire', function(req, res, next){
-
-});
-
-router.post('/post_reply', function(req, res, next){
-
-});
 
 function isAuthenticated(req, res, next){
     var realAdmin = req.session.admin ? req.session.admin: {};

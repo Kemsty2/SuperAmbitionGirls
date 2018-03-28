@@ -27,14 +27,15 @@ var userSchema = new Schema({
         id: String,
         token: String,
         displayName: String,
+        /*email: String,*/
         username: String
     },
 
     google_login: {
         id: String,
         token: String,
-        email: String,
-        name: String
+        name: String,
+        email: String
     }
 });
 

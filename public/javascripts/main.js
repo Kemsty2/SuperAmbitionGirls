@@ -9,7 +9,7 @@
 		
 		$('.header_submit') .on('click', function(){
             $('.header_input').toggleClass('display_block');
-        });	
+        });
 	});
 });
 
@@ -52,4 +52,3 @@ $(function(){
         }
     });
 });
-
