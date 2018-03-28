@@ -93,6 +93,7 @@ passport.use(new FacebookStrategy({
                     newUser.facebook_login.token = accessToken;
                     newUser.facebook_login.name = profile.displayName;
                     newUser.facebook_login.email = profile.emails[0].value;
+                    newUser.local.pseudo = profile.displayName;
 
                     newUser.save(function(err){
                         if(err)
@@ -125,6 +126,7 @@ passport.use(new TwitterStrategy({
                 newUser.twitter_login.token = accessToken;
                 newUser.twitter_login.username = profile.username;
                 newUser.twitter_login.displayName = profile.displayName;
+                newUser.local.pseudo = profile.displayName;
 
                 newUser.save(function(err){
                     if(err)
@@ -158,6 +160,7 @@ passport.use(new GoogleStrategy({
                 newUser.google_login.token = accessToken;
                 newUser.google_login.name = profile.displayName;
                 newUser.google_login.email = profile.emails[0].value;
+                newUser.local.pseudo = profile.displayName;
 
                 newUser.save(function(err){
                     if(err)
