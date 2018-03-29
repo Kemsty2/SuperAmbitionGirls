@@ -4,6 +4,10 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta property="og:title" content="{{article.titre}}" />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content="https://www.superambitiongirls.com/articles/{{article._id}}" />
+      <meta property="og:image" content="{{article.photo}}" />
 
       {{#if article}}<meta name="description" content="{{article.titre}}"> {{else}} <meta name="description" content="Super Ambition Girls Ambition et Distinction">{{/if}}
       {{#if article}}<meta name="author" content="{{article.auteur_nom}}"> {{else}} <meta name="author" content="Kemgne Moyo Steeve Aymard">{{/if}}
@@ -335,7 +339,9 @@
                                         <div class="ftr_video">
                                             <h4>video de la journée</h4>
                                             <div class="results_video embed-responsive embed-responsive-16by9">
-                                                <iframe class="embed-responsive-item" width="560" height="350" src="/images/woman.mp4" allowfullscreen></iframe>
+                                                <video class="embed-responsive-item" width="560" height="350" controls>
+                                                    <source src="/images/woman.mp4" type="video/mp4">
+                                                </video>
                                             </div>
                                         </div>
                                         <div class="ftr_tags">
