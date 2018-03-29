@@ -11,6 +11,16 @@ var Commentaire = require('../models/commentaires');
 var types = ['Super Ambitieux', 'LifeStyle', 'Edito',  'Empowering', 'Love & Relation'];
 var csurf = require('csurf');
 var csrfProtection = csurf({cookie: true});
+var multer = require('multer');
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'public/images/upload_images');
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
+var upload = multer({ storage: storage });
 
 
 const title = "SAG, Ambition & Distinction";
@@ -43,7 +53,7 @@ router.get('/list_article', isAuthenticated, function(req, res, next){
     })
 });
 
-router.post('/enroll_article', isAuthenticated, function(req, res, next){
+router.post('/enroll_article', upload.single('photo'), isAuthenticated, function(req, res, next){
     console.log(req.body.type);
     var newArticle = new Article({
         titre: req.body.titre,
@@ -63,27 +73,21 @@ router.post('/enroll_article', isAuthenticated, function(req, res, next){
         newArticle.special = false;
     }
 
-    if(!req.files){
+    //Gestions Fichiers
+    if(!req.file){
         req.flash('NewArticleMessage', 'Choissiez Une Image');
         res.redirect('/articles/new_article');
     }
 
-    var file = req.files.photo;
-    var img_path = 'public/images/upload_images/' + file.name;
+    var file = req.file;
+    var path = file.path.substring(6);
     if(file.mimetype == "image/jpeg" || file.mimetype == "image/png" || file.mimetype == "image/gif" || file.mimetype == "image/jpg"){
-        newArticle.photo = '/images/upload_images/' + file.name;
-        file.mv(img_path, function(err){
-            if(err){
-                req.flash('NewArticleMessage', "Erreur lors de l'importation de l'image");
-                throw err;
-            }
-        });
+        newArticle.photo = path;
     }
     else{
         req.flash('NewArticleMessage', "Format Image Incompatible");
         res.redirect('/articles/new_article');
     }
-    console.log(newArticle);
     newArticle.save(function(err){
         if(err)
             throw err
@@ -91,6 +95,42 @@ router.post('/enroll_article', isAuthenticated, function(req, res, next){
     res.redirect('/articles/list_article');
 });
 
+router.post('/uploadPhotos', upload.single('file'), isAuthenticated, function (req, res, next) {
+    return res.status(200).send(req.file);
+});
+
+//TODO Edit Article
+router.get('/edit_article/:article_id', isAuthenticated, function (req, res, next) {
+    Article.findById(req.params.article_id, function (err, article) {
+        res.render('Admin/Article/edit_article', {title, layout:'Admin/layout.hbs', article: article, type: types.indexOf(article.type) + 1});
+    });
+});
+
+router.post('/edit_article/', upload.single('photo'), isAuthenticated, function (req, res, next) {
+    Article.findById(req.body.article_id, function (err, article) {
+        article.auteur_nom = req.body.auteur;
+        article.titre = req.body.titre;
+        article.type = types[parseInt(req.body.type) - 1];
+        article.contenu = req.body.contenu;
+        console.log(req.file);
+        if(req.file){
+            article.photo = req.file.path.substring(6);
+        }
+        article.save(function (err) {
+            if(err)
+                throw err;
+            console.log(article);
+            return res.redirect('/articles/list_article');
+        });
+    });
+});
+router.get('/del_article/:article_id', isAuthenticated, function (req, res, next) {
+    Article.remove({_id: req.params.article_id}, function (err) {
+        if(err)
+            throw err;
+        return res.redirect('/articles/list_article');
+    });
+});
 
 function isAuthenticated(req, res, next){
     var realAdmin = req.session.admin ? req.session.admin: {};

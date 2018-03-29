@@ -48,8 +48,8 @@
                                 <td>{{this.nombre_vue}}</td>
                                 <td>{{this.date_publication}}</td>
                                 <td class="text-right">
-                                    <a href="#" class="btn btn-round btn-warning btn-icon btn-sm edit"><i class="far fa-calendar-alt"></i></a>
-                                    <a href="#" class="btn btn-round btn-danger btn-icon btn-sm remove"><i class="fas fa-times"></i></a>
+                                    <a href="/articles/edit_article/{{this._id}}" class="btn btn-round btn-warning btn-icon btn-sm edit" data-toggle="tooltip" data-placement="top" title="Modifier Article"><i class="far fa-calendar-alt"></i></a>
+                                    <a href="/articles/del_article/{{this._id}}" class="btn btn-round btn-danger btn-icon btn-sm remove" data-toggle="tooltip" data-placement="top" title="Supprimer Article"><i class="fas fa-times"></i></a>
                                 </td>
                             </tr>
                         {{/each}}

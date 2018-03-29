@@ -14,7 +14,7 @@ var articleSchema = new Schema({
     commentaires: {type: Array, default: []},
     date_publication: {type: Date, default: Date.now},
     photo: {type: String, required: true},
-    contenu: {type: String, required:true},
+    contenu: {type: String},
     tags:{type: [String]},
     special: {type: Boolean, default: false}
 });

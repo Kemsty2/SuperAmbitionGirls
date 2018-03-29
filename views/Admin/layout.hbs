@@ -18,6 +18,7 @@
 
         <link href="/assets/demo/demo.css" rel="stylesheet" />
         <link href="/stylesheets/newStyle.css" rel="stylesheet">
+        <link href="/stylesheets/dropzone.css" rel="stylesheet" >
     </head>
 
     <body class="sidebar-mini">
@@ -260,6 +261,9 @@
 
     <!-- Core Js File -->
         <script src="/assets/js/core/jquery.min.js" ></script>
+        <script src="/src-min/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/src-min/ext-statusbar.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/src-min/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
         <script src="/assets/js/core/popper.min.js" ></script>
         <script src="/assets/js/core/bootstrap.min.js" ></script>
         <script src="/assets/js/plugins/perfect-scrollbar.jquery.min.js" ></script>
@@ -301,7 +305,7 @@
 
         <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
         <script src="/assets/js/plugins/nouislider.min.js" ></script>
-
+        <script src="/javascripts/my_js.js"></script>
 
         <!--  Google Maps Plugin    -->
 
@@ -317,6 +321,7 @@
 
         <script src="/assets/js/now-ui-dashboard.minf700.js?v=1.0.1" ></script>
         <script src="/javascripts/main.js?v=1.0.1" ></script>
+        <script type="text/javascript" src="/javascripts/dropzone.js"></script>
         <script>
             $(document).ready(function() {
                 $('#datatable').DataTable({
@@ -333,12 +338,12 @@
                 var table = $('#datatable').DataTable();
 
                 // Edit record
-                table.on( 'click', '.edit', function () {
+                /*table.on( 'click', '.edit', function () {
                     $tr = $(this).closest('tr');
 
                     var data = table.row($tr).data();
                     alert( 'You press on Row: ' + data[0] + ' ' + data[1] + ' ' + data[2] + '\'s row.' );
-                } );
+                } );*/
 
                 // Delete a record
                 table.on( 'click', '.remove', function (e) {
@@ -353,6 +358,18 @@
                 });
             });
         </script>
-
+        <script>
+            Dropzone.options.uploadWidget = {
+                paramName: 'file',
+                dictDefaultMessage: 'Deposez Vos Photos ou Cliquez Pour Selectionner',
+                acceptedFiles: 'image/*',
+                init: function(){
+                    this.on('success', function (file, resp) {
+                        console.log(file);
+                        console.log(resp);
+                    })
+                }
+            }
+        </script>
     </body>
 </html>

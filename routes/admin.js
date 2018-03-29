@@ -33,13 +33,14 @@ router.post('/login_admin', notAuthenticated, function(req, res, next){
         Admin.findOne({'email': req.body.email}, function(err, admin){
             req.session.admin = admin;
             if(err)
-                res.redirect('/admin/login');
-            if(!admin)
-                res.redirect('/admin/login');
+                return res.redirect('/admin/login');
+            if(isEmpty(admin))
+                return res.redirect('/admin/login');
+            console.log(admin);
             if(!admin.validPassword(req.body.password))
-                res.redirect('/admin/login');
+                return res.redirect('/admin/login');
 
-            res.redirect('/admin')
+            return res.redirect('/admin')
         });
     }
 });
@@ -57,6 +58,8 @@ router.get('/list_newsletter', isAuthenticated, function (req, res, next) {
         res.render('Admin/Newsletter/list_newsletter', {newsletters: newsletters, title, layout: 'Admin/layout.hbs', admin: req.session.admin});
     });
 });
+
+
 
 function isAuthenticated(req, res, next){
     var realAdmin = req.session.admin ? req.session.admin: {};

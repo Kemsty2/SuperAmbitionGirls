@@ -4,6 +4,10 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      {{#if article}}<meta name="description" content="{{article.titre}}"> {{else}} <meta name="description" content="Super Ambition Girls Ambition et Distinction">{{/if}}
+      {{#if article}}<meta name="author" content="{{article.auteur_nom}}"> {{else}} <meta name="author" content="Kemgne Moyo Steeve Aymard">{{/if}}
+      {{#if article}}<meta name="keywords" content="{{#each article.tags}}{{this}}, {{/each}}" > {{else}} <meta name="keywords" content="SuperAmbitionGirls, Chimene Ndjoumou, Ambition & Distinction, Entreprenariat, Lifestyle, Empowering, SAG, Femme Forte" >{{/if}}
       <title>{{title}}</title>
 
       <!-- ~~~=| Fonts files |==-->
@@ -150,7 +154,7 @@
                                                             <div class="single_mega single_mega2">
                                                                 <div class="single_fs_news_left_text">
                                                                     <div class="fs_news_left_img" onclick="document.location= '/articles/lecture/{{this._id}}';">
-                                                                        <img alt="" src="{{this.photo}}">
+                                                                        <img alt="" src="/images/upload_images/Screenshot_20171023_094020.png">
                                                                         <div class="br_cam br_vid_big_s"> <a href="#" class="fa fa-camera"></a> </div>
                                                                     </div>
                                                                     <h4><a class="mega_title" href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h4>

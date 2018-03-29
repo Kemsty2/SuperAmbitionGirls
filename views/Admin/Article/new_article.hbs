@@ -1,3 +1,10 @@
+<style>
+    textarea{
+        width: 700px;
+        height: 700px !important;
+    }
+</style>
+
 <div class="panel-header panel-header-sm">
 </div>
 <h2 class="panel-title text-center" style="margin-top: 1rem;"> Creation Article</h2>
@@ -13,13 +20,13 @@
                                 <div class="row mb-4 ">
                                     <div class="col-md-11 pr-1 ml-auto mr-auto">
                                         <label>Titre</label>
-                                        <input type="text" class="form-control" placeholder="Titre Article" name="titre">
+                                        <input type="text" class="form-control" placeholder="Titre Article" name="titre" required>
                                     </div>
                                 </div>
                                 <div class="row mb-4 ml-4">
                                     <div class="col-md-6 pr-1">
                                         <label>Type</label>
-                                        <select class="selectpicker" data-size="7" data-style="btn btn-primary btn-round" title="Type Article" name="type">
+                                        <select class="selectpicker" data-size="7" data-style="btn btn-primary btn-round" title="Type Article" name="type" required>
                                             <option disabled selected>Type Article</option>
                                             <option value="1">SuperAmbitieux</option>
                                             <option value="2">LifeStyle</option>
@@ -41,9 +48,10 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-11 pr-1 ml-auto mr-auto">
-                                        <label>Contenu</label>
-                                        <textarea class="form-control" placeholder="Contenu de l'article" name="contenu"></textarea>
+                                    <div class="col-md-11 pr-1 ml-auto mr-auto ">
+                                        <h4>Contenu Article : </h4>
+                                        <div class="col-md-11 pr-1 ml-auto mr-auto" id="editor"></div>
+                                        <input type="hidden" id="contenu1" value="" name="contenu">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -55,7 +63,7 @@
                             </div>
                             <input type="hidden" name="special" id="special" value="">
                             <div class="card-footer row">
-                                <button type="submit" onclick="test()" class="btn btn-primary btn-round col-md-3" style="margin-left: 35%;background-color: #DC3151;">Créer</button>
+                                <button type="submit" class="btn btn-primary btn-round col-md-3" id="btn-new-article" style="margin-left: 35%;background-color: #DC3151;">Créer</button>
                             </div>
 
                     </div>
@@ -74,7 +82,7 @@
                                         <span class="btn btn-rose btn-round btn-file">
                                             <span class="fileinput-new">Select image</span>
                                             <span class="fileinput-exists">Change</span>
-                                            <input type="file" name="photo" />
+                                            <input type="file" name="photo" required />
                                         </span>
                                         <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
                                     </div>
@@ -85,12 +93,21 @@
                 </div>
         </div>
     </form>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h5>Ajouter Photo Pour Le contenu de l'article</h5>
+                </div>
+                <div class="card-body">
+                    <form id="upload-widget" method="post" action="/articles/uploadPhotos" class="dropzone">
+                        <div class="fallback">
+                            <input name="file" type="file">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<script>
-    function test () {
-        var checkbox = document.getElementById('specialcheck');
-        if(checkbox.checked){
-            document.getElementById('special').value = 'special';
-        }
-    }
-</script>
+
