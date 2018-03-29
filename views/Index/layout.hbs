@@ -7,7 +7,10 @@
       <meta property="og:title" content="{{article.titre}}" />
       <meta property="og:type" content="article" />
       <meta property="og:url" content="https://www.superambitiongirls.com/articles/{{article._id}}" />
-      <meta property="og:image" content="{{article.photo}}" />
+      <meta property="og:image" content="https://www.superambitiongirls.com{{article.photo}}" />
+      <meta property="og:description" content="Visiter www.superambitiongirls.com pour lire des articles passionnants sur l'entreprenariat" />
+      <meta property="og:locale" content="fr_FR" />
+      <meta property="og:site_name" content="SAG" />
 
       {{#if article}}<meta name="description" content="{{article.titre}}"> {{else}} <meta name="description" content="Super Ambition Girls Ambition et Distinction">{{/if}}
       {{#if article}}<meta name="author" content="{{article.auteur_nom}}"> {{else}} <meta name="author" content="Kemgne Moyo Steeve Aymard">{{/if}}
