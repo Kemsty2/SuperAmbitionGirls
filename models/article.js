@@ -11,12 +11,12 @@ var articleSchema = new Schema({
     auteur_nom: {type: String, required: true},
     nombre_vue: {type: Number, default: 0},
     nombre_comms: {type: Number, default: 0},
-    commentaires: {type: Array, default: []},
     date_publication: {type: Date, default: Date.now},
     photo: {type: String, required: true},
     contenu: {type: String},
     tags:{type: [String]},
-    special: {type: Boolean, default: false}
+    special: {type: Boolean, default: false},
+    description: String
 });
 
 articleSchema.virtual('duree').get(function(){

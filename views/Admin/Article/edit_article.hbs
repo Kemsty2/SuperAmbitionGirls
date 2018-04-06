@@ -17,7 +17,8 @@
                         <h5 class="title"> Modifier Article</h5>
                     </div>
                     <div class="card-body">
-                        <div class="row mb-4 ">
+
+                        <div class="row mb-2">
                             <div class="col-md-5 pr-1 ml-auto mr-auto">
                                 <label>Titre</label>
                                 <input type="text" class="form-control" placeholder="Titre Article" name="titre" value="{{article.titre}}" >
@@ -27,6 +28,14 @@
                                 <input type="text" class="form-control" placeholder="Nom Auteur" name="auteur" value="{{article.auteur_nom}}">
                             </div>
                         </div>
+
+                        <div class="row mb-4">
+                            <div class="col-md-11 pr-1 ml-auto mr-auto">
+                                <label>Description</label>
+                                <input type="text" class="form-control" placeholder="Description Article" value="{{article.description}}" name="description">
+                            </div>
+                        </div>
+
                         <div class="row mb-4 ml-4">
                             <div class="col-md-6 pr-1">
                                 <label>Type</label>

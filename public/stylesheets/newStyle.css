@@ -683,18 +683,6 @@ form .error {
     height: auto !important;
 }
 
-.overlay{
-    position: absolute;
-    bottom: 0;
-    background: rgb(0,0,0);
-    background: rgba(0,0,0,0.5);
-    color: #f1f1f1;
-    width: 100%;
-    transition: .5s ease;
-    opacity: 0;
-    font-size: 20px;
-    text-align: center;
-}
 
 .purchase_sidebar_img{
     position: relative;
@@ -706,7 +694,7 @@ form .error {
     color: #f1f1f1;
     width: 100%;
     background: rgb(0,0,0);
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.7);
     opacity: 0;
     transition: .5s ease;
     text-align: center;
@@ -717,5 +705,74 @@ form .error {
 .purchase_sidebar_img:hover .purchase_overlay{
     opacity: 1;
 }
+
+.purchase_sidebar_img2{
+    position: relative;
+}
+
+.purchase_overlay2{
+    position: absolute;
+    bottom: 0;
+    color: #f1f1f1;
+    width: 100%;
+    background: transparent;
+    opacity: 0;
+    transition: .5s ease;
+    text-align: center;
+    padding: 20px;
+}
+
+
+.purchase_sidebar_img2:hover .purchase_overlay2{
+    opacity: 1;
+}
+
+.ov-description{
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    text-align: justify;
+}
+
+.overlay-description p{
+    color: black;
+    font-size: 13px;
+}
+
+.overlay-type h4{
+    color: #B61D8D;
+    font-size: 20px;
+}
+.overlay-type hr{
+    margin-top: -5px;
+    width: 100px;
+    background-color: #4f2c84;
+    height: 0.1rem;
+}
+
+.overlay-type p{
+    color: black;
+}
+.overlay-description a{
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    outline-color: transparent;
+    border-color:#B61D8D;
+    color: black;
+}
+
+.overlay-description a:hover{
+    background-color: #B61D8D;
+    border-color: #B61D8D;
+}
+
+*{
+    outline-color: transparent !important;
+}
+
+.purchase_sidebar_img2:hover .purchase_overlay2 ~ div {
+    opacity: 0;
+}
+
 
 

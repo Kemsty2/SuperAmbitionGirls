@@ -1,3 +1,39 @@
+{{#each LoginSuccessMessage}}
+    <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
+{{#each LoginFailureMessage}}
+    <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
+{{#each RegisterSuccessMessage}}
+    <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
+{{#each RegisterFailureMessage}}
+    <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
 {{#each EnrollFailureNewsletter}}
     <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
         {{this}}
@@ -45,8 +81,27 @@
                         <p class="text-center">{{type_article}}</p>
                     </div>
                     {{#each articlefirst}}
-                        <div class="br_single_news" onclick="document.location= '/articles/lecture/{{this._id}}';">
+                        <div class="br_single_news purchase_sidebar_img2" onclick="document.location= '/articles/lecture/{{this._id}}';">
                             <img alt="" src="{{this.photo}}">
+                            <div class="purchase_overlay2">
+                                <div class="col ov-description">
+                                    <div class="row mb-3">
+                                        <div class="col-md-12 overlay-type">
+                                            <h4 class="text-center"> <strong>{{articlefirst.type}}</strong></h4>
+                                            <hr>
+                                            <p class="text-center">By {{articlefirst.auteur_nom}} Le {{articlefirst.date_pub}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-12 overlay-description">
+                                            <p> {{articlefirst.description}}...</p>
+                                            <div class="d-flex justify-content-center">
+                                                <a class="btn btn-outline-primary" href="/articles/lecture/{{articlefirst._id}}"> Lire la suite...</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="br_single_text">
                                 <span class="blue_hp_span">{{this.type}}</span>
                                 <h1 class="dark_hp_span"><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h1>
@@ -62,8 +117,27 @@
         <div class="row">
             <div class="col-md-9 col-sm-9 col-xs-12">
                 {{#each articles}}
-                    <div class="br_single_news mt-5" onclick="document.location= '/articles/lecture/{{this._id}}';">
+                    <div class="br_single_news mt-5 purchase_sidebar_img2" onclick="document.location= '/articles/lecture/{{this._id}}';">
                         <img alt="" src="{{this.photo}}">
+                        <div class="purchase_overlay2">
+                            <div class="col ov-description">
+                                <div class="row mb-3">
+                                    <div class="col-md-12 overlay-type">
+                                        <h4 class="text-center"> <strong>{{this.type}}</strong></h4>
+                                        <hr>
+                                        <p class="text-center">By {{this.auteur_nom}} Le {{this.date_pub}}</p>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-12 overlay-description">
+                                        <p> {{this.description}}...</p>
+                                        <div class="d-flex justify-content-center">
+                                            <a class="btn btn-outline-primary" href="/articles/lecture/{{this._id}}"> Lire la suite...</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="br_single_text">
                             <span class="blue_hp_span">{{this.type}}</span>
                             <h1 class="dark_hp_span"><a href="/articles/lecture/{{this._id}}">{{this.titre}}</a></h1>

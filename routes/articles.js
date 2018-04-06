@@ -32,9 +32,13 @@ router.get('/lecture/:article_id', csrfProtection, function(req, res, next){
                 Article.find({}).sort({'nombre_comms': -1}).limit(3).exec(function(err, popular_post){
                     Article.find({}).sort({'date_publication': -1}).limit(3).exec(function(err, recent_post){
                         Commentaire.find({article_id: req.params.article_id}, function (err, commentaires) {
+                            var LoginSuccessMessage = req.flash('LoginSuccessMessage');
+                            var LoginFailureMessage = req.flash('LoginFailureMessage');
                             var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
                             var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
-                            res.render('Article/article', {title, layout: 'Index/layout.hbs', article: article, next: next, previous: previous, popular_post:popular_post, recent_post:recent_post,recent_post2: recent_post.slice(0,1), article1: recent_post.slice(0,1), user:req.user, EnrollSuccessNewsletter: EnrollSuccessNewsletter, EnrollFailureNewsletter: EnrollFailureNewsletter, commentaires:commentaires, csrfToken: req.csrfToken()});
+                            var RegisterSuccessMessage = req.flash('RegisterSuccessMessage');
+                            var RegisterFailureMessage = req.flash('RegisterFailureMessage');
+                            res.render('Article/article', {title, layout: 'Index/layout.hbs', article: article, next: next, previous: previous, popular_post:popular_post, recent_post:recent_post,recent_post2: recent_post.slice(0,1), article1: recent_post.slice(0,1), user:req.user, EnrollSuccessNewsletter: EnrollSuccessNewsletter, EnrollFailureNewsletter: EnrollFailureNewsletter, commentaires:commentaires, csrfToken: req.csrfToken(), LoginFailureMessage: LoginFailureMessage, LoginSuccessMessage: LoginSuccessMessage, RegisterFailureMessage: RegisterFailureMessage, RegisterSuccessMessage: RegisterSuccessMessage});
                         });
                     });
                 });
@@ -60,7 +64,8 @@ router.post('/enroll_article', upload.single('photo'), isAuthenticated, function
         type: types[parseInt(req.body.type) - 1],
         auteur_id: req.session.admin._id,
         auteur_nom: req.session.admin.noms,
-        contenu: req.body.contenu
+        contenu: req.body.contenu,
+        description: req.body.description
     });
     var tags = req.body.tags.split(',');
     for(var i=0; i<tags.length; i++){
@@ -112,6 +117,7 @@ router.post('/edit_article/', upload.single('photo'), isAuthenticated, function 
         article.titre = req.body.titre;
         article.type = types[parseInt(req.body.type) - 1];
         article.contenu = req.body.contenu;
+        article.description = req.body.description;
         console.log(req.file);
         if(req.file){
             article.photo = req.file.path.substring(6);

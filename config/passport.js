@@ -31,7 +31,7 @@ passport.use('login', new LocalStrategy({
         if(!user)
             return done(null, false, req.flash('LoginFailureMessage', 'Utilisateur Inexistant'));
         if(!user.validPassword(password))
-            return done(null, false, req.flash('LoginFailureMessage', 'Mot de Passe Incorect'))
+            return done(null, false, req.flash('LoginFailureMessage', 'Mot de Passe Incorect'));
 
 
         req.flash('LoginSuccessMessage', 'Bienvenue Sur SAG , ' + user.local.prenoms + '!!');

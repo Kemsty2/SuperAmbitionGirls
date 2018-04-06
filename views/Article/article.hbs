@@ -1,3 +1,57 @@
+{{#each LoginSuccessMessage}}
+    <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
+{{#each LoginFailureMessage}}
+    <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
+{{#each EnrollFailureNewsletter}}
+    <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
+{{#each EnrollSuccessNewsletter}}
+    <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
+{{#each RegisterSuccessMessage}}
+    <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
+{{#each RegisterFailureMessage}}
+    <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
 <div class="breadcumb_common_area">
     <div class="container">
         <div class="row">
@@ -92,7 +146,7 @@
                                                 <div class="single_comment_text">
                                                     <div class="sp_title">
                                                         <a href="#"><h4>{{this.user_FullName}}</h4></a>
-                                                        <p>11 </p>
+                                                        <p>{{this.date_pub}}</p>
                                                     </div>
                                                     <p>{{this.contenu}}</p>
                                                     <a href="javascript:myfunction('{{this._id}}');"><i class="fa fa-reply"></i>Reply</a>
@@ -103,10 +157,18 @@
                                                     <div class="card">
                                                         <div class="card-header text-center">Reponses <a href="javascript:close('{{this._id}}');"><i class="fa fa-times "></i></a></div>
                                                         <div class="card-body">
-                                                            {{#if ../user}}
                                                                 <form action="/users/post_reply" method="post">
+                                                                    {{#unless ../user}}
+                                                                        <div class="row mb-4 mt-2">
+                                                                            <div class="col-md-6">
+                                                                                <input type="text" placeholder="Entrez votre nom" name="name" required>
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <input type="text" placeholder="Entrez votre email" name="email" required>
+                                                                            </div>
+                                                                        </div>
+                                                                    {{/unless}}
                                                                     <div class="row mb-3">
-                                                                        <input type="hidden" name="_csrf" value="{{csrfToken}}">
                                                                         <input type="hidden" name="article_id" value="{{../article._id}}">
                                                                         <input type="hidden" name="comms_id" value="{{this._id}}">
                                                                         <input type="hidden" name="comms_tab_id" value="{{@index}}">
@@ -118,11 +180,6 @@
                                                                         <button class="btn btn-primary">Repondre</button>
                                                                     </div>
                                                                 </form>
-                                                            {{else}}
-                                                                <div class="row">
-                                                                    <p><a href="#user_register" data-toggle="modal">Inscrivez</a> Vous Pour Poster un commentaire </p>
-                                                                </div>
-                                                            {{/if}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -132,7 +189,7 @@
                                                     <div class="single_comment_text">
                                                         <div class="sp_title">
                                                             <a href="#"><h4>{{this.user_FullName}}</h4></a>
-                                                            <p>10 </p>
+                                                            <p>{{this.date_pub}}</p>
                                                         </div>
                                                         <p>{{this.contenu}}</p>
                                                     </div>
@@ -143,23 +200,29 @@
                                         <p class="fs-15 ml-3">Aucun commentaire pour l'instant, Soyez le premier à commenter</p>
                                     {{/if}}
                                 </div>
-                                {{#if user}}
                                     <div class="comment-form">
-                                        <h2 class="mt-3">Laissez un commentaire</h2>
+                                        <h2 class="mt-3">Laissez un commentaire <small>(<a href="#user_register" data-toggle="modal">Inscrivez</a> Vous ou <a href="#user_login" data-toggle="modal">Connectez</a> Vous Pour ne plus à avoir à entrez vos informations)</small></h2>
                                         <div class="comments_form">
                                             <form action="/users/post_commentaire" method="post">
                                                 <input type="hidden" name="_csrf" value="{{csrfToken}}">
                                                 <input type="hidden" name="article_id" value="{{article._id}}">
-                                                <textarea cols="20" rows="10" placeholder="Message" name="message" required></textarea>
-                                                <input type="submit" value="Postez Commentaire"/>
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            {{#unless user}}
+                                                                <div class="inp_name">
+                                                                    <input id="c_name" type="text" placeholder="Entrez Votre Nom" name="name" required/>
+                                                                    <input type="text" placeholder="Entrez Votre Adresse Email" name="email" required/>
+                                                                </div>
+                                                            {{/unless}}
+                                                            <textarea cols="20" rows="10" placeholder="Message" name="message" required></textarea>
+                                                            <input type="submit" value="Postez Commentaire"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </form>
                                         </div>
                                     </div>
-                                {{else}}
-                                    <div class="row">
-                                        <p><a href="#user_register" data-toggle="modal">Inscrivez</a> Vous ou <a href="#user_login" data-toggle="modal">Connectez Vous</a> Pour Poster un commentaire</p>
-                                    </div>
-                                {{/if}}
                             </div>
                         </div>
                     </div>

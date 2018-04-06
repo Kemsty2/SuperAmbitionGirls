@@ -1,3 +1,39 @@
+{{#each LoginSuccessMessage}}
+    <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
+{{#each RegisterSuccessMessage}}
+    <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
+{{#each RegisterFailureMessage}}
+    <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
+{{#each LoginFailureMessage}}
+    <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
+        {{this}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/each}}
+
 {{#each EnrollFailureNewsletter}}
     <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
         {{this}}

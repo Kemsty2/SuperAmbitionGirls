@@ -13,5 +13,7 @@ var commsSchema = new Schema({
     date_publication: {type: Date, default: Date.now}
 });
 
-
+commsSchema.virtual('date_pub').get(function () {
+    return this.date_publication.toDateString();
+});
 module.exports = mongoose.model('Commentaires', commsSchema);

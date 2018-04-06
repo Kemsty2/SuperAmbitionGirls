@@ -35,14 +35,14 @@ router.get('/login', csrfProtection, function(req, res, next){
 });
 
 router.post('/login', csrfProtection,  passport.authenticate('login', {
-    successRedirect: '/',
-    failureRedirect: '/users/login',
+    successRedirect: 'back',
+    failureRedirect: 'back',
     failureFlash: true
 }));
 
 router.post('/register', csrfProtection, passport.authenticate('register', {
-    successRedirect: '/users/login',
-    failureRedirect: '/users/login',
+    successRedirect: 'back',
+    failureRedirect: 'back',
     failureFlash: true
 }));
 
@@ -68,37 +68,51 @@ router.post('/enroll_newsletter', csrfProtection, function (req, res, next) {
 
 router.post('/post_commentaire', csrfProtection,  function (req, res, next) {
     Article.findById(req.body.article_id, function (err, article) {
-    });
-    var newComms = new Commentaire({
-        article_id: req.body.article_id,
-        user_FullName: req.user.FullName,
-        contenu: req.body.message
-    });
-    newComms.save(function (err) {
-        if(err)
-            throw err;
-        console.log(newComms);
-        res.redirect('/articles/lecture/'+req.body.article_id);
+        var newComms = new Commentaire({
+            article_id: req.body.article_id,
+            contenu: req.body.message
+        });
+        newComms.user_email = !(isEmpty(req.body.email)) ? req.body.email : req.user.local.email;
+        newComms.user_FullName = !(isEmpty(req.body.name)) ? req.body.name : req.user.FullName;
+        newComms.save(function (err) {
+            if(err)
+                throw err;
+            console.log(newComms);
+        });
+        article.nombre_comms += 1;
+        article.save(function(err){
+            if(err)
+                throw err;
+            res.redirect('/articles/lecture/'+req.body.article_id);
+        });
     });
 
 });
 
-router.post('/post_reply', isLoggedIn, csrfProtection, function (req, res, next) {
-    Commentaire.findById(req.body.comms_id, function (err, commentaire) {
-       var new_reply = new Reponse({
-            user_FullName: req.user.FullName,
-            contenu: req.body.message
-       });
-       new_reply.save(function (err) {
-           if(err)
-               throw err;
-           commentaire.reponses.push(new_reply);
-           commentaire.save(function (err) {
-               if(err)
-                   throw err;
-               res.redirect('/articles/lecture/'+req.body.article_id);
-           });
-       });
+router.post('/post_reply',  function (req, res, next) {
+    Article.findById(req.body.article_id, function(err, article){
+        Commentaire.findById(req.body.comms_id, function (err, commentaire) {
+            var new_reply = new Reponse({
+                contenu: req.body.message
+            });
+            new_reply.user_email = !(isEmpty(req.body.email)) ? req.body.email : req.user.local.email;
+            new_reply.user_FullName = !(isEmpty(req.body.name)) ? req.body.name : req.user.FullName;
+            new_reply.save(function (err) {
+                if(err)
+                    throw err;
+                commentaire.reponses.push(new_reply);
+                commentaire.save(function (err) {
+                    if(err)
+                        throw err;
+                });
+                article.nombre_comms += 1;
+                article.save(function(err){
+                    if(err)
+                        throw err;
+                    res.redirect('/articles/lecture/'+req.body.article_id);
+                });
+            });
+        });
     });
 });
 
@@ -114,20 +128,23 @@ router.get('/auth/facebook', passport.authenticate('facebook', {
 }));
 
 router.get('/auth/facebook/callback', passport.authenticate('facebook', {
-    successRedirect: '/',
-    failureRedirect: '/',
+    successRedirect: 'back',
+    failureRedirect: 'back',
+    failureFlash: true
 }));
 
 router.get('/auth/twitter', passport.authenticate('twitter'));
 router.get('/auth/twitter/callback', passport.authenticate('twitter', {
-    successRedirect: '/',
-    failureRedirect: '/'
+    successRedirect: 'back',
+    failureRedirect: 'back',
+    failureFlash: true
 }));
 
 router.get('/auth/google', passport.authenticate('google', { scope : 'https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/plus.profile.emails.read https://www.googleapis.com/auth/userinfo.profile'}));
 router.get('/auth/google/callback', passport.authenticate('google', {
-    successRedirect: '/',
-    failureRedirect: '/'
+    successRedirect: 'back',
+    failureRedirect: 'back',
+    failureFlash: true
 }));
 
 function isLoggedIn(req, res, next){
@@ -142,6 +159,19 @@ function notLoggedIn(req, res, next){
         return next();
     }
     res.redirect('/users/login');
+}
+
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+function isEmpty(obj) {
+    if (obj == null) return true;
+    if (obj.length > 0)    return false;
+    if (obj.length === 0)  return true;
+    if (typeof obj !== "object") return true;
+    for (var key in obj) {
+        if (hasOwnProperty.call(obj, key)) return false;
+    }
+    return true;
 }
 
 module.exports = router;
