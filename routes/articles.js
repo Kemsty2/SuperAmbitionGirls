@@ -38,6 +38,13 @@ router.get('/lecture/:article_id', csrfProtection, function(req, res, next){
                             var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
                             var RegisterSuccessMessage = req.flash('RegisterSuccessMessage');
                             var RegisterFailureMessage = req.flash('RegisterFailureMessage');
+                            let ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
+                            if(article.vues.indexOf(ip) == -1){
+                                console.log('yeah');
+                                article.vues.push(ip);
+                                console.log(article.vues);
+                                article.save();
+                            }
                             res.render('Article/article', {title, layout: 'Index/layout.hbs', article: article, next: next, previous: previous, popular_post:popular_post, recent_post:recent_post,recent_post2: recent_post.slice(0,1), article1: recent_post.slice(0,1), user:req.user, EnrollSuccessNewsletter: EnrollSuccessNewsletter, EnrollFailureNewsletter: EnrollFailureNewsletter, commentaires:commentaires, csrfToken: req.csrfToken(), LoginFailureMessage: LoginFailureMessage, LoginSuccessMessage: LoginSuccessMessage, RegisterFailureMessage: RegisterFailureMessage, RegisterSuccessMessage: RegisterSuccessMessage});
                         });
                     });

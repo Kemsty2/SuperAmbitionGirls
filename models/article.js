@@ -9,7 +9,7 @@ var articleSchema = new Schema({
     type: {type: String},
     auteur_id: {type: String, required:true},
     auteur_nom: {type: String, required: true},
-    nombre_vue: {type: Number, default: 0},
+    vues: {type: Array, default: []},
     nombre_comms: {type: Number, default: 0},
     date_publication: {type: Date, default: Date.now},
     photo: {type: String, required: true},
@@ -17,6 +17,10 @@ var articleSchema = new Schema({
     tags:{type: [String]},
     special: {type: Boolean, default: false},
     description: String
+});
+
+articleSchema.virtual('nombre_vue').get(function(){
+    return this.vues.length;
 });
 
 articleSchema.virtual('duree').get(function(){
