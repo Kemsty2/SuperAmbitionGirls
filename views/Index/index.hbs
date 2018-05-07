@@ -143,7 +143,19 @@
     </div>
 </section>
 
-<section class="main_news_wrapper">
+<section class="main_news_wrapper">    
+    <div class="md-modal md-effect-16 d-flex justify-content-center" id="modal-16">
+            <div class="md-content">
+                <h3>
+                    <span>
+                        <button type="button" class="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </span>Les Secrets de Yoli
+                </h3>        
+            <img data-tilt class="img-responsive" onclick="window.open('http://www.lessecretsdeyoli.com/');" src="/images/Les Secrets de Yoli.jpg">
+        </div>    
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-9 col-sm-9 col-xs-12">
@@ -322,7 +334,7 @@
                                                         </div>
                                                     </div>
                                                     <h4><a href="/articles/lecture/{{loverelationarticle2._id}}">{{loverelationarticle2.titre}}</a></h4>
-                                                    <p> <i class="far fa-clock"></i> {{loverelationarticle2.date_pub}}   <i class="fa fa-eye"></i>  {{loverelationarticle2.nombre_}} </p>
+                                                    <p> <i class="far fa-clock"></i> {{loverelationarticle2.date_pub}}   <i class="fa fa-eye"></i>  {{loverelationarticle2.nombre_vue}} </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -490,7 +502,11 @@
             </div>
         </div>
     </div>
+
+    <div class="md-overlay"></div>        
 </section>
+
+
 
 <script src="/javascripts/wow.min.js"></script>
 <script>

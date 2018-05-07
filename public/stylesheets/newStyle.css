@@ -82,7 +82,7 @@ li[ data-target="#carousel-example-generic"]{
 }
 
 .fashion_area .header_fasion{
-    border-bottom: solid #4f2c84 5px;
+    border-bottom: solid rgb(79, 44, 132) 5px;
 }
 
 .footer_top{
@@ -774,5 +774,12 @@ form .error {
     opacity: 0;
 }
 
+.md-content img {
+    cursor: pointer;
+}
 
-
+.blur{
+    -webkit-filter: blur(3px);
+	-moz-filter: blur(3px);
+	filter: blur(3px);
+}
