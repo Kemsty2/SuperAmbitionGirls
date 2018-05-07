@@ -20,11 +20,10 @@ app.set('port', port);
 /**
  * Create HTTP server.
  */
-
 /*var options = {
-	key: fs.readFileSync('/etc/letsencrypt/live/www.superambitiongirls.com/privkey.pem'),
-	cert: fs.readFileSync('/etc/letsencrypt/live/www.superambitiongirls.com/cert.pem'),
-	ca: fs.readFileSync('/etc/letsencrypt/live/www.superambitiongirls.com/chain.pem')
+	key: fs.readFileSync('/etc/letsencrypt/live/superambitiongirls.com/privkey.pem'),
+	cert: fs.readFileSync('/etc/letsencrypt/live/superambitiongirls.com/cert.pem'),
+	ca: fs.readFileSync('/etc/letsencrypt/live/superambitiongirls.com/chain.pem')
 }*/
 
 var server = http.createServer(app);
