@@ -37,6 +37,7 @@
       <!-- ~~~=| Bootstrap css |==-->
       <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
       <link rel="stylesheet" href="/stylesheets/component.css">
+      <script src="/javascripts/jquery-3.3.1.js"></script>
 
       <!-- ~~~=| Theme files |==-->
       <link rel="stylesheet" href="/stylesheets/style.css">
@@ -622,39 +623,15 @@
     </div>
 
 
-    <script src="/javascripts/jquery-3.3.1.js"></script>
     <script src="/javascripts/popper.min.js"></script>
     <script src="/javascripts/bootstrap.min.js"></script>
     <script src="/javascripts/tilt.jquery.min.js"></script>
     <script src="/assets/js/plugins/jquery.validate.min.js"></script>
     <script src="/javascripts/main.js"></script>
-    <script src="/javascripts/jssocials.js"></script>    
+    <script src="/javascripts/jssocials.js"></script>
     <script src="/javascripts/classie.js"></script>
 	<script src="/javascripts/modalEffects.js"></script>
 
-    <script type="text/javascript">
-        /*$(window).on('load',function(){
-            var modal = document.getElementById('#modal-13');
-            //$('#modal-13').modal('show');
-            classie.add( modal, 'md-show' );
-        });*/
-        $(window).on('load', function(e){
-            $('#modal-16').addClass('md-show');
-            $('.container').addClass('blur');
-        });
-        $(document).click(function(event) {    
-            if (!$(event.target).closest(".md-modal,.md-show").length) {
-                $("body").find(".md-modal").removeClass("md-show");
-                $('.container').removeClass('blur');
-            }
-    });
-    </script>
-    <script>
-        $('.close').on('click', function(e){
-            $('#modal-16').removeClass('md-show');
-            $('.container').removeClass('blur');
-        })
-    </script>
 
     <script >
         $('.js-tilt').tilt({
