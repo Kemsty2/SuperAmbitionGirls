@@ -735,7 +735,6 @@ form .error {
 
 .overlay-description p{
     color: black;
-    font-size: 13px;
 }
 
 .overlay-type h4{
@@ -782,4 +781,5 @@ form .error {
     -webkit-filter: blur(3px);
 	-moz-filter: blur(3px);
 	filter: blur(3px);
+
 }

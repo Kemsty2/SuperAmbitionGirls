@@ -51,8 +51,7 @@ perspective effects (not including the modals and the overlay).
 	left: 0;
 	z-index: 1000;
 	opacity: 0;
-	/*background: rgba(143,27,15,0.8);*/
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(57, 57, 57, 0.8);
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
@@ -527,7 +526,7 @@ perspective effects (not including the modals and the overlay).
 
 /* Effect 16:  Blur */
 .md-show.md-effect-16 ~ .md-overlay {
-	background: rgba(180,46,32,0.5);
+	background: rgba(10, 10, 10, 0.7);
 }
 
 .md-show.md-effect-16 ~ .container {
