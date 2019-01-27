@@ -1,4 +1,5 @@
 public/images/upload_images/* 
 *.json
 bin/*
+node_modules
 

@@ -1,26 +1,23 @@
 /**
  * Created by LeKemsty on 07/03/2018.
  */
-
-// Ici je gère les articles et tout ce qui concerne les articles, Commentaires, Lecture ...
-
-var express = require('express');
-var router = express.Router();
-var Article = require('../models/article');
-var Commentaire = require('../models/commentaires');
-var types = ['Super Ambitieux', 'LifeStyle', 'Edito',  'Empowering', 'Love & Relation'];
-var csurf = require('csurf');
-var csrfProtection = csurf({cookie: true});
-var multer = require('multer');
-var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, 'public/images/upload_images');
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.originalname);
-    }
+const express = require('express');
+const router = express.Router();
+const Article = require('../models/article');
+const Commentaire = require('../models/commentaires');
+const types = ['Super Ambitieux', 'LifeStyle', 'Edito', 'Empowering', 'Love & Relation'];
+const csurf = require('csurf');
+const csrfProtection = csurf({cookie: true});
+const multer = require('multer');
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'public/images/upload_images');
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  }
 });
-var upload = multer({ storage: storage });
+const upload = multer({storage: storage});
 
 
 const title = "SAG, Ambition & Distinction";
@@ -32,14 +29,14 @@ router.get('/lecture/:article_id', csrfProtection, function(req, res, next){
                 Article.find({}).sort({'nombre_comms': -1}).limit(3).exec(function(err, popular_post){
                     Article.find({}).sort({'date_publication': -1}).limit(3).exec(function(err, recent_post){
                         Commentaire.find({article_id: req.params.article_id}, function (err, commentaires) {
-                            var LoginSuccessMessage = req.flash('LoginSuccessMessage');
-                            var LoginFailureMessage = req.flash('LoginFailureMessage');
-                            var EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
-                            var EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
-                            var RegisterSuccessMessage = req.flash('RegisterSuccessMessage');
-                            var RegisterFailureMessage = req.flash('RegisterFailureMessage');
-                            let ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
-                            if(article.vues.indexOf(ip) == -1){
+                          const LoginSuccessMessage = req.flash('LoginSuccessMessage');
+                          const LoginFailureMessage = req.flash('LoginFailureMessage');
+                          const EnrollSuccessNewsletter = req.flash('EnrollSuccessNewsletter');
+                          const EnrollFailureNewsletter = req.flash('EnrollFailureNewsletter');
+                          const RegisterSuccessMessage = req.flash('RegisterSuccessMessage');
+                          const RegisterFailureMessage = req.flash('RegisterFailureMessage');
+                          let ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
+                            if(article.vues.indexOf(ip) === -1){
                                 console.log('yeah');
                                 article.vues.push(ip);
                                 console.log(article.vues);
@@ -66,19 +63,19 @@ router.get('/list_article', isAuthenticated, function(req, res, next){
 
 router.post('/enroll_article', upload.single('photo'), isAuthenticated, function(req, res, next){
     console.log(req.body.type);
-    var newArticle = new Article({
-        titre: req.body.titre,
-        type: types[parseInt(req.body.type) - 1],
-        auteur_id: req.session.admin._id,
-        auteur_nom: req.session.admin.noms,
-        contenu: req.body.contenu,
-        description: req.body.description
-    });
-    var tags = req.body.tags.split(',');
-    for(var i=0; i<tags.length; i++){
+  const newArticle = new Article({
+    titre: req.body.titre,
+    type: types[parseInt(req.body.type) - 1],
+    auteur_id: req.session.admin._id,
+    auteur_nom: req.session.admin.noms,
+    contenu: req.body.contenu,
+    description: req.body.description
+  });
+  const tags = req.body.tags.split(',');
+  for(let i=0; i<tags.length; i++){
         newArticle.tags[i] = tags[i];
     }
-    if(req.body.special == 'special'){
+    if(req.body.special === 'special'){
         newArticle.special = true;
     }
     else{
@@ -91,9 +88,9 @@ router.post('/enroll_article', upload.single('photo'), isAuthenticated, function
         res.redirect('/articles/new_article');
     }
 
-    var file = req.file;
-    var path = file.path.substring(6);
-    if(file.mimetype == "image/jpeg" || file.mimetype == "image/png" || file.mimetype == "image/gif" || file.mimetype == "image/jpg"){
+  const file = req.file;
+  const path = file.path.substring(6);
+  if(file.mimetype === "image/jpeg" || file.mimetype === "image/png" || file.mimetype === "image/gif" || file.mimetype === "image/jpg"){
         newArticle.photo = path;
     }
     else{
@@ -146,18 +143,18 @@ router.get('/del_article/:article_id', isAuthenticated, function (req, res, next
 });
 
 function isAuthenticated(req, res, next){
-    var realAdmin = req.session.admin ? req.session.admin: {};
+  const realAdmin = req.session.admin ? req.session.admin : {};
 
-    if(!(isEmpty(realAdmin))){
+  if(!(isEmpty(realAdmin))){
         return next();
     }
     res.redirect('/admin/login')
 }
 
 function notAuthenticated(req, res, next){
-    var realAdmin = req.session.admin ? req.session.admin: {};
+  const realAdmin = req.session.admin ? req.session.admin : {};
 
-    if(isEmpty(realAdmin)){
+  if(isEmpty(realAdmin)){
         return next();
     }
     res.redirect('/admin')
@@ -165,14 +162,14 @@ function notAuthenticated(req, res, next){
 
 module.exports = router;
 
-var hasOwnProperty = Object.prototype.hasOwnProperty;
+const hasOwnProperty = Object.prototype.hasOwnProperty;
 
 function isEmpty(obj) {
     if (obj == null) return true;
     if (obj.length > 0)    return false;
     if (obj.length === 0)  return true;
     if (typeof obj !== "object") return true;
-    for (var key in obj) {
+    for (let key in obj) {
         if (hasOwnProperty.call(obj, key)) return false;
     }
     return true;

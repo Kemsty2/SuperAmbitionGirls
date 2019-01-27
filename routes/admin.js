@@ -1,13 +1,10 @@
 /**
  * Created by LeKemsty on 07/03/2018.
  */
-
-//Ici je gère tout ce qui concerne les administrateurs, Ajout Administrateur, Ajout Article, Ajout Pub, Liste Users, NewsLetter, ...
-
-var express = require('express');
-var router = express.Router();
-var Admin = require('../models/admin');
-var Newsletter = require('../models/newsletter');
+const express = require('express');
+const router = express.Router();
+const Admin = require('../models/admin');
+const Newsletter = require('../models/newsletter');
 const title = "SAG, Ambition & Distinction";
 
 
@@ -24,8 +21,8 @@ router.get('/login', notAuthenticated,  function(req, res, next){
 });
 
 router.post('/login_admin', notAuthenticated, function(req, res, next){
-    var realAdmin = req.session.admin ? req.session.admin: {};
-    console.log(realAdmin);
+  const realAdmin = req.session.admin ? req.session.admin : {};
+  console.log(realAdmin);
     if(!(isEmpty(realAdmin))){
         console.log('here');
         res.redirect('/admin');
@@ -59,21 +56,19 @@ router.get('/list_newsletter', isAuthenticated, function (req, res, next) {
     });
 });
 
-
-
 function isAuthenticated(req, res, next){
-    var realAdmin = req.session.admin ? req.session.admin: {};
+  const realAdmin = req.session.admin ? req.session.admin : {};
 
-    if(!(isEmpty(realAdmin))){
+  if(!(isEmpty(realAdmin))){
         return next();
     }
     res.redirect('/admin/login')
 }
 
 function notAuthenticated(req, res, next){
-    var realAdmin = req.session.admin ? req.session.admin: {};
+  const realAdmin = req.session.admin ? req.session.admin : {};
 
-    if(isEmpty(realAdmin)){
+  if(isEmpty(realAdmin)){
         return next();
     }
     res.redirect('/admin')
@@ -81,14 +76,14 @@ function notAuthenticated(req, res, next){
 
 module.exports = router;
 
-var hasOwnProperty = Object.prototype.hasOwnProperty;
+const hasOwnProperty = Object.prototype.hasOwnProperty;
 
 function isEmpty(obj) {
     if (obj == null) return true;
     if (obj.length > 0)    return false;
     if (obj.length === 0)  return true;
     if (typeof obj !== "object") return true;
-    for (var key in obj) {
+    for (let key in obj) {
         if (hasOwnProperty.call(obj, key)) return false;
     }
     return true;
